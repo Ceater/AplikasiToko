@@ -34,6 +34,7 @@ Module GlobalModule
     End Sub
 
     Sub LoadDataSet()
+        DSet.Clear()
         Try
             constring.Open()
             SqlAdapter = New SqlDataAdapter("select tb.KodeBarang, NamaBarang, Stok, NamaSatuan, HargaSatuan, JumlahIsiBarang, StokPengingat from TbBarang tb, TbSatuan ts, DSatuan ds where tb.SatuanBarang = ts.KodeSatuan and tb.KodeBarang=ds.KodeBarang", constring)
@@ -44,6 +45,8 @@ Module GlobalModule
             SqlAdapter.Fill(DSet, "DataKontakSupplier")
             SqlAdapter = New SqlDataAdapter("select * from TbSatuan", constring)
             SqlAdapter.Fill(DSet, "DataSatuan")
+            SqlAdapter = New SqlDataAdapter("select * from TbStaff", constring)
+            SqlAdapter.Fill(DSet, "DataStaff")
             constring.Close()
         Catch ex As Exception
             MsgBox(ex.ToString)

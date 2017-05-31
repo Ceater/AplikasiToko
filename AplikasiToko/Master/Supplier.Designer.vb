@@ -42,6 +42,8 @@ Partial Class Supplier
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -141,6 +143,7 @@ Partial Class Supplier
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Button5)
         Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Controls.Add(Me.Button1)
         Me.GroupBox3.Controls.Add(Me.Label3)
@@ -174,6 +177,7 @@ Partial Class Supplier
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Button6)
         Me.GroupBox4.Controls.Add(Me.Button4)
         Me.GroupBox4.Controls.Add(Me.Button3)
         Me.GroupBox4.Controls.Add(Me.TextBox4)
@@ -257,6 +261,24 @@ Partial Class Supplier
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nama Sales"
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(101, 98)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 40)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Reset"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(156, 94)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 44)
+        Me.Button6.TabIndex = 6
+        Me.Button6.Text = "Reset"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Supplier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -303,4 +325,6 @@ Partial Class Supplier
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class

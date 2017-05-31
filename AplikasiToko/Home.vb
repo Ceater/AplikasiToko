@@ -26,4 +26,10 @@
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub StaffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StaffToolStripMenuItem.Click
+        Dim f As New Staff
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class

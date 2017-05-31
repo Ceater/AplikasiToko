@@ -37,3 +37,17 @@ C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\Aplikasi
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Supplier.resources
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Resources.resources
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.exe
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.xml
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.pdb
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.exe
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.pdb
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.xml
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Home.resources
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.LoginForm.resources
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Barang.resources
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Supplier.resources
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Resources.resources
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Staff.resources

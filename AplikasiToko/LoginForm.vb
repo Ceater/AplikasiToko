@@ -29,4 +29,8 @@
             TextBox1.Focus()
         End If
     End Sub
+
+    Private Sub Enter_Textbox(sender As Object, e As EventArgs) Handles TextBox1.Enter, TextBox2.Enter
+        sender.selectall
+    End Sub
 End Class

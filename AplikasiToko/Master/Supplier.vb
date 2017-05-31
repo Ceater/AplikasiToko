@@ -2,33 +2,14 @@
     Dim tempNSupp As String 'Digunakan untuk menampung nama supplier sebelum dirubah
     Dim tempNSales As String 'Digunakan untuk menampung nama sales sebelum dirubah
     Private Sub Supplier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim TmpDSet As DataTable
         DataGridView1.DataSource = DSet.Tables("DataSupplier")
         DataGridView2.DataSource = DSet.Tables("DataKontakSupplier")
         setGV()
-        ComboBox1.DataSource = DSet.Tables("DataSupplier")
-        ComboBox1.ValueMember = "IDSupplier"
+        TmpDSet = DSet.Tables("DataSupplier")
+        ComboBox1.DataSource = TmpDSet
+        ComboBox1.ValueMember = "NamaSupplier"
         ComboBox1.DisplayMember = "NamaSupplier"
-
-    End Sub
-
-    Sub setGV()
-        DataGridView1.Columns(0).Visible = False
-        DataGridView1.Columns(1).HeaderText = "Nama"
-        DataGridView1.Columns(2).HeaderText = "Alamat"
-        Dim temp As Double = DataGridView1.Size.Width
-        DataGridView1.Columns(1).Width = temp * 0.3
-        DataGridView1.Columns(2).Width = temp * 0.68
-        DataGridView1.Sort(DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
-
-        DataGridView2.Columns(0).Visible = False
-        DataGridView2.Columns(1).HeaderText = "Supplier"
-        DataGridView2.Columns(2).HeaderText = "Nama Sales"
-        DataGridView2.Columns(3).HeaderText = "Telepon"
-        temp = DataGridView2.Size.Width
-        DataGridView2.Columns(1).Width = temp * 0.3
-        DataGridView2.Columns(2).Width = temp * 0.4
-        DataGridView2.Columns(3).Width = temp * 0.28
-        DataGridView2.Sort(DataGridView2.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
@@ -52,5 +33,46 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        resetSupp()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        resetSalesSupp()
+    End Sub
+
+    Sub setGV()
+        DataGridView1.Columns(0).Visible = False
+        DataGridView1.Columns(1).HeaderText = "Nama"
+        DataGridView1.Columns(2).HeaderText = "Alamat"
+        Dim temp As Double = DataGridView1.Size.Width
+        DataGridView1.Columns(1).Width = temp * 0.3
+        DataGridView1.Columns(2).Width = temp * 0.68
+        DataGridView1.Sort(DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+
+        DataGridView2.Columns(0).Visible = False
+        DataGridView2.Columns(1).HeaderText = "Supplier"
+        DataGridView2.Columns(2).HeaderText = "Nama Sales"
+        DataGridView2.Columns(3).HeaderText = "Telepon"
+        temp = DataGridView2.Size.Width
+        DataGridView2.Columns(1).Width = temp * 0.3
+        DataGridView2.Columns(2).Width = temp * 0.4
+        DataGridView2.Columns(3).Width = temp * 0.28
+        DataGridView2.Sort(DataGridView2.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Sub resetSupp()
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        Button1.Text = "Tambah"
+    End Sub
+
+    Sub resetSalesSupp()
+        TextBox1.Text = ""
+        TextBox4.Text = ""
+        ComboBox1.SelectedIndex = 0
+        Button3.Text = "Tambah"
     End Sub
 End Class

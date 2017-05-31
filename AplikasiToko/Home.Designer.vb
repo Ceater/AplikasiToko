@@ -66,7 +66,7 @@ Partial Class Home
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(77, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(78, 17)
         Me.ToolStripStatusLabel1.Text = "Aplikasi Toko"
         '
         'ToolStripStatusLabel2
@@ -78,13 +78,13 @@ Partial Class Home
         'ToolStripStatusLabel3
         '
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(1019, 17)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(1017, 17)
         Me.ToolStripStatusLabel3.Spring = True
         '
         'ToolStripStatusLabel4
         '
         Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(49, 17)
+        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(50, 17)
         Me.ToolStripStatusLabel4.Text = "Tanggal"
         '
         'ToolStripStatusLabel5
@@ -140,7 +140,7 @@ Partial Class Home
         '
         Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.PembelianToolStripMenuItem, Me.ReturToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
-        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.TransaksiToolStripMenuItem.Text = "Transaksi"
         '
         'PenjualanToolStripMenuItem
