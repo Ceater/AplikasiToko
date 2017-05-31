@@ -1,0 +1,11 @@
+delete DBeli
+delete DJual
+delete HBeli
+delete HJual
+delete ReturBeli
+delete ReturJual
+delete TbBarang
+delete TbKontakSupplier
+delete TbSatuan
+delete TbStaff
+delete TbSupplier

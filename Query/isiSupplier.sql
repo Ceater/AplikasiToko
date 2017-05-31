@@ -1,0 +1,5 @@
+insert into TbSupplier values('1','Unilever','Kupang Panjaan')
+insert into TbSupplier values('2','Wings','Diponegoro')
+insert into TbSupplier values('3','Alexa','GWalk')
+insert into TbSupplier values('4','Msi','Putat Jaya')
+insert into TbSupplier values('5','Asus','Ngagel Selatan')

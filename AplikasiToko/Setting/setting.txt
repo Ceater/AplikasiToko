@@ -1,0 +1,1 @@
+Server=PC-DELL\SQLEXPRESS01;Database=DBToko;User Id=admin;Password=1234;
