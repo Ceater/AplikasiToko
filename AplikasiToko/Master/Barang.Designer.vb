@@ -66,6 +66,9 @@ Partial Class Barang
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.NumericUpDown2)
         Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
@@ -79,9 +82,9 @@ Partial Class Barang
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 510)
+        Me.GroupBox1.Location = New System.Drawing.Point(766, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(557, 102)
+        Me.GroupBox1.Size = New System.Drawing.Size(236, 492)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Barang"
@@ -89,7 +92,7 @@ Partial Class Barang
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(341, 75)
+        Me.Label7.Location = New System.Drawing.Point(5, 154)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(54, 13)
         Me.Label7.TabIndex = 12
@@ -97,14 +100,14 @@ Partial Class Barang
         '
         'NumericUpDown2
         '
-        Me.NumericUpDown2.Location = New System.Drawing.Point(429, 72)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(93, 151)
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(120, 20)
         Me.NumericUpDown2.TabIndex = 7
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(429, 46)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(93, 125)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(122, 20)
@@ -113,7 +116,7 @@ Partial Class Barang
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(341, 48)
+        Me.Label6.Location = New System.Drawing.Point(5, 127)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 13)
         Me.Label6.TabIndex = 10
@@ -122,7 +125,7 @@ Partial Class Barang
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(426, 22)
+        Me.Label5.Location = New System.Drawing.Point(90, 101)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(24, 13)
         Me.Label5.TabIndex = 8
@@ -131,7 +134,7 @@ Partial Class Barang
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(341, 22)
+        Me.Label4.Location = New System.Drawing.Point(5, 101)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 7
@@ -139,7 +142,7 @@ Partial Class Barang
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(456, 19)
+        Me.TextBox3.Location = New System.Drawing.Point(120, 98)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(95, 20)
         Me.TextBox3.TabIndex = 5
@@ -159,14 +162,14 @@ Partial Class Barang
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(94, 71)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(220, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(134, 21)
         Me.ComboBox1.TabIndex = 4
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(94, 45)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(220, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(134, 20)
         Me.TextBox2.TabIndex = 3
         '
         'Label2
@@ -191,32 +194,32 @@ Partial Class Barang
         '
         Me.TextBox1.Location = New System.Drawing.Point(94, 19)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(220, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(134, 20)
         Me.TextBox1.TabIndex = 2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(575, 563)
+        Me.Button1.Location = New System.Drawing.Point(9, 230)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(165, 49)
+        Me.Button1.Size = New System.Drawing.Size(223, 38)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Tambah"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(665, 519)
+        Me.Button2.Location = New System.Drawing.Point(122, 186)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 38)
+        Me.Button2.Size = New System.Drawing.Size(110, 38)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Hapus"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(575, 519)
+        Me.Button3.Location = New System.Drawing.Point(9, 186)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(84, 38)
+        Me.Button3.Size = New System.Drawing.Size(110, 38)
         Me.Button3.TabIndex = 9
         Me.Button3.Text = "Reset"
         Me.Button3.UseVisualStyleBackColor = True
@@ -225,10 +228,7 @@ Partial Class Barang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 624)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(1010, 515)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

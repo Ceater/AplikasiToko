@@ -24,3 +24,16 @@ C:\Users\Robokidz\Google Drive\Kumpulan Program\AplikasiToko\AplikasiToko\obj\x8
 C:\Users\Robokidz\Google Drive\Kumpulan Program\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Supplier.resources
 C:\Users\Johan\Google Drive\Kumpulan Program\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
 C:\Users\Robokidz\Google Drive\Kumpulan Program\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.exe
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.xml
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.pdb
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.exe
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.pdb
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.xml
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Home.resources
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.LoginForm.resources
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Barang.resources
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Supplier.resources
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Resources.resources
+C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbproj.GenerateResource.Cache

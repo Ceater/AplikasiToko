@@ -25,7 +25,8 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-
+        clearall()
+        Button1.Text = "Tambah"
     End Sub
 
     Sub clearall()
@@ -54,5 +55,13 @@
         DataGridView1.Columns(5).Width = temp * 0.1
         DataGridView1.Columns(6).Width = temp * 0.1
         DataGridView1.Sort(DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

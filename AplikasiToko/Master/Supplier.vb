@@ -45,9 +45,9 @@
     Private Sub DataGridView2_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
         Try
             tempNSupp = DataGridView2.Rows(e.RowIndex).Cells(0).Value
-            TextBox1.Text = DataGridView2.Rows(e.RowIndex).Cells(1).Value
-            TextBox4.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
-            ComboBox1.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+            TextBox1.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
+            TextBox4.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value
+            ComboBox1.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(1).Value
             Button3.Text = "Rubah"
         Catch ex As Exception
 

@@ -46,7 +46,7 @@ HReturBeli
 - NoNotaBeli
 - TotalpengembalianUang
 
-DReturJual
+DReturBeli
 - No
 - IDReturBeli
 - KodeBarang

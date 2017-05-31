@@ -1,1 +1,1 @@
-Server=PC-DELL\SQLEXPRESS01;Database=DBToko;User Id=admin;Password=1234;
+Server=.\SQLEXPRESS;Database=DatabaseToko;User Id=johan;Password=1234;
