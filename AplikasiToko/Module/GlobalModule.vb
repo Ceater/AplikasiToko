@@ -28,7 +28,6 @@ Module GlobalModule
             constring.Open()
             constring.Close()
         Catch ex As Exception
-            'MsgBox(ex.ToString)
             MsgBox("Pengaturan Salah")
         End Try
     End Sub

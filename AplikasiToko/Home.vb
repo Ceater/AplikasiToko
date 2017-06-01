@@ -32,4 +32,16 @@
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+        Dim f As New HelpForm
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub PenjualanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem.Click
+        Dim f As New Penjualan
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class
