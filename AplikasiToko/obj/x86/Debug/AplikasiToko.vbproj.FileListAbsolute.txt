@@ -51,3 +51,4 @@ C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\
 C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Resources.resources
 C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Staff.resources
+C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.HelpForm.resources
