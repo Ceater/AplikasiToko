@@ -85,7 +85,7 @@
     End Sub
 
     Private Sub Batal(sender As Object, e As EventArgs) Handles Batal_btn.Click
-        Dim result As Integer = MessageBox.Show("Peringatan", "Anda ingin mengosongkan daftar barang?", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan daftar barang?", "Peringatan", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             DTable.Clear()
             GTotal = 0
@@ -129,7 +129,7 @@
     End Sub
 
     Private Sub Proses_btn_Click(sender As Object, e As EventArgs) Handles Proses_btn.Click
-        Dim result As Integer = MessageBox.Show("Peringatan", "Apakah semua barang sudah benar?", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Apakah semua barang sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
         ElseIf result = DialogResult.No Then
         End If

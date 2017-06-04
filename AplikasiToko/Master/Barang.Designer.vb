@@ -24,6 +24,9 @@ Partial Class Barang
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -37,9 +40,6 @@ Partial Class Barang
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +88,33 @@ Partial Class Barang
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data Barang"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(9, 230)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(223, 38)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Tambah"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(122, 186)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(110, 38)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "Hapus"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(9, 186)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(110, 38)
+        Me.Button3.TabIndex = 9
+        Me.Button3.Text = "Reset"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -146,6 +173,7 @@ Partial Class Barang
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(95, 20)
         Me.TextBox3.TabIndex = 5
+        Me.TextBox3.Text = "0"
         '
         'Label3
         '
@@ -196,33 +224,6 @@ Partial Class Barang
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(134, 20)
         Me.TextBox1.TabIndex = 2
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(9, 230)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(223, 38)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Tambah"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(122, 186)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 38)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Hapus"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(9, 186)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(110, 38)
-        Me.Button3.TabIndex = 9
-        Me.Button3.Text = "Reset"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Barang
         '
