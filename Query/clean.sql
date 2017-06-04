@@ -12,3 +12,4 @@ delete TbSatuan
 delete DSatuan
 delete TbStaff
 delete TbSupplier
+delete TbPelanggan

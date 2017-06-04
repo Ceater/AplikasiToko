@@ -93,6 +93,12 @@
     <Compile Include="HelpForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Master\Pelanggan.Designer.vb">
+      <DependentUpon>Pelanggan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Pelanggan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Master\Staff.Designer.vb">
       <DependentUpon>Staff.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Barang.resx">
       <DependentUpon>Barang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Pelanggan.resx">
+      <DependentUpon>Pelanggan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Staff.resx">
       <DependentUpon>Staff.vb</DependentUpon>

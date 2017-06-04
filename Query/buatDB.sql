@@ -1,6 +1,84 @@
+USE [master]
+GO
+/****** Object:  Database [DatabaseToko]    Script Date: 6/4/2017 6:48:00 PM ******/
+CREATE DATABASE [DatabaseToko]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'DatabaseToko', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA\DatabaseToko.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'DatabaseToko_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA\DatabaseToko_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [DatabaseToko] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [DatabaseToko].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [DatabaseToko] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [DatabaseToko] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [DatabaseToko] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [DatabaseToko] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [DatabaseToko] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [DatabaseToko] SET  MULTI_USER 
+GO
+ALTER DATABASE [DatabaseToko] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [DatabaseToko] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [DatabaseToko] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [DatabaseToko] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [DatabaseToko] SET DELAYED_DURABILITY = DISABLED 
+GO
 USE [DatabaseToko]
 GO
-/****** Object:  Table [dbo].[DBeli]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  User [johan]    Script Date: 6/4/2017 6:48:01 PM ******/
+CREATE USER [johan] FOR LOGIN [johan] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[DBeli]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19,7 +97,7 @@ CREATE TABLE [dbo].[DBeli](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DJual]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[DJual]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -38,7 +116,7 @@ CREATE TABLE [dbo].[DJual](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DReturBeli]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[DReturBeli]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -57,7 +135,7 @@ CREATE TABLE [dbo].[DReturBeli](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DReturJual]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[DReturJual]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -76,13 +154,13 @@ CREATE TABLE [dbo].[DReturJual](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DSatuan]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[DSatuan]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[DSatuan](
-	[NoDSatuan] [varchar](5) NOT NULL,
+	[NoDSatuan] [int] IDENTITY(1,1) NOT NULL,
 	[KodeBarang] [varchar](5) NOT NULL,
 	[KodeSatuan] [varchar](5) NOT NULL,
 	[JumlahIsiBarang] [varchar](5) NOT NULL,
@@ -92,7 +170,7 @@ CREATE TABLE [dbo].[DSatuan](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HBeli]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[HBeli]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -108,7 +186,7 @@ CREATE TABLE [dbo].[HBeli](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HJual]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[HJual]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -124,7 +202,7 @@ CREATE TABLE [dbo].[HJual](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HReturBeli]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[HReturBeli]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -140,7 +218,7 @@ CREATE TABLE [dbo].[HReturBeli](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HReturJual]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[HReturJual]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +234,7 @@ CREATE TABLE [dbo].[HReturJual](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TbBarang]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[TbBarang]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -174,7 +252,7 @@ CREATE TABLE [dbo].[TbBarang](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TbKontakSupplier]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[TbKontakSupplier]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -190,7 +268,23 @@ CREATE TABLE [dbo].[TbKontakSupplier](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TbSatuan]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[TbPelanggan]    Script Date: 6/4/2017 6:48:01 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TbPelanggan](
+	[NoPelanggan] [int] IDENTITY(1,1) NOT NULL,
+	[NamaPelanggan] [varchar](max) NOT NULL,
+	[TlpPelanggan] [varchar](max) NOT NULL,
+	[AlamatPelanggan] [varchar](max) NOT NULL,
+ CONSTRAINT [PK_TbPelanggan] PRIMARY KEY CLUSTERED 
+(
+	[NoPelanggan] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TbSatuan]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -204,7 +298,7 @@ CREATE TABLE [dbo].[TbSatuan](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TbStaff]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[TbStaff]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -222,7 +316,7 @@ CREATE TABLE [dbo].[TbStaff](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TbSupplier]    Script Date: 5/31/2017 11:30:07 AM ******/
+/****** Object:  Table [dbo].[TbSupplier]    Script Date: 6/4/2017 6:48:01 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -236,4 +330,8 @@ CREATE TABLE [dbo].[TbSupplier](
 	[IDSupplier] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+USE [master]
+GO
+ALTER DATABASE [DatabaseToko] SET  READ_WRITE 
 GO
