@@ -44,4 +44,10 @@
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub PelangganToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PelangganToolStripMenuItem.Click
+        Dim f As New Pelanggan
+        f.MdiParent = Me
+        f.Show()
+    End Sub
 End Class
