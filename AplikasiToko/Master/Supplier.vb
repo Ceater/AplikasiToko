@@ -36,11 +36,19 @@
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        resetSupp()
+        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan kolom?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            resetSupp()
+        ElseIf result = DialogResult.No Then
+        End If
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        resetSalesSupp()
+        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan kolom?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            resetSalesSupp()
+        ElseIf result = DialogResult.No Then
+        End If
     End Sub
 
     Sub setGV()

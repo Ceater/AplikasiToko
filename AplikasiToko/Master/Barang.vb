@@ -25,7 +25,7 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan daftar barang?", "Peringatan", MessageBoxButtons.YesNo)
+        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan kolom barang?", "Peringatan", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             clearall()
             Button1.Text = "Tambah"
