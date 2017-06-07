@@ -31,9 +31,11 @@ Partial Class Supplier
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -42,8 +44,6 @@ Partial Class Supplier
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -157,6 +157,15 @@ Partial Class Supplier
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Edit Supplier"
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(101, 98)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 40)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Reset"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(182, 97)
@@ -192,6 +201,15 @@ Partial Class Supplier
         Me.GroupBox4.TabIndex = 9
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Edit Kontak Sales"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(156, 94)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 44)
+        Me.Button6.TabIndex = 6
+        Me.Button6.Text = "Reset"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -260,24 +278,6 @@ Partial Class Supplier
         Me.Label1.Size = New System.Drawing.Size(64, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nama Sales"
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(101, 98)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 40)
-        Me.Button5.TabIndex = 8
-        Me.Button5.Text = "Reset"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(156, 94)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 44)
-        Me.Button6.TabIndex = 6
-        Me.Button6.Text = "Reset"
-        Me.Button6.UseVisualStyleBackColor = True
         '
         'Supplier
         '

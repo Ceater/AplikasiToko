@@ -72,7 +72,7 @@ Module ModuleSupplier
             With cmd.Parameters
                 .Add(New SqlParameter("@a", KSupplier))
                 .Add(New SqlParameter("@b", NSales))
-                .Add(New SqlParameter("@c", KSupplier))
+                .Add(New SqlParameter("@c", TSales))
                 .Add(New SqlParameter("@d", id))
             End With
             cmd.ExecuteNonQuery()
@@ -86,7 +86,7 @@ Module ModuleSupplier
     Sub deleteSupplier(ByVal KSupplier As String)
         Try
             constring.Open()
-            cmd = New SqlCommand("delete TbSupplier where IDSupplier=@ac", constring)
+            cmd = New SqlCommand("delete TbSupplier where IDSupplier=@a", constring)
             With cmd.Parameters
                 .Add(New SqlParameter("@a", KSupplier))
             End With

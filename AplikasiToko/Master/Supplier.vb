@@ -2,13 +2,11 @@
     Dim tempNSupp As String 'Digunakan untuk menampung nama supplier sebelum dirubah
     Dim tempNSales As String 'Digunakan untuk menampung nama sales sebelum dirubah
     Private Sub Supplier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim TmpDSet As DataTable
         DataGridView1.DataSource = DSet.Tables("DataSupplier")
         DataGridView2.DataSource = DSet.Tables("DataKontakSupplier")
         setGV()
-        TmpDSet = DSet.Tables("DataSupplier")
-        ComboBox1.DataSource = TmpDSet
-        ComboBox1.ValueMember = "NamaSupplier"
+        ComboBox1.DataSource = DSet.Tables("DataSupplier")
+        ComboBox1.ValueMember = "IDSupplier"
         ComboBox1.DisplayMember = "NamaSupplier"
     End Sub
 
@@ -25,10 +23,10 @@
 
     Private Sub DataGridView2_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView2.CellDoubleClick
         Try
-            tempNSupp = DataGridView2.Rows(e.RowIndex).Cells(0).Value
+            tempNSales = DataGridView2.Rows(e.RowIndex).Cells(0).Value
             TextBox1.Text = DataGridView2.Rows(e.RowIndex).Cells(2).Value
             TextBox4.Text = DataGridView2.Rows(e.RowIndex).Cells(3).Value
-            ComboBox1.SelectedValue = DataGridView2.Rows(e.RowIndex).Cells(1).Value
+            ComboBox1.SelectedText = DataGridView2.Rows(e.RowIndex).Cells(1).Value
             Button3.Text = "Rubah"
         Catch ex As Exception
 
@@ -51,6 +49,59 @@
         End If
     End Sub
 
+    Private Sub Hapus(sender As Object, e As EventArgs) Handles Button2.Click, Button4.Click
+        Dim result As Integer = MessageBox.Show("Anda ingin menghapus?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            If Button1.Text = "Rubah" And sender.name = "Button2" Then
+                deleteSupplier(tempNSupp)
+                resetSupp()
+            ElseIf Button3.Text = "Rubah" And sender.name = "Button4" Then
+                deleteSales(tempNSales)
+                resetSalesSupp()
+            End If
+            LoadDataSet()
+        ElseIf result = DialogResult.No Then
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, Button3.Click
+        If sender.text = "Tambah" Then
+            If sender.name = "Button1" Then
+                If TextBox2.Text <> "" And TextBox3.Text <> "" Then
+                    insertSupplier(TextBox2.Text, TextBox3.Text)
+                Else
+                    MsgBox("Cek kolom, jangan ada yang dikosongi.")
+                End If
+                resetSupp()
+            ElseIf sender.name = "Button3" Then
+                If TextBox1.Text <> "" And TextBox4.Text <> "" Then
+                    insertSales(ComboBox1.SelectedValue, TextBox1.Text, TextBox4.Text)
+                Else
+                    MsgBox("Cek kolom, jangan ada yang dikosongi.")
+                End If
+                resetSalesSupp()
+            End If
+        Else
+            If sender.name = "Button1" Then
+                If TextBox2.Text <> "" And TextBox3.Text <> "" Then
+                    updateSupplier(tempNSupp, TextBox2.Text, TextBox3.Text)
+                Else
+                    MsgBox("Cek kolom, jangan ada yang dikosongi.")
+                End If
+                resetSupp()
+            ElseIf sender.name = "Button3" Then
+                If TextBox1.Text <> "" And TextBox4.Text <> "" Then
+                    updateSales(ComboBox1.SelectedValue, TextBox1.Text, TextBox4.Text, tempNSales)
+                Else
+                    MsgBox("Cek kolom, jangan ada yang dikosongi.")
+                End If
+                resetSalesSupp()
+            End If
+        End If
+        LoadDataSet()
+    End Sub
+
+    'Procedure and Function
     Sub setGV()
         DataGridView1.Columns(0).Visible = False
         DataGridView1.Columns(1).HeaderText = "Nama"

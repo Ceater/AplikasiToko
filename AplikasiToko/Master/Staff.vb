@@ -41,9 +41,34 @@
     End Sub
 
     Private Sub Reset_btn(sender As Object, e As EventArgs) Handles Reset.Click
-        Clear()
+        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan kolom?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            Clear()
+        ElseIf result = DialogResult.No Then
+        End If
     End Sub
 
+    Private Sub Tambah_Click(sender As Object, e As EventArgs) Handles Tambah.Click
+        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" Then
+            Dim previl As String = ""
+            For i = 0 To chkbox.Count - 1
+                If chkbox(i).Checked = True Then
+                    previl &= "1"
+                Else
+                    previl &= "0"
+                End If
+
+            Next
+        Else
+            MsgBox("Jangan ada yang dikosongi")
+        End If
+    End Sub
+
+    Private Sub Hapus_Click(sender As Object, e As EventArgs) Handles Hapus.Click
+
+    End Sub
+
+    'Procedure and Function
     Sub setGV()
         DataGridView1.Columns(0).HeaderText = "ID Staff"
         DataGridView1.Columns(1).HeaderText = "Password"

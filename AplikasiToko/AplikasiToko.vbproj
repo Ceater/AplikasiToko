@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Module\LoginModule.vb" />
     <Compile Include="Module\ModuleBarang.vb" />
+    <Compile Include="Module\ModuleStaff.vb" />
     <Compile Include="Module\ModuleSupplier.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
