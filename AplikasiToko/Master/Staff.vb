@@ -25,6 +25,7 @@
             TextBox3.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value
             TextBox4.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value
             TextBox5.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value
+            TextBox1.ReadOnly = True
             Tambah.Text = "Rubah"
             Dim x(12) As String
             For i = 0 To 12
@@ -41,31 +42,65 @@
     End Sub
 
     Private Sub Reset_btn(sender As Object, e As EventArgs) Handles Reset.Click
-        Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan kolom?", "Peringatan", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-            Clear()
-        ElseIf result = DialogResult.No Then
+        If Tambah.Text = "Rubah" Then
+            Dim result As Integer = MessageBox.Show("Anda ingin mengosongkan kolom?", "Peringatan", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                Clear()
+            ElseIf result = DialogResult.No Then
+            End If
+        Else
+            MsgBox("Pilih staff yang ingin dihapus terlebih dahulu")
         End If
     End Sub
 
     Private Sub Tambah_Click(sender As Object, e As EventArgs) Handles Tambah.Click
-        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" Then
-            Dim previl As String = ""
-            For i = 0 To chkbox.Count - 1
-                If chkbox(i).Checked = True Then
-                    previl &= "1"
+        If sender.text = "Tambah" Then
+            If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" Then
+                Dim previl As String = ""
+                For i = 0 To chkbox.Count - 1
+                    If chkbox(i).Checked = True Then
+                        previl &= "1"
+                    Else
+                        previl &= "0"
+                    End If
+                Next
+                If cekIDStaff(TextBox1.Text) Then
+                    insertStaff(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, previl)
+                    LoadDataSet()
+                    Clear()
                 Else
-                    previl &= "0"
+                    MsgBox("ID sudah terdaftar")
                 End If
-
-            Next
+            Else
+                MsgBox("Jangan ada yang dikosongi")
+            End If
         Else
-            MsgBox("Jangan ada yang dikosongi")
+            If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" Then
+                Dim previl As String = ""
+                For i = 0 To chkbox.Count - 1
+                    If chkbox(i).Checked = True Then
+                        previl &= "1"
+                    Else
+                        previl &= "0"
+                    End If
+                Next
+                updateStaff(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, previl)
+                LoadDataSet()
+                Clear()
+            Else
+                MsgBox("Jangan ada yang dikosongi")
+            End If
         End If
     End Sub
 
     Private Sub Hapus_Click(sender As Object, e As EventArgs) Handles Hapus.Click
-
+        Dim result As Integer = MessageBox.Show("Anda ingin menghapus data?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            deleteStaff(TextBox1.Text)
+            LoadDataSet()
+            Clear()
+        ElseIf result = DialogResult.No Then
+        End If
     End Sub
 
     'Procedure and Function
@@ -91,10 +126,12 @@
         TextBox3.Text = ""
         TextBox4.Text = ""
         TextBox5.Text = ""
-        Tambah.Text = "Rubah"
+        TextBox1.ReadOnly = False
+        Tambah.Text = "Tambah"
         M1.Checked = False
         M2.Checked = False
         M3.Checked = False
+        M4.Checked = False
         L1.Checked = False
         L2.Checked = False
         L3.Checked = False

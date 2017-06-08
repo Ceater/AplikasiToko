@@ -122,7 +122,7 @@ Partial Class Staff
         Me.GroupBox2.Location = New System.Drawing.Point(12, 201)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(253, 232)
-        Me.GroupBox2.TabIndex = 5
+        Me.GroupBox2.TabIndex = 99
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Hak Akses"
         '
@@ -150,7 +150,7 @@ Partial Class Staff
         Me.L3.Location = New System.Drawing.Point(6, 199)
         Me.L3.Name = "L3"
         Me.L3.Size = New System.Drawing.Size(85, 17)
-        Me.L3.TabIndex = 0
+        Me.L3.TabIndex = 12
         Me.L3.Text = "Pembayaran"
         Me.L3.UseVisualStyleBackColor = True
         '
@@ -160,7 +160,7 @@ Partial Class Staff
         Me.T6.Location = New System.Drawing.Point(143, 159)
         Me.T6.Name = "T6"
         Me.T6.Size = New System.Drawing.Size(104, 17)
-        Me.T6.TabIndex = 0
+        Me.T6.TabIndex = 18
         Me.T6.Text = "Print Ulang Nota"
         Me.T6.UseVisualStyleBackColor = True
         '
@@ -170,7 +170,7 @@ Partial Class Staff
         Me.T3.Location = New System.Drawing.Point(143, 90)
         Me.T3.Name = "T3"
         Me.T3.Size = New System.Drawing.Size(52, 17)
-        Me.T3.TabIndex = 0
+        Me.T3.TabIndex = 15
         Me.T3.Text = "Retur"
         Me.T3.UseVisualStyleBackColor = True
         '
@@ -189,7 +189,7 @@ Partial Class Staff
         Me.T5.Location = New System.Drawing.Point(143, 136)
         Me.T5.Name = "T5"
         Me.T5.Size = New System.Drawing.Size(85, 17)
-        Me.T5.TabIndex = 0
+        Me.T5.TabIndex = 17
         Me.T5.Text = "Pembayaran"
         Me.T5.UseVisualStyleBackColor = True
         '
@@ -199,7 +199,7 @@ Partial Class Staff
         Me.L1.Location = New System.Drawing.Point(6, 153)
         Me.L1.Name = "L1"
         Me.L1.Size = New System.Drawing.Size(73, 17)
-        Me.L1.TabIndex = 0
+        Me.L1.TabIndex = 10
         Me.L1.Text = "Penjualan"
         Me.L1.UseVisualStyleBackColor = True
         '
@@ -209,7 +209,7 @@ Partial Class Staff
         Me.T2.Location = New System.Drawing.Point(143, 67)
         Me.T2.Name = "T2"
         Me.T2.Size = New System.Drawing.Size(75, 17)
-        Me.T2.TabIndex = 0
+        Me.T2.TabIndex = 14
         Me.T2.Text = "Pembelian"
         Me.T2.UseVisualStyleBackColor = True
         '
@@ -219,7 +219,7 @@ Partial Class Staff
         Me.M4.Location = New System.Drawing.Point(6, 113)
         Me.M4.Name = "M4"
         Me.M4.Size = New System.Drawing.Size(60, 17)
-        Me.M4.TabIndex = 0
+        Me.M4.TabIndex = 9
         Me.M4.Text = "Satuan"
         Me.M4.UseVisualStyleBackColor = True
         '
@@ -229,7 +229,7 @@ Partial Class Staff
         Me.M3.Location = New System.Drawing.Point(6, 90)
         Me.M3.Name = "M3"
         Me.M3.Size = New System.Drawing.Size(48, 17)
-        Me.M3.TabIndex = 0
+        Me.M3.TabIndex = 8
         Me.M3.Text = "Staff"
         Me.M3.UseVisualStyleBackColor = True
         '
@@ -239,7 +239,7 @@ Partial Class Staff
         Me.L2.Location = New System.Drawing.Point(6, 176)
         Me.L2.Name = "L2"
         Me.L2.Size = New System.Drawing.Size(95, 17)
-        Me.L2.TabIndex = 0
+        Me.L2.TabIndex = 11
         Me.L2.Text = "Barang Masuk"
         Me.L2.UseVisualStyleBackColor = True
         '
@@ -249,7 +249,7 @@ Partial Class Staff
         Me.T4.Location = New System.Drawing.Point(143, 113)
         Me.T4.Name = "T4"
         Me.T4.Size = New System.Drawing.Size(91, 17)
-        Me.T4.TabIndex = 0
+        Me.T4.TabIndex = 16
         Me.T4.Text = "Stok Opname"
         Me.T4.UseVisualStyleBackColor = True
         '
@@ -259,7 +259,7 @@ Partial Class Staff
         Me.T1.Location = New System.Drawing.Point(143, 44)
         Me.T1.Name = "T1"
         Me.T1.Size = New System.Drawing.Size(73, 17)
-        Me.T1.TabIndex = 0
+        Me.T1.TabIndex = 13
         Me.T1.Text = "Penjualan"
         Me.T1.UseVisualStyleBackColor = True
         '
@@ -269,7 +269,7 @@ Partial Class Staff
         Me.M2.Location = New System.Drawing.Point(6, 67)
         Me.M2.Name = "M2"
         Me.M2.Size = New System.Drawing.Size(64, 17)
-        Me.M2.TabIndex = 0
+        Me.M2.TabIndex = 7
         Me.M2.Text = "Supplier"
         Me.M2.UseVisualStyleBackColor = True
         '
@@ -279,7 +279,7 @@ Partial Class Staff
         Me.M1.Location = New System.Drawing.Point(6, 44)
         Me.M1.Name = "M1"
         Me.M1.Size = New System.Drawing.Size(60, 17)
-        Me.M1.TabIndex = 0
+        Me.M1.TabIndex = 6
         Me.M1.Text = "Barang"
         Me.M1.UseVisualStyleBackColor = True
         '
@@ -315,7 +315,7 @@ Partial Class Staff
         Me.TextBox5.Location = New System.Drawing.Point(67, 175)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(195, 20)
-        Me.TextBox5.TabIndex = 3
+        Me.TextBox5.TabIndex = 5
         '
         'TextBox4
         '
@@ -323,14 +323,14 @@ Partial Class Staff
         Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(195, 72)
-        Me.TextBox4.TabIndex = 3
+        Me.TextBox4.TabIndex = 4
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(67, 45)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(195, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.TextBox2.TabIndex = 2
         '
         'Label6
         '
@@ -355,7 +355,7 @@ Partial Class Staff
         Me.TextBox3.Location = New System.Drawing.Point(67, 71)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(195, 20)
-        Me.TextBox3.TabIndex = 1
+        Me.TextBox3.TabIndex = 3
         '
         'TextBox1
         '

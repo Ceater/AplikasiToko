@@ -13,45 +13,70 @@ Module ModuleStaff
             End With
             Dim reader As SqlDataReader = cmd.ExecuteReader
             If reader.HasRows Then
-                result = True
-            Else
                 result = False
+            Else
+                result = True
             End If
             constring.Close()
         Catch ex As Exception
             constring.Close()
-            result = False
+            result = True
         End Try
         Return result
     End Function
 
     Sub insertStaff(idstaff As String, password As String, nama As String, alamat As String, notlp As String, hakakses As String)
         Try
-            If cekIDStaff(idstaff) Then
-                constring.Open()
-                cmd = New SqlCommand("insert into TbStaff Values(@a,@b,@c,@d,@e,@f)", constring)
-                With cmd.Parameters
-                    .Add(New SqlParameter("@a", idstaff))
-                    .Add(New SqlParameter("@b", password))
-                    .Add(New SqlParameter("@c", nama))
-                    .Add(New SqlParameter("@d", alamat))
-                    .Add(New SqlParameter("@e", notlp))
-                    .Add(New SqlParameter("@f", hakakses))
-                End With
-                cmd.ExecuteNonQuery()
-                constring.Close()
-            End If
+            constring.Open()
+            cmd = New SqlCommand("insert into TbStaff Values(@a,@b,@c,@d,@e,@f)", constring)
+            With cmd.Parameters
+                .Add(New SqlParameter("@a", idstaff))
+                .Add(New SqlParameter("@b", password))
+                .Add(New SqlParameter("@c", nama))
+                .Add(New SqlParameter("@d", alamat))
+                .Add(New SqlParameter("@e", notlp))
+                .Add(New SqlParameter("@f", hakakses))
+            End With
+            cmd.ExecuteNonQuery()
+            constring.Close()
         Catch ex As Exception
             MsgBox(ex.ToString)
             constring.Close()
         End Try
     End Sub
 
-    Sub updateStaff()
-
+    Sub updateStaff(idstaff As String, password As String, nama As String, alamat As String, notlp As String, hakakses As String)
+        Try
+            constring.Open()
+            cmd = New SqlCommand("update TbStaff set Password=@b, NamaStaff=@c, Alamat=@d, NoTlp=@e, HakAkses=@f where IDstaff=@a", constring)
+            With cmd.Parameters
+                .Add(New SqlParameter("@a", idstaff))
+                .Add(New SqlParameter("@b", password))
+                .Add(New SqlParameter("@c", nama))
+                .Add(New SqlParameter("@d", alamat))
+                .Add(New SqlParameter("@e", notlp))
+                .Add(New SqlParameter("@f", hakakses))
+            End With
+            cmd.ExecuteNonQuery()
+            constring.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            constring.Close()
+        End Try
     End Sub
 
-    Sub deleteStaff()
-
+    Sub deleteStaff(idstaff As String)
+        Try
+            constring.Open()
+            cmd = New SqlCommand("delete TbStaff where IDstaff=@a", constring)
+            With cmd.Parameters
+                .Add(New SqlParameter("@a", idstaff))
+            End With
+            cmd.ExecuteNonQuery()
+            constring.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            constring.Close()
+        End Try
     End Sub
 End Module
