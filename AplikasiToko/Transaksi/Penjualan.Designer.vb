@@ -52,10 +52,10 @@ Partial Class Penjualan
         Me.Proses_btn = New System.Windows.Forms.Button()
         Me.Batal_btn = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.NotaTxt = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -362,29 +362,13 @@ Partial Class Penjualan
         Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox4.Controls.Add(Me.Label21)
         Me.GroupBox4.Controls.Add(Me.Label20)
-        Me.GroupBox4.Controls.Add(Me.TextBox2)
+        Me.GroupBox4.Controls.Add(Me.NotaTxt)
         Me.GroupBox4.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(760, 88)
         Me.GroupBox4.TabIndex = 7
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Nota Transaksi"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(79, 19)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(203, 20)
-        Me.TextBox2.TabIndex = 0
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(5, 22)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(64, 13)
-        Me.Label20.TabIndex = 1
-        Me.Label20.Text = "Nomer Nota"
         '
         'DateTimePicker1
         '
@@ -403,6 +387,22 @@ Partial Class Penjualan
         Me.Label21.Size = New System.Drawing.Size(46, 13)
         Me.Label21.TabIndex = 1
         Me.Label21.Text = "Tanggal"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(5, 22)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(64, 13)
+        Me.Label20.TabIndex = 1
+        Me.Label20.Text = "Nomer Nota"
+        '
+        'NotaTxt
+        '
+        Me.NotaTxt.Location = New System.Drawing.Point(79, 19)
+        Me.NotaTxt.Name = "NotaTxt"
+        Me.NotaTxt.Size = New System.Drawing.Size(203, 20)
+        Me.NotaTxt.TabIndex = 0
         '
         'Penjualan
         '
@@ -470,6 +470,6 @@ Partial Class Penjualan
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label20 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents NotaTxt As TextBox
     Friend WithEvents Label21 As Label
 End Class

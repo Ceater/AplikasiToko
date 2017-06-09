@@ -42,6 +42,7 @@
     Private Sub PenjualanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem.Click
         Dim f As New Penjualan
         f.MdiParent = Me
+        f.setStaff(ToolStripStatusLabel2.Text)
         f.Show()
     End Sub
 

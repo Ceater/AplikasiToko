@@ -5,6 +5,7 @@
     Dim TotBarang As Integer 'Total Barang
     Dim TotJumBarang As Integer 'Total Jumlah Barang
     Dim Pembayaran As Integer
+    Dim staff As String = ""
     'Variable Label
     Dim pembayarantxt1 As Label
     Dim grandtotaltxt1 As Label
@@ -130,9 +131,17 @@
     End Sub
 
     Private Sub Proses_btn_Click(sender As Object, e As EventArgs) Handles Proses_btn.Click
-        If TextBox2.Text <> "" And DataGridView1.RowCount <> 0 Then
+        If NotaTxt.Text <> "" And DataGridView1.RowCount <> 0 Then
             Dim result As Integer = MessageBox.Show("Apakah semua barang sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
+                Dim tgl As String = DateTimePicker1.Value.Year & "-" & DateTimePicker1.Value.Month & "-" & DateTimePicker1.Value.Day
+                insertHJual(NotaTxt.Text, tgl, GTotal, staff)
+                For Each f In DataGridView1.Rows
+                    insertDJual(NotaTxt.Text, f.Cells(0).Value, f.Cells(1).Value, f.Cells(2).Value, f.Cells(3).Value, f.Cells(4).Value, f.Cells(5).Value, f.Cells(6).Value)
+                Next
+                insertPembayaran(NotaTxt.Text, tgl, Pembayaran)
+                MsgBox("Transaksi Berhasil")
+                clear()
             ElseIf result = DialogResult.No Then
             End If
         Else
@@ -201,4 +210,15 @@
         End If
         Return s
     End Function
+
+    Sub setStaff(x As String)
+        staff = x
+    End Sub
+
+    Sub clear()
+        DTable.Clear()
+        NotaTxt.Text = ""
+        CashRB.Checked = True
+        TextBox1.Text = "0"
+    End Sub
 End Class
