@@ -15,6 +15,7 @@
         grandtotaltxt1 = Label6
         grandtotaltxt2 = Label12
         pembayarantxt1 = Label15
+        DateTimePicker1.CustomFormat = Application.CurrentCulture.DateTimeFormat.LongDatePattern
     End Sub
 
     Private Sub Penjualan_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
@@ -129,9 +130,13 @@
     End Sub
 
     Private Sub Proses_btn_Click(sender As Object, e As EventArgs) Handles Proses_btn.Click
-        Dim result As Integer = MessageBox.Show("Apakah semua barang sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
-        If result = DialogResult.Yes Then
-        ElseIf result = DialogResult.No Then
+        If TextBox2.Text <> "" And DataGridView1.RowCount <> 0 Then
+            Dim result As Integer = MessageBox.Show("Apakah semua barang sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+            ElseIf result = DialogResult.No Then
+            End If
+        Else
+            MsgBox("Cek nomer nota atau data barang")
         End If
     End Sub
 
