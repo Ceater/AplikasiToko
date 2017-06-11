@@ -135,7 +135,13 @@
             Dim result As Integer = MessageBox.Show("Apakah semua barang sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 Dim tgl As String = DateTimePicker1.Value.Year & "-" & DateTimePicker1.Value.Month & "-" & DateTimePicker1.Value.Day
-                insertHJual(NotaTxt.Text, tgl, GTotal, staff)
+                Dim temp As String
+                If RadioButton1.Checked Then
+                    temp = "Tamu"
+                Else
+                    temp = ComboBox2.SelectedValue
+                End If
+                insertHJual(NotaTxt.Text, tgl, GTotal, temp, staff)
                 For Each f In DataGridView1.Rows
                     insertDJual(NotaTxt.Text, f.Cells(0).Value, f.Cells(1).Value, f.Cells(2).Value, f.Cells(3).Value, f.Cells(4).Value, f.Cells(5).Value, f.Cells(6).Value)
                 Next
@@ -147,6 +153,10 @@
         Else
             MsgBox("Cek nomer nota atau data barang")
         End If
+    End Sub
+
+    Private Sub DataGridView1_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles DataGridView1.RowsRemoved
+        cekTotal()
     End Sub
 
     'Procedure and Function
@@ -220,5 +230,6 @@
         NotaTxt.Text = ""
         CashRB.Checked = True
         TextBox1.Text = "0"
+        ComboBox1.SelectedIndex = 0
     End Sub
 End Class

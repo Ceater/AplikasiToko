@@ -88,4 +88,18 @@ Module ModuleBarang
         cmd.Dispose()
         constring.Close()
     End Sub
+
+    Sub updateStok(stok As Integer, KDBarang As String)
+        Try
+            constring.Open()
+            cmd = New SqlCommand("update TbBarang set stok=stok+@a where KodeBarang=@b", constring)
+            With cmd.Parameters
+                .Add(New SqlParameter("@a", stok))
+                .Add(New SqlParameter("@b", KDBarang))
+            End With
+            constring.Close()
+        Catch ex As Exception
+            constring.Close()
+        End Try
+    End Sub
 End Module

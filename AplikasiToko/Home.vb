@@ -51,4 +51,18 @@
         f.MdiParent = Me
         f.Show()
     End Sub
+
+    Private Sub PembelianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem.Click
+        Dim f As New TerimaBarang
+        f.MdiParent = Me
+        f.setStaff(ToolStripStatusLabel2.Text)
+        f.Show()
+    End Sub
+
+    Private Sub PembayaranToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PembayaranToolStripMenuItem.Click
+        Dim f As New Pembayaran
+        f.MdiParent = Me
+        f.setStaff(ToolStripStatusLabel2.Text)
+        f.Show()
+    End Sub
 End Class

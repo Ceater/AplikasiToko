@@ -58,3 +58,5 @@ C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\Aplikasi
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Staff.resources
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Penjualan.resources
 C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Pelanggan.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.TerimaBarang.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Pembayaran.resources

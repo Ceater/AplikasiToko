@@ -35,6 +35,7 @@ Partial Class Home
         Me.BarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SupplierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StaffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -51,7 +52,7 @@ Partial Class Home
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PembayaranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -121,26 +122,33 @@ Partial Class Home
         '
         Me.BarangToolStripMenuItem.Name = "BarangToolStripMenuItem"
         Me.BarangToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.B), System.Windows.Forms.Keys)
-        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.BarangToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.BarangToolStripMenuItem.Text = "Barang"
         '
         'SupplierToolStripMenuItem
         '
         Me.SupplierToolStripMenuItem.Name = "SupplierToolStripMenuItem"
         Me.SupplierToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.SupplierToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.SupplierToolStripMenuItem.Text = "Supplier"
         '
         'StaffToolStripMenuItem
         '
         Me.StaffToolStripMenuItem.Name = "StaffToolStripMenuItem"
         Me.StaffToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.StaffToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.StaffToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.StaffToolStripMenuItem.Text = "Staff"
+        '
+        'PelangganToolStripMenuItem
+        '
+        Me.PelangganToolStripMenuItem.Name = "PelangganToolStripMenuItem"
+        Me.PelangganToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.PelangganToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.PelangganToolStripMenuItem.Text = "Pelanggan"
         '
         'TransaksiToolStripMenuItem
         '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.PembelianToolStripMenuItem, Me.ReturToolStripMenuItem})
+        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.PembelianToolStripMenuItem, Me.PembayaranToolStripMenuItem, Me.ReturToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
         Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.TransaksiToolStripMenuItem.Text = "Transaksi"
@@ -149,32 +157,33 @@ Partial Class Home
         '
         Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
         Me.PenjualanToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.PenjualanToolStripMenuItem.Text = "Penjualan"
         '
         'PembelianToolStripMenuItem
         '
         Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
-        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.PembelianToolStripMenuItem.Text = "Pembelian"
+        Me.PembelianToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
+        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.PembelianToolStripMenuItem.Text = "Terima Barang"
         '
         'ReturToolStripMenuItem
         '
         Me.ReturToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem1, Me.PembelianToolStripMenuItem1})
         Me.ReturToolStripMenuItem.Name = "ReturToolStripMenuItem"
-        Me.ReturToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.ReturToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.ReturToolStripMenuItem.Text = "Retur"
         '
         'PenjualanToolStripMenuItem1
         '
         Me.PenjualanToolStripMenuItem1.Name = "PenjualanToolStripMenuItem1"
-        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
+        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.PenjualanToolStripMenuItem1.Text = "Penjualan"
         '
         'PembelianToolStripMenuItem1
         '
         Me.PembelianToolStripMenuItem1.Name = "PembelianToolStripMenuItem1"
-        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
+        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.PembelianToolStripMenuItem1.Text = "Pembelian"
         '
         'LaporanToolStripMenuItem
@@ -236,12 +245,11 @@ Partial Class Home
         'Timer1
         '
         '
-        'PelangganToolStripMenuItem
+        'PembayaranToolStripMenuItem
         '
-        Me.PelangganToolStripMenuItem.Name = "PelangganToolStripMenuItem"
-        Me.PelangganToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.PelangganToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.PelangganToolStripMenuItem.Text = "Pelanggan"
+        Me.PembayaranToolStripMenuItem.Name = "PembayaranToolStripMenuItem"
+        Me.PembayaranToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.PembayaranToolStripMenuItem.Text = "Pembayaran"
         '
         'Home
         '
@@ -294,4 +302,5 @@ Partial Class Home
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PelangganToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PembayaranToolStripMenuItem As ToolStripMenuItem
 End Class

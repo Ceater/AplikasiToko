@@ -3,15 +3,16 @@ Imports System.Data.SqlClient
 
 Module ModuleTransaksi
     Dim cmd As SqlCommand
-    Sub insertHJual(nota As String, tgl As String, grandtot As Integer, idstaff As String)
+    Sub insertHJual(nota As String, tgl As String, grandtot As Integer, pelanggan As String, idstaff As String)
         Try
             constring.Open()
-            cmd = New SqlCommand("Insert into HJual values(@a,@b,@c,@d)", constring)
+            cmd = New SqlCommand("Insert into HJual values(@a,@b,@c,@d,@e)", constring)
             With cmd.Parameters
                 .Add(New SqlParameter("@a", nota))
                 .Add(New SqlParameter("@b", tgl))
                 .Add(New SqlParameter("@c", grandtot))
-                .Add(New SqlParameter("@d", idstaff))
+                .Add(New SqlParameter("@d", pelanggan))
+                .Add(New SqlParameter("@e", idstaff))
             End With
             cmd.ExecuteNonQuery()
             constring.Close()
