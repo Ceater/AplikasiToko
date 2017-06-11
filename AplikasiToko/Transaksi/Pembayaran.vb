@@ -1,5 +1,6 @@
 ﻿Public Class Pembayaran
-    Dim lblArr(7) As Label
+    Dim Pembayaran As Integer
+    Dim lblArr(8) As Label
     Dim staff As String = ""
 
     Private Sub Pembayaran_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,18 +22,67 @@
             Dim temp() As String = Split(loadTagihan.Item(sender.selectedindex), "-")
             lblArr(0).Text = temp(0)
             lblArr(1).Text = temp(2)
-            lblArr(2).Text = temp(3)
-            lblArr(3).Text = temp(4)
-            lblArr(4).Text = temp(3)
-            lblArr(5).Text = temp(4)
+            lblArr(2).Text = FormatCurrency(temp(3))
+            lblArr(3).Text = FormatCurrency(temp(4))
+            lblArr(4).Text = FormatCurrency(temp(3))
+            lblArr(5).Text = FormatCurrency(temp(4))
             lblArr(6).Text = "0"
-            lblArr(7).Text = lblArr(6).Text - temp(4)
+            lblArr(7).Text = FormatCurrency(lblArr(6).Text - temp(4))
+            HitungUang()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged
+        HitungUang()
+    End Sub
+
+    Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        If e.KeyCode >= 48 And e.KeyCode <= 57 Or e.KeyCode >= 96 And e.KeyCode <= 105 Or e.KeyCode = 8 Or e.KeyCode = 46 Then
+        Else
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    Private Sub TextBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyUp
+        If sender.text = "" Then
+            sender.text = "0"
+            HitungUang()
+        Else
+            HitungUang()
+            If CInt(sender.text) <> 0 Then
+                sender.text = FormatCurrency(sender.text)
+            Else
+                sender.text = CInt(sender.text)
+            End If
+        End If
+        sender.select(sender.text.length, 0)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Proses.Click
+        If TextBox2.Text <> "" Then
+
+        End If
+    End Sub
+
+    Sub HitungUang()
+        Try
+            If RadioButton1.Checked Then
+                Pembayaran = lblArr(5).Text
+            Else
+                Pembayaran = TextBox1.Text
+            End If
+            lblArr(6).Text = FormatCurrency(Pembayaran)
+            lblArr(7).Text = FormatCurrency(Pembayaran - lblArr(5).Text)
         Catch ex As Exception
 
         End Try
     End Sub
 
     Sub clear()
+        TextBox1.Text = "0"
+        TextBox2.Text = ""
         lblArr(0).Text = ""
         lblArr(1).Text = ""
         lblArr(2).Text = "0"
@@ -41,6 +91,7 @@
         lblArr(5).Text = "0"
         lblArr(6).Text = "0"
         lblArr(7).Text = "0"
+        RadioButton1.Checked = True
     End Sub
 
     Sub loadListBox()
@@ -59,4 +110,14 @@
     Sub setStaff(x As String)
         staff = x
     End Sub
+
+    Function FormatCurrency(xx As Integer)
+        Dim s As String
+        If xx <> 0 Then
+            s = xx.ToString("###,###")
+        Else
+            s = xx
+        End If
+        Return s
+    End Function
 End Class

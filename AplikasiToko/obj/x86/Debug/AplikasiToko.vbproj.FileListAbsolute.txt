@@ -60,3 +60,4 @@ C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\Aplikasi
 C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Pelanggan.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.TerimaBarang.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Pembayaran.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.exe.config
