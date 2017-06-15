@@ -61,7 +61,6 @@ C:\Users\Administrator\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.TerimaBarang.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Pembayaran.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.exe.config
-C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormNotaPenjualan.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecisions.Shared.dll
@@ -81,3 +80,4 @@ C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecis
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\stdole.dll
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporan.resources

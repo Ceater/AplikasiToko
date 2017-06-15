@@ -37,12 +37,22 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:AplikasiToko.DSetPenjualan.PenjualanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:AplikasiToko.DSetPenjualan.HJualRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:AplikasiToko.DSetPenjualan.DJualRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:AplikasiToko.DSetPenjualan.PenjualanRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -57,12 +67,22 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:AplikasiToko.DSetPenjualan.PenjualanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:AplikasiToko.DSetPenjualanTableAdapters.HJualTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:AplikasiToko.DSetPenjualanTableAdapters.DJualTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:AplikasiToko.DSetPenjualanTableAdapters.PenjualanTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

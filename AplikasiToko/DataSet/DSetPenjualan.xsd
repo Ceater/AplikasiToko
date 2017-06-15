@@ -155,6 +155,33 @@ SELECT NoDJual, NoNotaJual, IDBarang, NamaBarang, Satuan, HargaSatuan, Jumlah, D
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PenjualanTableAdapter" GeneratorDataComponentClassName="PenjualanTableAdapter" Name="Penjualan" UserDataComponentName="PenjualanTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DatabaseTokoConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT H.NoNotaJual, H.TglNota, H.GrandTotal, H.NamaPelanggan, H.IDStaff, D.IDBarang, D.NamaBarang, D.Satuan, D.HargaSatuan, D.Jumlah, D.Diskon, D.Subtotal from HJual H, DJual D where H.NoNotaJual=D.NoNotaJual</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NoNotaJual" DataSetColumn="NoNotaJual" />
+              <Mapping SourceColumn="TglNota" DataSetColumn="TglNota" />
+              <Mapping SourceColumn="GrandTotal" DataSetColumn="GrandTotal" />
+              <Mapping SourceColumn="NamaPelanggan" DataSetColumn="NamaPelanggan" />
+              <Mapping SourceColumn="IDStaff" DataSetColumn="IDStaff" />
+              <Mapping SourceColumn="IDBarang" DataSetColumn="IDBarang" />
+              <Mapping SourceColumn="NamaBarang" DataSetColumn="NamaBarang" />
+              <Mapping SourceColumn="Satuan" DataSetColumn="Satuan" />
+              <Mapping SourceColumn="HargaSatuan" DataSetColumn="HargaSatuan" />
+              <Mapping SourceColumn="Jumlah" DataSetColumn="Jumlah" />
+              <Mapping SourceColumn="Diskon" DataSetColumn="Diskon" />
+              <Mapping SourceColumn="Subtotal" DataSetColumn="Subtotal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -163,7 +190,7 @@ SELECT NoDJual, NoNotaJual, IDBarang, NamaBarang, Satuan, HargaSatuan, Jumlah, D
   <xs:element name="DSetPenjualan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSetPenjualan" msprop:Generator_UserDSName="DSetPenjualan">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="HJual" msprop:Generator_TableClassName="HJualDataTable" msprop:Generator_TableVarName="tableHJual" msprop:Generator_RowChangedName="HJualRowChanged" msprop:Generator_TablePropName="HJual" msprop:Generator_RowDeletingName="HJualRowDeleting" msprop:Generator_RowChangingName="HJualRowChanging" msprop:Generator_RowEvHandlerName="HJualRowChangeEventHandler" msprop:Generator_RowDeletedName="HJualRowDeleted" msprop:Generator_RowClassName="HJualRow" msprop:Generator_UserTableName="HJual" msprop:Generator_RowEvArgName="HJualRowChangeEvent">
+        <xs:element name="HJual" msprop:Generator_TableClassName="HJualDataTable" msprop:Generator_TableVarName="tableHJual" msprop:Generator_TablePropName="HJual" msprop:Generator_RowDeletingName="HJualRowDeleting" msprop:Generator_RowChangingName="HJualRowChanging" msprop:Generator_RowEvHandlerName="HJualRowChangeEventHandler" msprop:Generator_RowDeletedName="HJualRowDeleted" msprop:Generator_UserTableName="HJual" msprop:Generator_RowChangedName="HJualRowChanged" msprop:Generator_RowEvArgName="HJualRowChangeEvent" msprop:Generator_RowClassName="HJualRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NoNotaJual" msprop:Generator_ColumnVarNameInTable="columnNoNotaJual" msprop:Generator_ColumnPropNameInRow="NoNotaJual" msprop:Generator_ColumnPropNameInTable="NoNotaJualColumn" msprop:Generator_UserColumnName="NoNotaJual">
@@ -192,11 +219,71 @@ SELECT NoDJual, NoNotaJual, IDBarang, NamaBarang, Satuan, HargaSatuan, Jumlah, D
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DJual" msprop:Generator_TableClassName="DJualDataTable" msprop:Generator_TableVarName="tableDJual" msprop:Generator_RowChangedName="DJualRowChanged" msprop:Generator_TablePropName="DJual" msprop:Generator_RowDeletingName="DJualRowDeleting" msprop:Generator_RowChangingName="DJualRowChanging" msprop:Generator_RowEvHandlerName="DJualRowChangeEventHandler" msprop:Generator_RowDeletedName="DJualRowDeleted" msprop:Generator_RowClassName="DJualRow" msprop:Generator_UserTableName="DJual" msprop:Generator_RowEvArgName="DJualRowChangeEvent">
+        <xs:element name="DJual" msprop:Generator_TableClassName="DJualDataTable" msprop:Generator_TableVarName="tableDJual" msprop:Generator_TablePropName="DJual" msprop:Generator_RowDeletingName="DJualRowDeleting" msprop:Generator_RowChangingName="DJualRowChanging" msprop:Generator_RowEvHandlerName="DJualRowChangeEventHandler" msprop:Generator_RowDeletedName="DJualRowDeleted" msprop:Generator_UserTableName="DJual" msprop:Generator_RowChangedName="DJualRowChanged" msprop:Generator_RowEvArgName="DJualRowChangeEvent" msprop:Generator_RowClassName="DJualRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NoDJual" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNoDJual" msprop:Generator_ColumnPropNameInRow="NoDJual" msprop:Generator_ColumnPropNameInTable="NoDJualColumn" msprop:Generator_UserColumnName="NoDJual" type="xs:int" />
               <xs:element name="NoNotaJual" msprop:Generator_ColumnVarNameInTable="columnNoNotaJual" msprop:Generator_ColumnPropNameInRow="NoNotaJual" msprop:Generator_ColumnPropNameInTable="NoNotaJualColumn" msprop:Generator_UserColumnName="NoNotaJual">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDBarang" msprop:Generator_ColumnVarNameInTable="columnIDBarang" msprop:Generator_ColumnPropNameInRow="IDBarang" msprop:Generator_ColumnPropNameInTable="IDBarangColumn" msprop:Generator_UserColumnName="IDBarang">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NamaBarang" msprop:Generator_ColumnVarNameInTable="columnNamaBarang" msprop:Generator_ColumnPropNameInRow="NamaBarang" msprop:Generator_ColumnPropNameInTable="NamaBarangColumn" msprop:Generator_UserColumnName="NamaBarang">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Satuan" msprop:Generator_ColumnVarNameInTable="columnSatuan" msprop:Generator_ColumnPropNameInRow="Satuan" msprop:Generator_ColumnPropNameInTable="SatuanColumn" msprop:Generator_UserColumnName="Satuan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HargaSatuan" msprop:Generator_ColumnVarNameInTable="columnHargaSatuan" msprop:Generator_ColumnPropNameInRow="HargaSatuan" msprop:Generator_ColumnPropNameInTable="HargaSatuanColumn" msprop:Generator_UserColumnName="HargaSatuan" type="xs:int" />
+              <xs:element name="Jumlah" msprop:Generator_ColumnVarNameInTable="columnJumlah" msprop:Generator_ColumnPropNameInRow="Jumlah" msprop:Generator_ColumnPropNameInTable="JumlahColumn" msprop:Generator_UserColumnName="Jumlah" type="xs:int" />
+              <xs:element name="Diskon" msprop:Generator_ColumnVarNameInTable="columnDiskon" msprop:Generator_ColumnPropNameInRow="Diskon" msprop:Generator_ColumnPropNameInTable="DiskonColumn" msprop:Generator_UserColumnName="Diskon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Subtotal" msprop:Generator_ColumnVarNameInTable="columnSubtotal" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_UserColumnName="Subtotal" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Penjualan" msprop:Generator_TableClassName="PenjualanDataTable" msprop:Generator_TableVarName="tablePenjualan" msprop:Generator_TablePropName="Penjualan" msprop:Generator_RowDeletingName="PenjualanRowDeleting" msprop:Generator_RowChangingName="PenjualanRowChanging" msprop:Generator_RowEvHandlerName="PenjualanRowChangeEventHandler" msprop:Generator_RowDeletedName="PenjualanRowDeleted" msprop:Generator_UserTableName="Penjualan" msprop:Generator_RowChangedName="PenjualanRowChanged" msprop:Generator_RowEvArgName="PenjualanRowChangeEvent" msprop:Generator_RowClassName="PenjualanRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NoNotaJual" msprop:Generator_ColumnVarNameInTable="columnNoNotaJual" msprop:Generator_ColumnPropNameInRow="NoNotaJual" msprop:Generator_ColumnPropNameInTable="NoNotaJualColumn" msprop:Generator_UserColumnName="NoNotaJual">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TglNota" msprop:Generator_ColumnVarNameInTable="columnTglNota" msprop:Generator_ColumnPropNameInRow="TglNota" msprop:Generator_ColumnPropNameInTable="TglNotaColumn" msprop:Generator_UserColumnName="TglNota" type="xs:dateTime" />
+              <xs:element name="GrandTotal" msprop:Generator_ColumnVarNameInTable="columnGrandTotal" msprop:Generator_ColumnPropNameInRow="GrandTotal" msprop:Generator_ColumnPropNameInTable="GrandTotalColumn" msprop:Generator_UserColumnName="GrandTotal" type="xs:int" />
+              <xs:element name="NamaPelanggan" msprop:Generator_ColumnVarNameInTable="columnNamaPelanggan" msprop:Generator_ColumnPropNameInRow="NamaPelanggan" msprop:Generator_ColumnPropNameInTable="NamaPelangganColumn" msprop:Generator_UserColumnName="NamaPelanggan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDStaff" msprop:Generator_ColumnVarNameInTable="columnIDStaff" msprop:Generator_ColumnPropNameInRow="IDStaff" msprop:Generator_ColumnPropNameInTable="IDStaffColumn" msprop:Generator_UserColumnName="IDStaff">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -247,9 +334,9 @@ SELECT NoDJual, NoNotaJual, IDBarang, NamaBarang, Satuan, HargaSatuan, Jumlah, D
       <xs:selector xpath=".//mstns:DJual" />
       <xs:field xpath="mstns:NoDJual" />
     </xs:unique>
-    <xs:keyref name="FK_Penjualan" refer="Constraint1" msdata:ConstraintOnly="true">
-      <xs:selector xpath=".//mstns:DJual" />
+    <xs:unique name="Penjualan_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Penjualan" />
       <xs:field xpath="mstns:NoNotaJual" />
-    </xs:keyref>
+    </xs:unique>
   </xs:element>
 </xs:schema>

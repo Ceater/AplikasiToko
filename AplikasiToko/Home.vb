@@ -67,7 +67,8 @@
     End Sub
 
     Private Sub CekLaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CekLaporanToolStripMenuItem.Click
-        Dim f As New FormNotaPenjualan
+        Dim f As New FormLaporan("NotaPenjualanSatuan")
+        f.LaporanNoNota = "1"
         f.Show()
     End Sub
 End Class

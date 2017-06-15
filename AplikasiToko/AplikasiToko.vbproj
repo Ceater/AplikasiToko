@@ -171,10 +171,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Nota\FormNotaPenjualan.Designer.vb">
-      <DependentUpon>FormNotaPenjualan.vb</DependentUpon>
+    <Compile Include="Nota\FormLaporan.Designer.vb">
+      <DependentUpon>FormLaporan.vb</DependentUpon>
     </Compile>
-    <Compile Include="Nota\FormNotaPenjualan.vb">
+    <Compile Include="Nota\FormLaporan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nota\Rpt\NotaPenjualan.vb">
@@ -230,8 +230,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nota\FormNotaPenjualan.resx">
-      <DependentUpon>FormNotaPenjualan.vb</DependentUpon>
+    <EmbeddedResource Include="Nota\FormLaporan.resx">
+      <DependentUpon>FormLaporan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nota\Rpt\NotaPenjualan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
