@@ -97,6 +97,7 @@ Module ModuleBarang
                 .Add(New SqlParameter("@a", stok))
                 .Add(New SqlParameter("@b", KDBarang))
             End With
+            cmd.ExecuteNonQuery()
             constring.Close()
         Catch ex As Exception
             constring.Close()

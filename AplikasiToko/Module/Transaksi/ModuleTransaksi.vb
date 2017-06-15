@@ -60,4 +60,23 @@ Module ModuleTransaksi
             constring.Close()
         End Try
     End Sub
+
+    Function cekNotaJual(nota As String) As Boolean
+        Dim temp As Boolean = False
+        Try
+            constring.Open()
+            cmd = New SqlCommand("select NoNotaJual from HJual where NoNotaJual=@a", constring)
+            With cmd.Parameters
+                .Add(New SqlParameter("@a", nota))
+            End With
+            Dim reader As SqlDataReader = cmd.ExecuteReader
+            If reader.HasRows Then
+                temp = True
+            End If
+            constring.Close()
+        Catch ex As Exception
+
+        End Try
+        Return temp
+    End Function
 End Module

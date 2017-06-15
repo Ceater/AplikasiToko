@@ -25,12 +25,12 @@ Partial Class Pembayaran
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Kekurangan1 = New System.Windows.Forms.Label()
         Me.TotTag1 = New System.Windows.Forms.Label()
+        Me.NNotaPembayaran = New System.Windows.Forms.Label()
         Me.NNota = New System.Windows.Forms.Label()
         Me.NToko = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -58,6 +58,8 @@ Partial Class Pembayaran
         Me.TotTag2 = New System.Windows.Forms.Label()
         Me.Proses = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -69,7 +71,7 @@ Partial Class Pembayaran
         Me.GroupBox1.Controls.Add(Me.ListBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(166, 345)
+        Me.GroupBox1.Size = New System.Drawing.Size(166, 384)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nota Piutang"
@@ -79,17 +81,17 @@ Partial Class Pembayaran
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(6, 19)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(154, 316)
+        Me.ListBox1.Size = New System.Drawing.Size(154, 355)
         Me.ListBox1.TabIndex = 0
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Kekurangan1)
         Me.GroupBox2.Controls.Add(Me.TotTag1)
+        Me.GroupBox2.Controls.Add(Me.NNotaPembayaran)
         Me.GroupBox2.Controls.Add(Me.NNota)
         Me.GroupBox2.Controls.Add(Me.NToko)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -102,13 +104,6 @@ Partial Class Pembayaran
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detail Piutang"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(122, 17)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(131, 20)
-        Me.TextBox2.TabIndex = 4
         '
         'Label3
         '
@@ -155,6 +150,15 @@ Partial Class Pembayaran
         Me.TotTag1.TabIndex = 1
         Me.TotTag1.Text = "< x >"
         '
+        'NNotaPembayaran
+        '
+        Me.NNotaPembayaran.AutoSize = True
+        Me.NNotaPembayaran.Location = New System.Drawing.Point(147, 20)
+        Me.NNotaPembayaran.Name = "NNotaPembayaran"
+        Me.NNotaPembayaran.Size = New System.Drawing.Size(30, 13)
+        Me.NNotaPembayaran.TabIndex = 1
+        Me.NNotaPembayaran.Text = "< x >"
+        '
         'NNota
         '
         Me.NNota.AutoSize = True
@@ -196,9 +200,9 @@ Partial Class Pembayaran
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(6, 40)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 13)
+        Me.Label8.Size = New System.Drawing.Size(114, 13)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Nomer Nota"
+        Me.Label8.Text = "Nomer Nota Penjualan"
         '
         'Label1
         '
@@ -263,6 +267,8 @@ Partial Class Pembayaran
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox4.Controls.Add(Me.Label20)
         Me.GroupBox4.Controls.Add(Me.Label23)
         Me.GroupBox4.Controls.Add(Me.Label19)
@@ -278,7 +284,7 @@ Partial Class Pembayaran
         Me.GroupBox4.Controls.Add(Me.TotTag2)
         Me.GroupBox4.Location = New System.Drawing.Point(184, 231)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(218, 126)
+        Me.GroupBox4.Size = New System.Drawing.Size(218, 165)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Detail Pembayaran"
@@ -286,7 +292,7 @@ Partial Class Pembayaran
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(119, 82)
+        Me.Label20.Location = New System.Drawing.Point(120, 124)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(88, 13)
         Me.Label20.TabIndex = 3
@@ -295,7 +301,7 @@ Partial Class Pembayaran
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(97, 100)
+        Me.Label23.Location = New System.Drawing.Point(98, 142)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(24, 13)
         Me.Label23.TabIndex = 2
@@ -304,7 +310,7 @@ Partial Class Pembayaran
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(97, 69)
+        Me.Label19.Location = New System.Drawing.Point(98, 111)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(24, 13)
         Me.Label19.TabIndex = 2
@@ -313,7 +319,7 @@ Partial Class Pembayaran
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(97, 47)
+        Me.Label16.Location = New System.Drawing.Point(98, 89)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(24, 13)
         Me.Label16.TabIndex = 2
@@ -322,7 +328,7 @@ Partial Class Pembayaran
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 25)
+        Me.Label11.Location = New System.Drawing.Point(7, 67)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(73, 13)
         Me.Label11.TabIndex = 0
@@ -331,7 +337,7 @@ Partial Class Pembayaran
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(97, 25)
+        Me.Label15.Location = New System.Drawing.Point(98, 67)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(24, 13)
         Me.Label15.TabIndex = 2
@@ -340,7 +346,7 @@ Partial Class Pembayaran
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(6, 100)
+        Me.Label22.Location = New System.Drawing.Point(7, 142)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(57, 13)
         Me.Label22.TabIndex = 0
@@ -349,7 +355,7 @@ Partial Class Pembayaran
         'HAkhir
         '
         Me.HAkhir.AutoSize = True
-        Me.HAkhir.Location = New System.Drawing.Point(127, 100)
+        Me.HAkhir.Location = New System.Drawing.Point(128, 142)
         Me.HAkhir.Name = "HAkhir"
         Me.HAkhir.Size = New System.Drawing.Size(30, 13)
         Me.HAkhir.TabIndex = 1
@@ -358,7 +364,7 @@ Partial Class Pembayaran
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(6, 69)
+        Me.Label18.Location = New System.Drawing.Point(7, 111)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(66, 13)
         Me.Label18.TabIndex = 0
@@ -367,7 +373,7 @@ Partial Class Pembayaran
         'Bayar
         '
         Me.Bayar.AutoSize = True
-        Me.Bayar.Location = New System.Drawing.Point(127, 69)
+        Me.Bayar.Location = New System.Drawing.Point(128, 111)
         Me.Bayar.Name = "Bayar"
         Me.Bayar.Size = New System.Drawing.Size(30, 13)
         Me.Bayar.TabIndex = 1
@@ -376,7 +382,7 @@ Partial Class Pembayaran
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(6, 47)
+        Me.Label12.Location = New System.Drawing.Point(7, 89)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(65, 13)
         Me.Label12.TabIndex = 0
@@ -385,7 +391,7 @@ Partial Class Pembayaran
         'Kekurangan2
         '
         Me.Kekurangan2.AutoSize = True
-        Me.Kekurangan2.Location = New System.Drawing.Point(127, 47)
+        Me.Kekurangan2.Location = New System.Drawing.Point(128, 89)
         Me.Kekurangan2.Name = "Kekurangan2"
         Me.Kekurangan2.Size = New System.Drawing.Size(30, 13)
         Me.Kekurangan2.TabIndex = 1
@@ -394,7 +400,7 @@ Partial Class Pembayaran
         'TotTag2
         '
         Me.TotTag2.AutoSize = True
-        Me.TotTag2.Location = New System.Drawing.Point(127, 25)
+        Me.TotTag2.Location = New System.Drawing.Point(128, 67)
         Me.TotTag2.Name = "TotTag2"
         Me.TotTag2.Size = New System.Drawing.Size(30, 13)
         Me.TotTag2.TabIndex = 1
@@ -402,27 +408,43 @@ Partial Class Pembayaran
         '
         'Proses
         '
-        Me.Proses.Location = New System.Drawing.Point(408, 231)
+        Me.Proses.Location = New System.Drawing.Point(408, 236)
         Me.Proses.Name = "Proses"
-        Me.Proses.Size = New System.Drawing.Size(115, 97)
+        Me.Proses.Size = New System.Drawing.Size(115, 113)
         Me.Proses.TabIndex = 4
         Me.Proses.Text = "Proses"
         Me.Proses.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(408, 334)
+        Me.Button2.Location = New System.Drawing.Point(408, 355)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(115, 23)
+        Me.Button2.Size = New System.Drawing.Size(115, 41)
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "Batal"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(9, 39)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 4
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Tanggal Bayar"
         '
         'Pembayaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(540, 369)
+        Me.ClientSize = New System.Drawing.Size(540, 404)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Proses)
         Me.Controls.Add(Me.GroupBox4)
@@ -481,5 +503,7 @@ Partial Class Pembayaran
     Friend WithEvents NToko As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents NNotaPembayaran As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

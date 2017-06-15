@@ -141,15 +141,21 @@
                 Else
                     temp = ComboBox2.SelectedValue
                 End If
-                insertHJual(NotaTxt.Text, tgl, GTotal, temp, staff)
-                For Each f In DataGridView1.Rows
-                    insertDJual(NotaTxt.Text, f.Cells(0).Value, f.Cells(1).Value, f.Cells(2).Value, f.Cells(3).Value, f.Cells(4).Value, f.Cells(5).Value, f.Cells(6).Value)
-                Next
-                insertPembayaran(NotaTxt.Text, tgl, Pembayaran)
-                MsgBox("Transaksi Berhasil")
-                clear()
+                If cekNotaJual(NotaTxt.Text) Then
+                    MsgBox("Nota sudah terdaftar")
+                Else
+                    insertHJual(NotaTxt.Text, tgl, GTotal, temp, staff)
+                    For Each f In DataGridView1.Rows
+                        insertDJual(NotaTxt.Text, f.Cells(0).Value, f.Cells(1).Value, f.Cells(2).Value, f.Cells(3).Value, f.Cells(4).Value, f.Cells(5).Value, f.Cells(6).Value)
+                        updateStok(-f.Cells(4).Value, f.Cells(0).Value)
+                    Next
+                    insertPembayaran(NotaTxt.Text, tgl, Pembayaran)
+                    MsgBox("Transaksi Berhasil")
+                    LoadDataSet()
+                    clear()
+                End If
             ElseIf result = DialogResult.No Then
-            End If
+                End If
         Else
             MsgBox("Cek nomer nota atau data barang")
         End If

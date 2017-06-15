@@ -75,14 +75,20 @@
             Dim result As Integer = MessageBox.Show("Apakah semua barang sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 Dim tgl As String = DateTimePicker1.Value.Year & "-" & DateTimePicker1.Value.Month & "-" & DateTimePicker1.Value.Day
-                insertHTerima(NotaTxt.Text, tgl, staff)
-                For Each f In DataGridView1.Rows
-                    insertDTerima(NotaTxt.Text, f.Cells(0).Value, f.Cells(1).Value, f.Cells(2).Value, f.Cells(3).Value)
-                Next
-                MsgBox("Transaksi Berhasil")
-                clear()
+                If cekNotaTerima(NotaTxt.Text) Then
+                    MsgBox("Nota sudah terdaftar")
+                Else
+                    insertHTerima(NotaTxt.Text, tgl, staff)
+                    For Each f In DataGridView1.Rows
+                        insertDTerima(NotaTxt.Text, f.Cells(0).Value, f.Cells(1).Value, f.Cells(2).Value, f.Cells(3).Value)
+                        updateStok(f.Cells(3).Value, f.Cells(0).Value)
+                    Next
+                    MsgBox("Transaksi Berhasil")
+                    clear()
+                    LoadDataSet()
+                End If
             ElseIf result = DialogResult.No Then
-            End If
+                End If
         Else
             MsgBox("Cek nomer nota atau data barang")
         End If

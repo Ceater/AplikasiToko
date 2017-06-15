@@ -12,6 +12,7 @@
         lblArr(5) = Kekurangan2
         lblArr(6) = Bayar
         lblArr(7) = HAkhir
+        lblArr(8) = NNotaPembayaran
         clear()
         loadTagihan()
         loadListBox()
@@ -60,9 +61,15 @@
         sender.select(sender.text.length, 0)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Proses.Click
-        If TextBox2.Text <> "" Then
-
+    Private Sub Proses_Click(sender As Object, e As EventArgs) Handles Proses.Click
+        Dim tgl As String = DateTimePicker1.Value.Year & "-" & DateTimePicker1.Value.Month & "-" & DateTimePicker1.Value.Day
+        Dim result As Integer = MessageBox.Show("Apakah data sudah benar?", "Peringatan", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            insertPembayaran(lblArr(0).Text, tgl, CInt(lblArr(6).Text))
+            MsgBox("Pembayaran berhasil")
+            clear()
+            loadListBox()
+        ElseIf result = DialogResult.No Then
         End If
     End Sub
 
@@ -82,7 +89,6 @@
 
     Sub clear()
         TextBox1.Text = "0"
-        TextBox2.Text = ""
         lblArr(0).Text = ""
         lblArr(1).Text = ""
         lblArr(2).Text = "0"
@@ -91,11 +97,13 @@
         lblArr(5).Text = "0"
         lblArr(6).Text = "0"
         lblArr(7).Text = "0"
+        lblArr(8).Text = cekNotaPembayaran()
         RadioButton1.Checked = True
     End Sub
 
     Sub loadListBox()
         If loadTagihan.Count <> 0 Then
+            ListBox1.Items.Clear()
             For i = 0 To loadTagihan.Count - 1
                 Dim temp() As String
                 temp = Split(loadTagihan.Item(i), "-")

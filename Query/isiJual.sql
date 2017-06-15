@@ -1,6 +1,7 @@
 delete HJual
 delete DJual
 delete TbPembayaran
+DBCC CHECKIDENT ('TbPembayaran', RESEED, 0);
 insert into HJual Values('1', '6/9/2017', 10000, 'Toko Maju Jaya','admin')
 insert into DJUal Values('1', 'PE001', 'Pepsodent Kecil', 'Buah', 2500, 2, 0, 5000)
 insert into DJUal Values('1', 'PE002', 'Pepsodent Sedang', 'Buah', 5000, 1, 0, 5000)

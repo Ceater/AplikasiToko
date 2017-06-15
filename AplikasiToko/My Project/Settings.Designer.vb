@@ -53,6 +53,17 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.99\SQLEXPRESS;Initial Catalog=DatabaseToko;Persist Security"& _ 
+            " Info=True;User ID=johan;Password=1234")>  _
+        Public ReadOnly Property DatabaseTokoConnectionString() As String
+            Get
+                Return CType(Me("DatabaseTokoConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

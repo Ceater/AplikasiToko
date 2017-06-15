@@ -1,8 +1,9 @@
+delete TbBarang
 insert into TbBarang values('PE001','Pepsodent Kecil',0,2,2500,5)
 insert into TbBarang values('PE002','Pepsodent Sedang',0,2,5000,5)
-insert into TbBarang values('PE003','Pepsodent Besar',0,6,7500,5)
+insert into TbBarang values('PE003','Pepsodent Besar',0,2,7500,5)
 insert into TbBarang values('SA001','Sabun Lifeboy',0,6,3500,5)
-insert into TbBarang values('SA002','Sabun Lux',0,2,3500,5)
+insert into TbBarang values('SA002','Sabun Lux',0,6,3500,5)
 insert into TbBarang values('GE001','Gery Chocolatos',0,7,500,0)
 insert into TbBarang values('GE002','Gery Chocolatos',0,14,10000,5)
 insert into TbBarang values('AQ001','Aqua Gelas',0,2,500,10)

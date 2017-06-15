@@ -65,4 +65,9 @@
         f.setStaff(ToolStripStatusLabel2.Text)
         f.Show()
     End Sub
+
+    Private Sub CekLaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CekLaporanToolStripMenuItem.Click
+        Dim f As New FormNotaPenjualan
+        f.Show()
+    End Sub
 End Class
