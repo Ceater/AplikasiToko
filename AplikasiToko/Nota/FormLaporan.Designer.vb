@@ -36,13 +36,13 @@ Partial Class FormLaporan
         Me.crv.Size = New System.Drawing.Size(877, 613)
         Me.crv.TabIndex = 0
         '
-        'FormNotaPenjualan
+        'FormLaporan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(877, 613)
         Me.Controls.Add(Me.crv)
-        Me.Name = "FormNotaPenjualan"
+        Me.Name = "FormLaporan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormNotaPenjualan"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

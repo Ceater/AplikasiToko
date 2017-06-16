@@ -28,6 +28,7 @@ Public Class FormLaporan
             adapt.SelectCommand = cmd
             dataset.Clear()
             Dim rep As New ReportDocument
+            'MsgBox(Jenis)
             If Jenis = "NotaPenjualan" Then
                 cmd.CommandText = "SELECT H.NoNotaJual, H.TglNota, H.GrandTotal, H.NamaPelanggan, H.IDStaff, D.IDBarang, D.NamaBarang, D.Satuan, D.HargaSatuan, D.Jumlah, D.Diskon, D.Subtotal from HJual H, DJual D where H.NoNotaJual=D.NoNotaJual"
                 adapt.Fill(dataset, "Penjualan")
@@ -39,6 +40,8 @@ Public Class FormLaporan
                 adapt.Fill(dataset, "Penjualan")
                 rep = New NotaPenjualan
                 rep.SetDataSource(dataset)
+                rep.PrintOptions.PrinterName = "HP Deskjet 1010 series"
+                rep.PrintToPrinter(1, False, 0, 0)
             End If
             con.Close()
             crv.ReportSource = rep
@@ -46,5 +49,13 @@ Public Class FormLaporan
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub FormLaporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Sub print()
+
     End Sub
 End Class

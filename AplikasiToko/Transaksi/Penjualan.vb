@@ -150,7 +150,11 @@
                         updateStok(-f.Cells(4).Value, f.Cells(0).Value)
                     Next
                     insertPembayaran(NotaTxt.Text, tgl, Pembayaran)
-                    MsgBox("Transaksi Berhasil")
+                    Dim g As New FormLaporan("NotaPenjualanSatuan")
+                    g.LaporanNoNota = "1"
+                    g.Width = 0
+                    g.Height = 0
+                    g.Show()
                     LoadDataSet()
                     clear()
                 End If
