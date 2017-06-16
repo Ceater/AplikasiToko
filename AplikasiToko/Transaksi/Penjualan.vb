@@ -151,7 +151,7 @@
                     Next
                     insertPembayaran(NotaTxt.Text, tgl, Pembayaran)
                     Dim g As New FormLaporan("NotaPenjualanSatuan")
-                    g.LaporanNoNota = "1"
+                    g.LaporanNoNota = NotaTxt.Text
                     g.Width = 0
                     g.Height = 0
                     g.Show()
