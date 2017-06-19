@@ -52,8 +52,8 @@ Partial Class Home
         Me.PengaturanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.CekLaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -204,20 +204,20 @@ Partial Class Home
         'PenjualanToolStripMenuItem2
         '
         Me.PenjualanToolStripMenuItem2.Name = "PenjualanToolStripMenuItem2"
-        Me.PenjualanToolStripMenuItem2.Size = New System.Drawing.Size(130, 22)
+        Me.PenjualanToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.PenjualanToolStripMenuItem2.Text = "Penjualan"
         '
         'PembelianToolStripMenuItem2
         '
         Me.PembelianToolStripMenuItem2.Name = "PembelianToolStripMenuItem2"
-        Me.PembelianToolStripMenuItem2.Size = New System.Drawing.Size(130, 22)
+        Me.PembelianToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.PembelianToolStripMenuItem2.Text = "Pembelian"
         '
         'ReturToolStripMenuItem1
         '
         Me.ReturToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem3, Me.PembelianToolStripMenuItem3})
         Me.ReturToolStripMenuItem1.Name = "ReturToolStripMenuItem1"
-        Me.ReturToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
+        Me.ReturToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.ReturToolStripMenuItem1.Text = "Retur"
         '
         'PenjualanToolStripMenuItem3
@@ -250,14 +250,14 @@ Partial Class Home
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
-        'Timer1
-        '
-        '
         'CekLaporanToolStripMenuItem
         '
         Me.CekLaporanToolStripMenuItem.Name = "CekLaporanToolStripMenuItem"
         Me.CekLaporanToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
         Me.CekLaporanToolStripMenuItem.Text = "Cek Laporan"
+        '
+        'Timer1
+        '
         '
         'Home
         '

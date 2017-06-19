@@ -150,7 +150,7 @@
                         updateStok(-f.Cells(4).Value, f.Cells(0).Value)
                     Next
                     insertPembayaran(NotaTxt.Text, tgl, Pembayaran)
-                    Dim g As New FormLaporan("NotaPenjualanSatuan")
+                    Dim g As New FormLaporan("NotaPenjualan")
                     g.LaporanNoNota = NotaTxt.Text
                     g.Width = 0
                     g.Height = 0

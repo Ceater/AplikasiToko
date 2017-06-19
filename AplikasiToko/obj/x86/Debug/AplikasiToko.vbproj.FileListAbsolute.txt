@@ -30,7 +30,6 @@ C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\Aplikasi
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.exe
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.pdb
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\bin\Debug\AplikasiToko.xml
-C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Home.resources
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.LoginForm.resources
 C:\Users\Johan\Documents\GitHub\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.Barang.resources
@@ -81,3 +80,6 @@ C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\ShockwaveFla
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\stdole.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporan.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporanPenjualan.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporanTerima.resources

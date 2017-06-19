@@ -20,16 +20,16 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DSetPembayaran"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DSetPenerimaanBarang"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DSetPembayaran
+Partial Public Class DSetPenerimaanBarang
     Inherits Global.System.Data.DataSet
     
-    Private tableTbPembayaran As TbPembayaranDataTable
+    Private tableDTerima As DTerimaDataTable
     
-    Private tableHJual As HJualDataTable
+    Private tableHTerima As HTerimaDataTable
     
-    Private tableDetailPembayaran As DetailPembayaranDataTable
+    Private tablePenerimaan As PenerimaanDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -60,14 +60,14 @@ Partial Public Class DSetPembayaran
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("TbPembayaran")) Is Nothing) Then
-                MyBase.Tables.Add(New TbPembayaranDataTable(ds.Tables("TbPembayaran")))
+            If (Not (ds.Tables("DTerima")) Is Nothing) Then
+                MyBase.Tables.Add(New DTerimaDataTable(ds.Tables("DTerima")))
             End If
-            If (Not (ds.Tables("HJual")) Is Nothing) Then
-                MyBase.Tables.Add(New HJualDataTable(ds.Tables("HJual")))
+            If (Not (ds.Tables("HTerima")) Is Nothing) Then
+                MyBase.Tables.Add(New HTerimaDataTable(ds.Tables("HTerima")))
             End If
-            If (Not (ds.Tables("DetailPembayaran")) Is Nothing) Then
-                MyBase.Tables.Add(New DetailPembayaranDataTable(ds.Tables("DetailPembayaran")))
+            If (Not (ds.Tables("Penerimaan")) Is Nothing) Then
+                MyBase.Tables.Add(New PenerimaanDataTable(ds.Tables("Penerimaan")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -90,9 +90,9 @@ Partial Public Class DSetPembayaran
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property TbPembayaran() As TbPembayaranDataTable
+    Public ReadOnly Property DTerima() As DTerimaDataTable
         Get
-            Return Me.tableTbPembayaran
+            Return Me.tableDTerima
         End Get
     End Property
     
@@ -100,9 +100,9 @@ Partial Public Class DSetPembayaran
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property HJual() As HJualDataTable
+    Public ReadOnly Property HTerima() As HTerimaDataTable
         Get
-            Return Me.tableHJual
+            Return Me.tableHTerima
         End Get
     End Property
     
@@ -110,9 +110,9 @@ Partial Public Class DSetPembayaran
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property DetailPembayaran() As DetailPembayaranDataTable
+    Public ReadOnly Property Penerimaan() As PenerimaanDataTable
         Get
-            Return Me.tableDetailPembayaran
+            Return Me.tablePenerimaan
         End Get
     End Property
     
@@ -158,7 +158,7 @@ Partial Public Class DSetPembayaran
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DSetPembayaran = CType(MyBase.Clone,DSetPembayaran)
+        Dim cln As DSetPenerimaanBarang = CType(MyBase.Clone,DSetPenerimaanBarang)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -183,14 +183,14 @@ Partial Public Class DSetPembayaran
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("TbPembayaran")) Is Nothing) Then
-                MyBase.Tables.Add(New TbPembayaranDataTable(ds.Tables("TbPembayaran")))
+            If (Not (ds.Tables("DTerima")) Is Nothing) Then
+                MyBase.Tables.Add(New DTerimaDataTable(ds.Tables("DTerima")))
             End If
-            If (Not (ds.Tables("HJual")) Is Nothing) Then
-                MyBase.Tables.Add(New HJualDataTable(ds.Tables("HJual")))
+            If (Not (ds.Tables("HTerima")) Is Nothing) Then
+                MyBase.Tables.Add(New HTerimaDataTable(ds.Tables("HTerima")))
             End If
-            If (Not (ds.Tables("DetailPembayaran")) Is Nothing) Then
-                MyBase.Tables.Add(New DetailPembayaranDataTable(ds.Tables("DetailPembayaran")))
+            If (Not (ds.Tables("Penerimaan")) Is Nothing) Then
+                MyBase.Tables.Add(New PenerimaanDataTable(ds.Tables("Penerimaan")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -224,22 +224,22 @@ Partial Public Class DSetPembayaran
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableTbPembayaran = CType(MyBase.Tables("TbPembayaran"),TbPembayaranDataTable)
+        Me.tableDTerima = CType(MyBase.Tables("DTerima"),DTerimaDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableTbPembayaran) Is Nothing) Then
-                Me.tableTbPembayaran.InitVars
+            If (Not (Me.tableDTerima) Is Nothing) Then
+                Me.tableDTerima.InitVars
             End If
         End If
-        Me.tableHJual = CType(MyBase.Tables("HJual"),HJualDataTable)
+        Me.tableHTerima = CType(MyBase.Tables("HTerima"),HTerimaDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableHJual) Is Nothing) Then
-                Me.tableHJual.InitVars
+            If (Not (Me.tableHTerima) Is Nothing) Then
+                Me.tableHTerima.InitVars
             End If
         End If
-        Me.tableDetailPembayaran = CType(MyBase.Tables("DetailPembayaran"),DetailPembayaranDataTable)
+        Me.tablePenerimaan = CType(MyBase.Tables("Penerimaan"),PenerimaanDataTable)
         If (initTable = true) Then
-            If (Not (Me.tableDetailPembayaran) Is Nothing) Then
-                Me.tableDetailPembayaran.InitVars
+            If (Not (Me.tablePenerimaan) Is Nothing) Then
+                Me.tablePenerimaan.InitVars
             End If
         End If
     End Sub
@@ -247,34 +247,34 @@ Partial Public Class DSetPembayaran
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "DSetPembayaran"
+        Me.DataSetName = "DSetPenerimaanBarang"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DSetPembayaran.xsd"
+        Me.Namespace = "http://tempuri.org/DSetPenerimaanBarang.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableTbPembayaran = New TbPembayaranDataTable()
-        MyBase.Tables.Add(Me.tableTbPembayaran)
-        Me.tableHJual = New HJualDataTable()
-        MyBase.Tables.Add(Me.tableHJual)
-        Me.tableDetailPembayaran = New DetailPembayaranDataTable()
-        MyBase.Tables.Add(Me.tableDetailPembayaran)
+        Me.tableDTerima = New DTerimaDataTable()
+        MyBase.Tables.Add(Me.tableDTerima)
+        Me.tableHTerima = New HTerimaDataTable()
+        MyBase.Tables.Add(Me.tableHTerima)
+        Me.tablePenerimaan = New PenerimaanDataTable()
+        MyBase.Tables.Add(Me.tablePenerimaan)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeTbPembayaran() As Boolean
+    Private Function ShouldSerializeDTerima() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeHJual() As Boolean
+    Private Function ShouldSerializeHTerima() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializeDetailPembayaran() As Boolean
+    Private Function ShouldSerializePenerimaan() As Boolean
         Return false
     End Function
     
@@ -289,7 +289,7 @@ Partial Public Class DSetPembayaran
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DSetPembayaran = New DSetPembayaran()
+        Dim ds As DSetPenerimaanBarang = New DSetPenerimaanBarang()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -337,35 +337,39 @@ Partial Public Class DSetPembayaran
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub TbPembayaranRowChangeEventHandler(ByVal sender As Object, ByVal e As TbPembayaranRowChangeEvent)
+    Public Delegate Sub DTerimaRowChangeEventHandler(ByVal sender As Object, ByVal e As DTerimaRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub HJualRowChangeEventHandler(ByVal sender As Object, ByVal e As HJualRowChangeEvent)
+    Public Delegate Sub HTerimaRowChangeEventHandler(ByVal sender As Object, ByVal e As HTerimaRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub DetailPembayaranRowChangeEventHandler(ByVal sender As Object, ByVal e As DetailPembayaranRowChangeEvent)
+    Public Delegate Sub PenerimaanRowChangeEventHandler(ByVal sender As Object, ByVal e As PenerimaanRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class TbPembayaranDataTable
-        Inherits Global.System.Data.TypedTableBase(Of TbPembayaranRow)
+    Partial Public Class DTerimaDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DTerimaRow)
         
-        Private columnNoNotaPembayaran As Global.System.Data.DataColumn
+        Private columnNoTerima As Global.System.Data.DataColumn
         
-        Private columnNoNotaJual As Global.System.Data.DataColumn
+        Private columnNoNotaTerima As Global.System.Data.DataColumn
         
-        Private columnTglBayar As Global.System.Data.DataColumn
+        Private columnIDBarang As Global.System.Data.DataColumn
         
-        Private columnUangBayar As Global.System.Data.DataColumn
+        Private columnNamaBarang As Global.System.Data.DataColumn
+        
+        Private columnSatuan As Global.System.Data.DataColumn
+        
+        Private columnJumlah As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "TbPembayaran"
+            Me.TableName = "DTerima"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -398,33 +402,49 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NoNotaPembayaranColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NoTerimaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNoNotaPembayaran
+                Return Me.columnNoTerima
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NoNotaJualColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NoNotaTerimaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNoNotaJual
+                Return Me.columnNoNotaTerima
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property TglBayarColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDBarangColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnTglBayar
+                Return Me.columnIDBarang
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property UangBayarColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NamaBarangColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUangBayar
+                Return Me.columnNamaBarang
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property SatuanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSatuan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property JumlahColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnJumlah
             End Get
         End Property
         
@@ -439,50 +459,50 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As TbPembayaranRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As DTerimaRow
             Get
-                Return CType(Me.Rows(index),TbPembayaranRow)
+                Return CType(Me.Rows(index),DTerimaRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event TbPembayaranRowChanging As TbPembayaranRowChangeEventHandler
+        Public Event DTerimaRowChanging As DTerimaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event TbPembayaranRowChanged As TbPembayaranRowChangeEventHandler
+        Public Event DTerimaRowChanged As DTerimaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event TbPembayaranRowDeleting As TbPembayaranRowChangeEventHandler
+        Public Event DTerimaRowDeleting As DTerimaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event TbPembayaranRowDeleted As TbPembayaranRowChangeEventHandler
+        Public Event DTerimaRowDeleted As DTerimaRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddTbPembayaranRow(ByVal row As TbPembayaranRow)
+        Public Overloads Sub AddDTerimaRow(ByVal row As DTerimaRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddTbPembayaranRow(ByVal NoNotaJual As String, ByVal TglBayar As Date, ByVal UangBayar As Integer) As TbPembayaranRow
-            Dim rowTbPembayaranRow As TbPembayaranRow = CType(Me.NewRow,TbPembayaranRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, NoNotaJual, TglBayar, UangBayar}
-            rowTbPembayaranRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowTbPembayaranRow)
-            Return rowTbPembayaranRow
+        Public Overloads Function AddDTerimaRow(ByVal NoNotaTerima As String, ByVal IDBarang As String, ByVal NamaBarang As String, ByVal Satuan As String, ByVal Jumlah As Integer) As DTerimaRow
+            Dim rowDTerimaRow As DTerimaRow = CType(Me.NewRow,DTerimaRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, NoNotaTerima, IDBarang, NamaBarang, Satuan, Jumlah}
+            rowDTerimaRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDTerimaRow)
+            Return rowDTerimaRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByNoNotaPembayaran(ByVal NoNotaPembayaran As Integer) As TbPembayaranRow
-            Return CType(Me.Rows.Find(New Object() {NoNotaPembayaran}),TbPembayaranRow)
+        Public Function FindByNoTerima(ByVal NoTerima As Integer) As DTerimaRow
+            Return CType(Me.Rows.Find(New Object() {NoTerima}),DTerimaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As TbPembayaranDataTable = CType(MyBase.Clone,TbPembayaranDataTable)
+            Dim cln As DTerimaDataTable = CType(MyBase.Clone,DTerimaDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -490,66 +510,77 @@ Partial Public Class DSetPembayaran
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New TbPembayaranDataTable()
+            Return New DTerimaDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnNoNotaPembayaran = MyBase.Columns("NoNotaPembayaran")
-            Me.columnNoNotaJual = MyBase.Columns("NoNotaJual")
-            Me.columnTglBayar = MyBase.Columns("TglBayar")
-            Me.columnUangBayar = MyBase.Columns("UangBayar")
+            Me.columnNoTerima = MyBase.Columns("NoTerima")
+            Me.columnNoNotaTerima = MyBase.Columns("NoNotaTerima")
+            Me.columnIDBarang = MyBase.Columns("IDBarang")
+            Me.columnNamaBarang = MyBase.Columns("NamaBarang")
+            Me.columnSatuan = MyBase.Columns("Satuan")
+            Me.columnJumlah = MyBase.Columns("Jumlah")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnNoNotaPembayaran = New Global.System.Data.DataColumn("NoNotaPembayaran", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNoNotaPembayaran)
-            Me.columnNoNotaJual = New Global.System.Data.DataColumn("NoNotaJual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNoNotaJual)
-            Me.columnTglBayar = New Global.System.Data.DataColumn("TglBayar", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTglBayar)
-            Me.columnUangBayar = New Global.System.Data.DataColumn("UangBayar", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUangBayar)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNoNotaPembayaran}, true))
-            Me.columnNoNotaPembayaran.AutoIncrement = true
-            Me.columnNoNotaPembayaran.AutoIncrementSeed = -1
-            Me.columnNoNotaPembayaran.AutoIncrementStep = -1
-            Me.columnNoNotaPembayaran.AllowDBNull = false
-            Me.columnNoNotaPembayaran.ReadOnly = true
-            Me.columnNoNotaPembayaran.Unique = true
-            Me.columnNoNotaJual.AllowDBNull = false
-            Me.columnNoNotaJual.MaxLength = 10
-            Me.columnTglBayar.AllowDBNull = false
-            Me.columnUangBayar.AllowDBNull = false
+            Me.columnNoTerima = New Global.System.Data.DataColumn("NoTerima", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNoTerima)
+            Me.columnNoNotaTerima = New Global.System.Data.DataColumn("NoNotaTerima", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNoNotaTerima)
+            Me.columnIDBarang = New Global.System.Data.DataColumn("IDBarang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDBarang)
+            Me.columnNamaBarang = New Global.System.Data.DataColumn("NamaBarang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNamaBarang)
+            Me.columnSatuan = New Global.System.Data.DataColumn("Satuan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSatuan)
+            Me.columnJumlah = New Global.System.Data.DataColumn("Jumlah", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnJumlah)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNoTerima}, true))
+            Me.columnNoTerima.AutoIncrement = true
+            Me.columnNoTerima.AutoIncrementSeed = -1
+            Me.columnNoTerima.AutoIncrementStep = -1
+            Me.columnNoTerima.AllowDBNull = false
+            Me.columnNoTerima.ReadOnly = true
+            Me.columnNoTerima.Unique = true
+            Me.columnNoNotaTerima.AllowDBNull = false
+            Me.columnNoNotaTerima.MaxLength = 10
+            Me.columnIDBarang.AllowDBNull = false
+            Me.columnIDBarang.MaxLength = 10
+            Me.columnNamaBarang.AllowDBNull = false
+            Me.columnNamaBarang.MaxLength = 2147483647
+            Me.columnSatuan.AllowDBNull = false
+            Me.columnSatuan.MaxLength = 2147483647
+            Me.columnJumlah.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewTbPembayaranRow() As TbPembayaranRow
-            Return CType(Me.NewRow,TbPembayaranRow)
+        Public Function NewDTerimaRow() As DTerimaRow
+            Return CType(Me.NewRow,DTerimaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New TbPembayaranRow(builder)
+            Return New DTerimaRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(TbPembayaranRow)
+            Return GetType(DTerimaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.TbPembayaranRowChangedEvent) Is Nothing) Then
-                RaiseEvent TbPembayaranRowChanged(Me, New TbPembayaranRowChangeEvent(CType(e.Row,TbPembayaranRow), e.Action))
+            If (Not (Me.DTerimaRowChangedEvent) Is Nothing) Then
+                RaiseEvent DTerimaRowChanged(Me, New DTerimaRowChangeEvent(CType(e.Row,DTerimaRow), e.Action))
             End If
         End Sub
         
@@ -557,8 +588,8 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.TbPembayaranRowChangingEvent) Is Nothing) Then
-                RaiseEvent TbPembayaranRowChanging(Me, New TbPembayaranRowChangeEvent(CType(e.Row,TbPembayaranRow), e.Action))
+            If (Not (Me.DTerimaRowChangingEvent) Is Nothing) Then
+                RaiseEvent DTerimaRowChanging(Me, New DTerimaRowChangeEvent(CType(e.Row,DTerimaRow), e.Action))
             End If
         End Sub
         
@@ -566,8 +597,8 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.TbPembayaranRowDeletedEvent) Is Nothing) Then
-                RaiseEvent TbPembayaranRowDeleted(Me, New TbPembayaranRowChangeEvent(CType(e.Row,TbPembayaranRow), e.Action))
+            If (Not (Me.DTerimaRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DTerimaRowDeleted(Me, New DTerimaRowChangeEvent(CType(e.Row,DTerimaRow), e.Action))
             End If
         End Sub
         
@@ -575,14 +606,14 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.TbPembayaranRowDeletingEvent) Is Nothing) Then
-                RaiseEvent TbPembayaranRowDeleting(Me, New TbPembayaranRowChangeEvent(CType(e.Row,TbPembayaranRow), e.Action))
+            If (Not (Me.DTerimaRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DTerimaRowDeleting(Me, New DTerimaRowChangeEvent(CType(e.Row,DTerimaRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveTbPembayaranRow(ByVal row As TbPembayaranRow)
+        Public Sub RemoveDTerimaRow(ByVal row As DTerimaRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -591,7 +622,7 @@ Partial Public Class DSetPembayaran
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DSetPembayaran = New DSetPembayaran()
+            Dim ds As DSetPenerimaanBarang = New DSetPenerimaanBarang()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -609,7 +640,7 @@ Partial Public Class DSetPembayaran
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "TbPembayaranDataTable"
+            attribute2.FixedValue = "DTerimaDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -658,16 +689,12 @@ Partial Public Class DSetPembayaran
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class HJualDataTable
-        Inherits Global.System.Data.TypedTableBase(Of HJualRow)
+    Partial Public Class HTerimaDataTable
+        Inherits Global.System.Data.TypedTableBase(Of HTerimaRow)
         
-        Private columnNoNotaJual As Global.System.Data.DataColumn
+        Private columnNoNotaTerima As Global.System.Data.DataColumn
         
         Private columnTglNota As Global.System.Data.DataColumn
-        
-        Private columnGrandTotal As Global.System.Data.DataColumn
-        
-        Private columnNamaPelanggan As Global.System.Data.DataColumn
         
         Private columnIDStaff As Global.System.Data.DataColumn
         
@@ -675,7 +702,7 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "HJual"
+            Me.TableName = "HTerima"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -708,9 +735,9 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NoNotaJualColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NoNotaTerimaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNoNotaJual
+                Return Me.columnNoNotaTerima
             End Get
         End Property
         
@@ -719,22 +746,6 @@ Partial Public Class DSetPembayaran
         Public ReadOnly Property TglNotaColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnTglNota
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property GrandTotalColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnGrandTotal
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NamaPelangganColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNamaPelanggan
             End Get
         End Property
         
@@ -757,50 +768,50 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As HJualRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As HTerimaRow
             Get
-                Return CType(Me.Rows(index),HJualRow)
+                Return CType(Me.Rows(index),HTerimaRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event HJualRowChanging As HJualRowChangeEventHandler
+        Public Event HTerimaRowChanging As HTerimaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event HJualRowChanged As HJualRowChangeEventHandler
+        Public Event HTerimaRowChanged As HTerimaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event HJualRowDeleting As HJualRowChangeEventHandler
+        Public Event HTerimaRowDeleting As HTerimaRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event HJualRowDeleted As HJualRowChangeEventHandler
+        Public Event HTerimaRowDeleted As HTerimaRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddHJualRow(ByVal row As HJualRow)
+        Public Overloads Sub AddHTerimaRow(ByVal row As HTerimaRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddHJualRow(ByVal NoNotaJual As String, ByVal TglNota As Date, ByVal GrandTotal As Integer, ByVal NamaPelanggan As String, ByVal IDStaff As String) As HJualRow
-            Dim rowHJualRow As HJualRow = CType(Me.NewRow,HJualRow)
-            Dim columnValuesArray() As Object = New Object() {NoNotaJual, TglNota, GrandTotal, NamaPelanggan, IDStaff}
-            rowHJualRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowHJualRow)
-            Return rowHJualRow
+        Public Overloads Function AddHTerimaRow(ByVal NoNotaTerima As String, ByVal TglNota As Date, ByVal IDStaff As String) As HTerimaRow
+            Dim rowHTerimaRow As HTerimaRow = CType(Me.NewRow,HTerimaRow)
+            Dim columnValuesArray() As Object = New Object() {NoNotaTerima, TglNota, IDStaff}
+            rowHTerimaRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowHTerimaRow)
+            Return rowHTerimaRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByNoNotaJual(ByVal NoNotaJual As String) As HJualRow
-            Return CType(Me.Rows.Find(New Object() {NoNotaJual}),HJualRow)
+        Public Function FindByNoNotaTerima(ByVal NoNotaTerima As String) As HTerimaRow
+            Return CType(Me.Rows.Find(New Object() {NoNotaTerima}),HTerimaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As HJualDataTable = CType(MyBase.Clone,HJualDataTable)
+            Dim cln As HTerimaDataTable = CType(MyBase.Clone,HTerimaDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -808,68 +819,59 @@ Partial Public Class DSetPembayaran
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New HJualDataTable()
+            Return New HTerimaDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnNoNotaJual = MyBase.Columns("NoNotaJual")
+            Me.columnNoNotaTerima = MyBase.Columns("NoNotaTerima")
             Me.columnTglNota = MyBase.Columns("TglNota")
-            Me.columnGrandTotal = MyBase.Columns("GrandTotal")
-            Me.columnNamaPelanggan = MyBase.Columns("NamaPelanggan")
             Me.columnIDStaff = MyBase.Columns("IDStaff")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnNoNotaJual = New Global.System.Data.DataColumn("NoNotaJual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNoNotaJual)
+            Me.columnNoNotaTerima = New Global.System.Data.DataColumn("NoNotaTerima", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNoNotaTerima)
             Me.columnTglNota = New Global.System.Data.DataColumn("TglNota", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTglNota)
-            Me.columnGrandTotal = New Global.System.Data.DataColumn("GrandTotal", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGrandTotal)
-            Me.columnNamaPelanggan = New Global.System.Data.DataColumn("NamaPelanggan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNamaPelanggan)
             Me.columnIDStaff = New Global.System.Data.DataColumn("IDStaff", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIDStaff)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNoNotaJual}, true))
-            Me.columnNoNotaJual.AllowDBNull = false
-            Me.columnNoNotaJual.Unique = true
-            Me.columnNoNotaJual.MaxLength = 10
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNoNotaTerima}, true))
+            Me.columnNoNotaTerima.AllowDBNull = false
+            Me.columnNoNotaTerima.Unique = true
+            Me.columnNoNotaTerima.MaxLength = 10
             Me.columnTglNota.AllowDBNull = false
-            Me.columnGrandTotal.AllowDBNull = false
-            Me.columnNamaPelanggan.AllowDBNull = false
-            Me.columnNamaPelanggan.MaxLength = 2147483647
             Me.columnIDStaff.AllowDBNull = false
             Me.columnIDStaff.MaxLength = 10
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewHJualRow() As HJualRow
-            Return CType(Me.NewRow,HJualRow)
+        Public Function NewHTerimaRow() As HTerimaRow
+            Return CType(Me.NewRow,HTerimaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New HJualRow(builder)
+            Return New HTerimaRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(HJualRow)
+            Return GetType(HTerimaRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.HJualRowChangedEvent) Is Nothing) Then
-                RaiseEvent HJualRowChanged(Me, New HJualRowChangeEvent(CType(e.Row,HJualRow), e.Action))
+            If (Not (Me.HTerimaRowChangedEvent) Is Nothing) Then
+                RaiseEvent HTerimaRowChanged(Me, New HTerimaRowChangeEvent(CType(e.Row,HTerimaRow), e.Action))
             End If
         End Sub
         
@@ -877,8 +879,8 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.HJualRowChangingEvent) Is Nothing) Then
-                RaiseEvent HJualRowChanging(Me, New HJualRowChangeEvent(CType(e.Row,HJualRow), e.Action))
+            If (Not (Me.HTerimaRowChangingEvent) Is Nothing) Then
+                RaiseEvent HTerimaRowChanging(Me, New HTerimaRowChangeEvent(CType(e.Row,HTerimaRow), e.Action))
             End If
         End Sub
         
@@ -886,8 +888,8 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.HJualRowDeletedEvent) Is Nothing) Then
-                RaiseEvent HJualRowDeleted(Me, New HJualRowChangeEvent(CType(e.Row,HJualRow), e.Action))
+            If (Not (Me.HTerimaRowDeletedEvent) Is Nothing) Then
+                RaiseEvent HTerimaRowDeleted(Me, New HTerimaRowChangeEvent(CType(e.Row,HTerimaRow), e.Action))
             End If
         End Sub
         
@@ -895,14 +897,14 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.HJualRowDeletingEvent) Is Nothing) Then
-                RaiseEvent HJualRowDeleting(Me, New HJualRowChangeEvent(CType(e.Row,HJualRow), e.Action))
+            If (Not (Me.HTerimaRowDeletingEvent) Is Nothing) Then
+                RaiseEvent HTerimaRowDeleting(Me, New HTerimaRowChangeEvent(CType(e.Row,HTerimaRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveHJualRow(ByVal row As HJualRow)
+        Public Sub RemoveHTerimaRow(ByVal row As HTerimaRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -911,7 +913,7 @@ Partial Public Class DSetPembayaran
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DSetPembayaran = New DSetPembayaran()
+            Dim ds As DSetPenerimaanBarang = New DSetPenerimaanBarang()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -929,7 +931,7 @@ Partial Public Class DSetPembayaran
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "HJualDataTable"
+            attribute2.FixedValue = "HTerimaDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -978,28 +980,28 @@ Partial Public Class DSetPembayaran
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class DetailPembayaranDataTable
-        Inherits Global.System.Data.TypedTableBase(Of DetailPembayaranRow)
+    Partial Public Class PenerimaanDataTable
+        Inherits Global.System.Data.TypedTableBase(Of PenerimaanRow)
         
-        Private columnNoNotaJual As Global.System.Data.DataColumn
-        
-        Private columnNoNotaPembayaran As Global.System.Data.DataColumn
+        Private columnNoNotaTerima As Global.System.Data.DataColumn
         
         Private columnTglNota As Global.System.Data.DataColumn
         
-        Private columnGrandTotal As Global.System.Data.DataColumn
+        Private columnIDStaff As Global.System.Data.DataColumn
         
-        Private columnTglBayar As Global.System.Data.DataColumn
+        Private columnIDBarang As Global.System.Data.DataColumn
         
-        Private columnUangBayar As Global.System.Data.DataColumn
+        Private columnNamabarang As Global.System.Data.DataColumn
         
-        Private columnNamaPelanggan As Global.System.Data.DataColumn
+        Private columnSatuan As Global.System.Data.DataColumn
+        
+        Private columnJumlah As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "DetailPembayaran"
+            Me.TableName = "Penerimaan"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1032,17 +1034,9 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NoNotaJualColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NoNotaTerimaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNoNotaJual
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NoNotaPembayaranColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNoNotaPembayaran
+                Return Me.columnNoNotaTerima
             End Get
         End Property
         
@@ -1056,33 +1050,41 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property GrandTotalColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDStaffColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnGrandTotal
+                Return Me.columnIDStaff
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property TglBayarColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property IDBarangColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnTglBayar
+                Return Me.columnIDBarang
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property UangBayarColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NamabarangColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnUangBayar
+                Return Me.columnNamabarang
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property NamaPelangganColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property SatuanColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNamaPelanggan
+                Return Me.columnSatuan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property JumlahColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnJumlah
             End Get
         End Property
         
@@ -1097,50 +1099,50 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As DetailPembayaranRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As PenerimaanRow
             Get
-                Return CType(Me.Rows(index),DetailPembayaranRow)
+                Return CType(Me.Rows(index),PenerimaanRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event DetailPembayaranRowChanging As DetailPembayaranRowChangeEventHandler
+        Public Event PenerimaanRowChanging As PenerimaanRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event DetailPembayaranRowChanged As DetailPembayaranRowChangeEventHandler
+        Public Event PenerimaanRowChanged As PenerimaanRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event DetailPembayaranRowDeleting As DetailPembayaranRowChangeEventHandler
+        Public Event PenerimaanRowDeleting As PenerimaanRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event DetailPembayaranRowDeleted As DetailPembayaranRowChangeEventHandler
+        Public Event PenerimaanRowDeleted As PenerimaanRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub AddDetailPembayaranRow(ByVal row As DetailPembayaranRow)
+        Public Overloads Sub AddPenerimaanRow(ByVal row As PenerimaanRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDetailPembayaranRow(ByVal NoNotaJual As String, ByVal TglNota As Date, ByVal GrandTotal As Integer, ByVal TglBayar As Date, ByVal UangBayar As Integer, ByVal NamaPelanggan As String) As DetailPembayaranRow
-            Dim rowDetailPembayaranRow As DetailPembayaranRow = CType(Me.NewRow,DetailPembayaranRow)
-            Dim columnValuesArray() As Object = New Object() {NoNotaJual, Nothing, TglNota, GrandTotal, TglBayar, UangBayar, NamaPelanggan}
-            rowDetailPembayaranRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowDetailPembayaranRow)
-            Return rowDetailPembayaranRow
+        Public Overloads Function AddPenerimaanRow(ByVal NoNotaTerima As String, ByVal TglNota As Date, ByVal IDStaff As String, ByVal IDBarang As String, ByVal Namabarang As String, ByVal Satuan As String, ByVal Jumlah As Integer) As PenerimaanRow
+            Dim rowPenerimaanRow As PenerimaanRow = CType(Me.NewRow,PenerimaanRow)
+            Dim columnValuesArray() As Object = New Object() {NoNotaTerima, TglNota, IDStaff, IDBarang, Namabarang, Satuan, Jumlah}
+            rowPenerimaanRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowPenerimaanRow)
+            Return rowPenerimaanRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByNoNotaJualNoNotaPembayaran(ByVal NoNotaJual As String, ByVal NoNotaPembayaran As Integer) As DetailPembayaranRow
-            Return CType(Me.Rows.Find(New Object() {NoNotaJual, NoNotaPembayaran}),DetailPembayaranRow)
+        Public Function FindByNoNotaTerima(ByVal NoNotaTerima As String) As PenerimaanRow
+            Return CType(Me.Rows.Find(New Object() {NoNotaTerima}),PenerimaanRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As DetailPembayaranDataTable = CType(MyBase.Clone,DetailPembayaranDataTable)
+            Dim cln As PenerimaanDataTable = CType(MyBase.Clone,PenerimaanDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -1148,78 +1150,78 @@ Partial Public Class DSetPembayaran
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New DetailPembayaranDataTable()
+            Return New PenerimaanDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnNoNotaJual = MyBase.Columns("NoNotaJual")
-            Me.columnNoNotaPembayaran = MyBase.Columns("NoNotaPembayaran")
+            Me.columnNoNotaTerima = MyBase.Columns("NoNotaTerima")
             Me.columnTglNota = MyBase.Columns("TglNota")
-            Me.columnGrandTotal = MyBase.Columns("GrandTotal")
-            Me.columnTglBayar = MyBase.Columns("TglBayar")
-            Me.columnUangBayar = MyBase.Columns("UangBayar")
-            Me.columnNamaPelanggan = MyBase.Columns("NamaPelanggan")
+            Me.columnIDStaff = MyBase.Columns("IDStaff")
+            Me.columnIDBarang = MyBase.Columns("IDBarang")
+            Me.columnNamabarang = MyBase.Columns("Namabarang")
+            Me.columnSatuan = MyBase.Columns("Satuan")
+            Me.columnJumlah = MyBase.Columns("Jumlah")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnNoNotaJual = New Global.System.Data.DataColumn("NoNotaJual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNoNotaJual)
-            Me.columnNoNotaPembayaran = New Global.System.Data.DataColumn("NoNotaPembayaran", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNoNotaPembayaran)
+            Me.columnNoNotaTerima = New Global.System.Data.DataColumn("NoNotaTerima", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNoNotaTerima)
             Me.columnTglNota = New Global.System.Data.DataColumn("TglNota", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTglNota)
-            Me.columnGrandTotal = New Global.System.Data.DataColumn("GrandTotal", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGrandTotal)
-            Me.columnTglBayar = New Global.System.Data.DataColumn("TglBayar", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTglBayar)
-            Me.columnUangBayar = New Global.System.Data.DataColumn("UangBayar", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUangBayar)
-            Me.columnNamaPelanggan = New Global.System.Data.DataColumn("NamaPelanggan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNamaPelanggan)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNoNotaJual, Me.columnNoNotaPembayaran}, true))
-            Me.columnNoNotaJual.AllowDBNull = false
-            Me.columnNoNotaJual.MaxLength = 10
-            Me.columnNoNotaPembayaran.AutoIncrement = true
-            Me.columnNoNotaPembayaran.AutoIncrementSeed = -1
-            Me.columnNoNotaPembayaran.AutoIncrementStep = -1
-            Me.columnNoNotaPembayaran.AllowDBNull = false
-            Me.columnNoNotaPembayaran.ReadOnly = true
+            Me.columnIDStaff = New Global.System.Data.DataColumn("IDStaff", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDStaff)
+            Me.columnIDBarang = New Global.System.Data.DataColumn("IDBarang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDBarang)
+            Me.columnNamabarang = New Global.System.Data.DataColumn("Namabarang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNamabarang)
+            Me.columnSatuan = New Global.System.Data.DataColumn("Satuan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSatuan)
+            Me.columnJumlah = New Global.System.Data.DataColumn("Jumlah", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnJumlah)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNoNotaTerima}, true))
+            Me.columnNoNotaTerima.AllowDBNull = false
+            Me.columnNoNotaTerima.Unique = true
+            Me.columnNoNotaTerima.MaxLength = 10
             Me.columnTglNota.AllowDBNull = false
-            Me.columnGrandTotal.AllowDBNull = false
-            Me.columnTglBayar.AllowDBNull = false
-            Me.columnUangBayar.AllowDBNull = false
-            Me.columnNamaPelanggan.AllowDBNull = false
-            Me.columnNamaPelanggan.MaxLength = 2147483647
+            Me.columnIDStaff.AllowDBNull = false
+            Me.columnIDStaff.MaxLength = 10
+            Me.columnIDBarang.AllowDBNull = false
+            Me.columnIDBarang.MaxLength = 10
+            Me.columnNamabarang.AllowDBNull = false
+            Me.columnNamabarang.MaxLength = 2147483647
+            Me.columnSatuan.AllowDBNull = false
+            Me.columnSatuan.MaxLength = 2147483647
+            Me.columnJumlah.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function NewDetailPembayaranRow() As DetailPembayaranRow
-            Return CType(Me.NewRow,DetailPembayaranRow)
+        Public Function NewPenerimaanRow() As PenerimaanRow
+            Return CType(Me.NewRow,PenerimaanRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New DetailPembayaranRow(builder)
+            Return New PenerimaanRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(DetailPembayaranRow)
+            Return GetType(PenerimaanRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.DetailPembayaranRowChangedEvent) Is Nothing) Then
-                RaiseEvent DetailPembayaranRowChanged(Me, New DetailPembayaranRowChangeEvent(CType(e.Row,DetailPembayaranRow), e.Action))
+            If (Not (Me.PenerimaanRowChangedEvent) Is Nothing) Then
+                RaiseEvent PenerimaanRowChanged(Me, New PenerimaanRowChangeEvent(CType(e.Row,PenerimaanRow), e.Action))
             End If
         End Sub
         
@@ -1227,8 +1229,8 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.DetailPembayaranRowChangingEvent) Is Nothing) Then
-                RaiseEvent DetailPembayaranRowChanging(Me, New DetailPembayaranRowChangeEvent(CType(e.Row,DetailPembayaranRow), e.Action))
+            If (Not (Me.PenerimaanRowChangingEvent) Is Nothing) Then
+                RaiseEvent PenerimaanRowChanging(Me, New PenerimaanRowChangeEvent(CType(e.Row,PenerimaanRow), e.Action))
             End If
         End Sub
         
@@ -1236,8 +1238,8 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.DetailPembayaranRowDeletedEvent) Is Nothing) Then
-                RaiseEvent DetailPembayaranRowDeleted(Me, New DetailPembayaranRowChangeEvent(CType(e.Row,DetailPembayaranRow), e.Action))
+            If (Not (Me.PenerimaanRowDeletedEvent) Is Nothing) Then
+                RaiseEvent PenerimaanRowDeleted(Me, New PenerimaanRowChangeEvent(CType(e.Row,PenerimaanRow), e.Action))
             End If
         End Sub
         
@@ -1245,14 +1247,14 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.DetailPembayaranRowDeletingEvent) Is Nothing) Then
-                RaiseEvent DetailPembayaranRowDeleting(Me, New DetailPembayaranRowChangeEvent(CType(e.Row,DetailPembayaranRow), e.Action))
+            If (Not (Me.PenerimaanRowDeletingEvent) Is Nothing) Then
+                RaiseEvent PenerimaanRowDeleting(Me, New PenerimaanRowChangeEvent(CType(e.Row,PenerimaanRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub RemoveDetailPembayaranRow(ByVal row As DetailPembayaranRow)
+        Public Sub RemovePenerimaanRow(ByVal row As PenerimaanRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1261,7 +1263,7 @@ Partial Public Class DSetPembayaran
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DSetPembayaran = New DSetPembayaran()
+            Dim ds As DSetPenerimaanBarang = New DSetPenerimaanBarang()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1279,7 +1281,7 @@ Partial Public Class DSetPembayaran
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "DetailPembayaranDataTable"
+            attribute2.FixedValue = "PenerimaanDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1326,59 +1328,81 @@ Partial Public Class DSetPembayaran
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class TbPembayaranRow
+    Partial Public Class DTerimaRow
         Inherits Global.System.Data.DataRow
         
-        Private tableTbPembayaran As TbPembayaranDataTable
+        Private tableDTerima As DTerimaDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableTbPembayaran = CType(Me.Table,TbPembayaranDataTable)
+            Me.tableDTerima = CType(Me.Table,DTerimaDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoNotaPembayaran() As Integer
+        Public Property NoTerima() As Integer
             Get
-                Return CType(Me(Me.tableTbPembayaran.NoNotaPembayaranColumn),Integer)
+                Return CType(Me(Me.tableDTerima.NoTerimaColumn),Integer)
             End Get
             Set
-                Me(Me.tableTbPembayaran.NoNotaPembayaranColumn) = value
+                Me(Me.tableDTerima.NoTerimaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoNotaJual() As String
+        Public Property NoNotaTerima() As String
             Get
-                Return CType(Me(Me.tableTbPembayaran.NoNotaJualColumn),String)
+                Return CType(Me(Me.tableDTerima.NoNotaTerimaColumn),String)
             End Get
             Set
-                Me(Me.tableTbPembayaran.NoNotaJualColumn) = value
+                Me(Me.tableDTerima.NoNotaTerimaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property TglBayar() As Date
+        Public Property IDBarang() As String
             Get
-                Return CType(Me(Me.tableTbPembayaran.TglBayarColumn),Date)
+                Return CType(Me(Me.tableDTerima.IDBarangColumn),String)
             End Get
             Set
-                Me(Me.tableTbPembayaran.TglBayarColumn) = value
+                Me(Me.tableDTerima.IDBarangColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property UangBayar() As Integer
+        Public Property NamaBarang() As String
             Get
-                Return CType(Me(Me.tableTbPembayaran.UangBayarColumn),Integer)
+                Return CType(Me(Me.tableDTerima.NamaBarangColumn),String)
             End Get
             Set
-                Me(Me.tableTbPembayaran.UangBayarColumn) = value
+                Me(Me.tableDTerima.NamaBarangColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Satuan() As String
+            Get
+                Return CType(Me(Me.tableDTerima.SatuanColumn),String)
+            End Get
+            Set
+                Me(Me.tableDTerima.SatuanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Jumlah() As Integer
+            Get
+                Return CType(Me(Me.tableDTerima.JumlahColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableDTerima.JumlahColumn) = value
             End Set
         End Property
     End Class
@@ -1386,26 +1410,26 @@ Partial Public Class DSetPembayaran
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class HJualRow
+    Partial Public Class HTerimaRow
         Inherits Global.System.Data.DataRow
         
-        Private tableHJual As HJualDataTable
+        Private tableHTerima As HTerimaDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableHJual = CType(Me.Table,HJualDataTable)
+            Me.tableHTerima = CType(Me.Table,HTerimaDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoNotaJual() As String
+        Public Property NoNotaTerima() As String
             Get
-                Return CType(Me(Me.tableHJual.NoNotaJualColumn),String)
+                Return CType(Me(Me.tableHTerima.NoNotaTerimaColumn),String)
             End Get
             Set
-                Me(Me.tableHJual.NoNotaJualColumn) = value
+                Me(Me.tableHTerima.NoNotaTerimaColumn) = value
             End Set
         End Property
         
@@ -1413,32 +1437,10 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property TglNota() As Date
             Get
-                Return CType(Me(Me.tableHJual.TglNotaColumn),Date)
+                Return CType(Me(Me.tableHTerima.TglNotaColumn),Date)
             End Get
             Set
-                Me(Me.tableHJual.TglNotaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GrandTotal() As Integer
-            Get
-                Return CType(Me(Me.tableHJual.GrandTotalColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableHJual.GrandTotalColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NamaPelanggan() As String
-            Get
-                Return CType(Me(Me.tableHJual.NamaPelangganColumn),String)
-            End Get
-            Set
-                Me(Me.tableHJual.NamaPelangganColumn) = value
+                Me(Me.tableHTerima.TglNotaColumn) = value
             End Set
         End Property
         
@@ -1446,10 +1448,10 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property IDStaff() As String
             Get
-                Return CType(Me(Me.tableHJual.IDStaffColumn),String)
+                Return CType(Me(Me.tableHTerima.IDStaffColumn),String)
             End Get
             Set
-                Me(Me.tableHJual.IDStaffColumn) = value
+                Me(Me.tableHTerima.IDStaffColumn) = value
             End Set
         End Property
     End Class
@@ -1457,37 +1459,26 @@ Partial Public Class DSetPembayaran
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class DetailPembayaranRow
+    Partial Public Class PenerimaanRow
         Inherits Global.System.Data.DataRow
         
-        Private tableDetailPembayaran As DetailPembayaranDataTable
+        Private tablePenerimaan As PenerimaanDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableDetailPembayaran = CType(Me.Table,DetailPembayaranDataTable)
+            Me.tablePenerimaan = CType(Me.Table,PenerimaanDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoNotaJual() As String
+        Public Property NoNotaTerima() As String
             Get
-                Return CType(Me(Me.tableDetailPembayaran.NoNotaJualColumn),String)
+                Return CType(Me(Me.tablePenerimaan.NoNotaTerimaColumn),String)
             End Get
             Set
-                Me(Me.tableDetailPembayaran.NoNotaJualColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NoNotaPembayaran() As Integer
-            Get
-                Return CType(Me(Me.tableDetailPembayaran.NoNotaPembayaranColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableDetailPembayaran.NoNotaPembayaranColumn) = value
+                Me(Me.tablePenerimaan.NoNotaTerimaColumn) = value
             End Set
         End Property
         
@@ -1495,54 +1486,65 @@ Partial Public Class DSetPembayaran
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property TglNota() As Date
             Get
-                Return CType(Me(Me.tableDetailPembayaran.TglNotaColumn),Date)
+                Return CType(Me(Me.tablePenerimaan.TglNotaColumn),Date)
             End Get
             Set
-                Me(Me.tableDetailPembayaran.TglNotaColumn) = value
+                Me(Me.tablePenerimaan.TglNotaColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property GrandTotal() As Integer
+        Public Property IDStaff() As String
             Get
-                Return CType(Me(Me.tableDetailPembayaran.GrandTotalColumn),Integer)
+                Return CType(Me(Me.tablePenerimaan.IDStaffColumn),String)
             End Get
             Set
-                Me(Me.tableDetailPembayaran.GrandTotalColumn) = value
+                Me(Me.tablePenerimaan.IDStaffColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property TglBayar() As Date
+        Public Property IDBarang() As String
             Get
-                Return CType(Me(Me.tableDetailPembayaran.TglBayarColumn),Date)
+                Return CType(Me(Me.tablePenerimaan.IDBarangColumn),String)
             End Get
             Set
-                Me(Me.tableDetailPembayaran.TglBayarColumn) = value
+                Me(Me.tablePenerimaan.IDBarangColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property UangBayar() As Integer
+        Public Property Namabarang() As String
             Get
-                Return CType(Me(Me.tableDetailPembayaran.UangBayarColumn),Integer)
+                Return CType(Me(Me.tablePenerimaan.NamabarangColumn),String)
             End Get
             Set
-                Me(Me.tableDetailPembayaran.UangBayarColumn) = value
+                Me(Me.tablePenerimaan.NamabarangColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property NamaPelanggan() As String
+        Public Property Satuan() As String
             Get
-                Return CType(Me(Me.tableDetailPembayaran.NamaPelangganColumn),String)
+                Return CType(Me(Me.tablePenerimaan.SatuanColumn),String)
             End Get
             Set
-                Me(Me.tableDetailPembayaran.NamaPelangganColumn) = value
+                Me(Me.tablePenerimaan.SatuanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Jumlah() As Integer
+            Get
+                Return CType(Me(Me.tablePenerimaan.JumlahColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablePenerimaan.JumlahColumn) = value
             End Set
         End Property
     End Class
@@ -1551,16 +1553,16 @@ Partial Public Class DSetPembayaran
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class TbPembayaranRowChangeEvent
+    Public Class DTerimaRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As TbPembayaranRow
+        Private eventRow As DTerimaRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As TbPembayaranRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As DTerimaRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1568,7 +1570,7 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As TbPembayaranRow
+        Public ReadOnly Property Row() As DTerimaRow
             Get
                 Return Me.eventRow
             End Get
@@ -1587,16 +1589,16 @@ Partial Public Class DSetPembayaran
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class HJualRowChangeEvent
+    Public Class HTerimaRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As HJualRow
+        Private eventRow As HTerimaRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As HJualRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As HTerimaRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1604,7 +1606,7 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As HJualRow
+        Public ReadOnly Property Row() As HTerimaRow
             Get
                 Return Me.eventRow
             End Get
@@ -1623,16 +1625,16 @@ Partial Public Class DSetPembayaran
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class DetailPembayaranRowChangeEvent
+    Public Class PenerimaanRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As DetailPembayaranRow
+        Private eventRow As PenerimaanRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As DetailPembayaranRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As PenerimaanRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1640,7 +1642,7 @@ Partial Public Class DSetPembayaran
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As DetailPembayaranRow
+        Public ReadOnly Property Row() As PenerimaanRow
             Get
                 Return Me.eventRow
             End Get
@@ -1656,7 +1658,7 @@ Partial Public Class DSetPembayaran
     End Class
 End Class
 
-Namespace DSetPembayaranTableAdapters
+Namespace DSetPenerimaanBarangTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -1667,7 +1669,7 @@ Namespace DSetPembayaranTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class TbPembayaranTableAdapter
+    Partial Public Class DTerimaTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -1784,48 +1786,55 @@ Namespace DSetPembayaranTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "TbPembayaran"
-            tableMapping.ColumnMappings.Add("NoNotaPembayaran", "NoNotaPembayaran")
-            tableMapping.ColumnMappings.Add("NoNotaJual", "NoNotaJual")
-            tableMapping.ColumnMappings.Add("TglBayar", "TglBayar")
-            tableMapping.ColumnMappings.Add("UangBayar", "UangBayar")
+            tableMapping.DataSetTable = "DTerima"
+            tableMapping.ColumnMappings.Add("NoTerima", "NoTerima")
+            tableMapping.ColumnMappings.Add("NoNotaTerima", "NoNotaTerima")
+            tableMapping.ColumnMappings.Add("IDBarang", "IDBarang")
+            tableMapping.ColumnMappings.Add("NamaBarang", "NamaBarang")
+            tableMapping.ColumnMappings.Add("Satuan", "Satuan")
+            tableMapping.ColumnMappings.Add("Jumlah", "Jumlah")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TbPembayaran] WHERE (([NoNotaPembayaran] = @Original_NoNotaPem"& _ 
-                "bayaran) AND ([NoNotaJual] = @Original_NoNotaJual) AND ([TglBayar] = @Original_T"& _ 
-                "glBayar) AND ([UangBayar] = @Original_UangBayar))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[DTerima] WHERE (([NoTerima] = @Original_NoTerima) AND ([NoNota"& _ 
+                "Terima] = @Original_NoNotaTerima) AND ([IDBarang] = @Original_IDBarang) AND ([Ju"& _ 
+                "mlah] = @Original_Jumlah))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaPembayaran", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaPembayaran", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TglBayar", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglBayar", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UangBayar", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UangBayar", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoTerima", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoTerima", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDBarang", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDBarang", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Jumlah", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Jumlah", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TbPembayaran] ([NoNotaJual], [TglBayar], [UangBayar]) VALUES ("& _ 
-                "@NoNotaJual, @TglBayar, @UangBayar);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT NoNotaPembayaran, NoNotaJual, TglBa"& _ 
-                "yar, UangBayar FROM TbPembayaran WHERE (NoNotaPembayaran = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[DTerima] ([NoNotaTerima], [IDBarang], [NamaBarang], [Satuan], "& _ 
+                "[Jumlah]) VALUES (@NoNotaTerima, @IDBarang, @NamaBarang, @Satuan, @Jumlah);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SEL"& _ 
+                "ECT NoTerima, NoNotaTerima, IDBarang, NamaBarang, Satuan, Jumlah FROM DTerima WH"& _ 
+                "ERE (NoTerima = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TglBayar", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglBayar", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UangBayar", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UangBayar", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDBarang", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDBarang", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NamaBarang", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NamaBarang", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Satuan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Satuan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Jumlah", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Jumlah", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TbPembayaran] SET [NoNotaJual] = @NoNotaJual, [TglBayar] = @TglBaya"& _ 
-                "r, [UangBayar] = @UangBayar WHERE (([NoNotaPembayaran] = @Original_NoNotaPembaya"& _ 
-                "ran) AND ([NoNotaJual] = @Original_NoNotaJual) AND ([TglBayar] = @Original_TglBa"& _ 
-                "yar) AND ([UangBayar] = @Original_UangBayar));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT NoNotaPembayaran, NoNotaJ"& _ 
-                "ual, TglBayar, UangBayar FROM TbPembayaran WHERE (NoNotaPembayaran = @NoNotaPemb"& _ 
-                "ayaran)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[DTerima] SET [NoNotaTerima] = @NoNotaTerima, [IDBarang] = @IDBarang"& _ 
+                ", [NamaBarang] = @NamaBarang, [Satuan] = @Satuan, [Jumlah] = @Jumlah WHERE (([No"& _ 
+                "Terima] = @Original_NoTerima) AND ([NoNotaTerima] = @Original_NoNotaTerima) AND "& _ 
+                "([IDBarang] = @Original_IDBarang) AND ([Jumlah] = @Original_Jumlah));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT No"& _ 
+                "Terima, NoNotaTerima, IDBarang, NamaBarang, Satuan, Jumlah FROM DTerima WHERE (N"& _ 
+                "oTerima = @NoTerima)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TglBayar", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglBayar", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UangBayar", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UangBayar", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaPembayaran", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaPembayaran", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TglBayar", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglBayar", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UangBayar", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UangBayar", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaPembayaran", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaPembayaran", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDBarang", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDBarang", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NamaBarang", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NamaBarang", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Satuan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Satuan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Jumlah", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Jumlah", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoTerima", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoTerima", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDBarang", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDBarang", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Jumlah", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Jumlah", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoTerima", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "NoTerima", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1841,7 +1850,8 @@ Namespace DSetPembayaranTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT NoNotaPembayaran, NoNotaJual, TglBayar, UangBayar FROM dbo.TbPembayaran"
+            Me._commandCollection(0).CommandText = "SELECT NoTerima, NoNotaTerima, IDBarang, NamaBarang, Satuan, Jumlah FROM dbo.DTer"& _ 
+                "ima"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1849,7 +1859,7 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DSetPembayaran.TbPembayaranDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSetPenerimaanBarang.DTerimaDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1862,9 +1872,9 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DSetPembayaran.TbPembayaranDataTable
+        Public Overloads Overridable Function GetData() As DSetPenerimaanBarang.DTerimaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DSetPembayaran.TbPembayaranDataTable = New DSetPembayaran.TbPembayaranDataTable()
+            Dim dataTable As DSetPenerimaanBarang.DTerimaDataTable = New DSetPenerimaanBarang.DTerimaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1872,15 +1882,15 @@ Namespace DSetPembayaranTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DSetPembayaran.TbPembayaranDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DSetPenerimaanBarang.DTerimaDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DSetPembayaran) As Integer
-            Return Me.Adapter.Update(dataSet, "TbPembayaran")
+        Public Overloads Overridable Function Update(ByVal dataSet As DSetPenerimaanBarang) As Integer
+            Return Me.Adapter.Update(dataSet, "DTerima")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1901,15 +1911,19 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_NoNotaPembayaran As Integer, ByVal Original_NoNotaJual As String, ByVal Original_TglBayar As Date, ByVal Original_UangBayar As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_NoNotaPembayaran,Integer)
-            If (Original_NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_NoNotaJual")
+        Public Overloads Overridable Function Delete(ByVal Original_NoTerima As Integer, ByVal Original_NoNotaTerima As String, ByVal Original_IDBarang As String, ByVal Original_Jumlah As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_NoTerima,Integer)
+            If (Original_NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_NoNotaTerima")
             Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_NoNotaJual,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_NoNotaTerima,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_TglBayar,Date)
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_UangBayar,Integer)
+            If (Original_IDBarang Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_IDBarang")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IDBarang,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Jumlah,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1929,14 +1943,28 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal NoNotaJual As String, ByVal TglBayar As Date, ByVal UangBayar As Integer) As Integer
-            If (NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("NoNotaJual")
+        Public Overloads Overridable Function Insert(ByVal NoNotaTerima As String, ByVal IDBarang As String, ByVal NamaBarang As String, ByVal Satuan As String, ByVal Jumlah As Integer) As Integer
+            If (NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NoNotaTerima")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(NoNotaJual,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(NoNotaTerima,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(TglBayar,Date)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(UangBayar,Integer)
+            If (IDBarang Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("IDBarang")
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(IDBarang,String)
+            End If
+            If (NamaBarang Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NamaBarang")
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(NamaBarang,String)
+            End If
+            If (Satuan Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Satuan")
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Satuan,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(Jumlah,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1956,23 +1984,41 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NoNotaJual As String, ByVal TglBayar As Date, ByVal UangBayar As Integer, ByVal Original_NoNotaPembayaran As Integer, ByVal Original_NoNotaJual As String, ByVal Original_TglBayar As Date, ByVal Original_UangBayar As Integer, ByVal NoNotaPembayaran As Integer) As Integer
-            If (NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("NoNotaJual")
+        Public Overloads Overridable Function Update(ByVal NoNotaTerima As String, ByVal IDBarang As String, ByVal NamaBarang As String, ByVal Satuan As String, ByVal Jumlah As Integer, ByVal Original_NoTerima As Integer, ByVal Original_NoNotaTerima As String, ByVal Original_IDBarang As String, ByVal Original_Jumlah As Integer, ByVal NoTerima As Integer) As Integer
+            If (NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NoNotaTerima")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(NoNotaJual,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(NoNotaTerima,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(TglBayar,Date)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(UangBayar,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_NoNotaPembayaran,Integer)
-            If (Original_NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_NoNotaJual")
+            If (IDBarang Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("IDBarang")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_NoNotaJual,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(IDBarang,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_TglBayar,Date)
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_UangBayar,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(NoNotaPembayaran,Integer)
+            If (NamaBarang Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NamaBarang")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(NamaBarang,String)
+            End If
+            If (Satuan Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Satuan")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Satuan,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Jumlah,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_NoTerima,Integer)
+            If (Original_NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_NoNotaTerima")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_NoNotaTerima,String)
+            End If
+            If (Original_IDBarang Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_IDBarang")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_IDBarang,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Jumlah,Integer)
+            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(NoTerima,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1992,8 +2038,8 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NoNotaJual As String, ByVal TglBayar As Date, ByVal UangBayar As Integer, ByVal Original_NoNotaPembayaran As Integer, ByVal Original_NoNotaJual As String, ByVal Original_TglBayar As Date, ByVal Original_UangBayar As Integer) As Integer
-            Return Me.Update(NoNotaJual, TglBayar, UangBayar, Original_NoNotaPembayaran, Original_NoNotaJual, Original_TglBayar, Original_UangBayar, Original_NoNotaPembayaran)
+        Public Overloads Overridable Function Update(ByVal NoNotaTerima As String, ByVal IDBarang As String, ByVal NamaBarang As String, ByVal Satuan As String, ByVal Jumlah As Integer, ByVal Original_NoTerima As Integer, ByVal Original_NoNotaTerima As String, ByVal Original_IDBarang As String, ByVal Original_Jumlah As Integer) As Integer
+            Return Me.Update(NoNotaTerima, IDBarang, NamaBarang, Satuan, Jumlah, Original_NoTerima, Original_NoNotaTerima, Original_IDBarang, Original_Jumlah, Original_NoTerima)
         End Function
     End Class
     
@@ -2006,7 +2052,7 @@ Namespace DSetPembayaranTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class HJualTableAdapter
+    Partial Public Class HTerimaTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -2123,52 +2169,40 @@ Namespace DSetPembayaranTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "HJual"
-            tableMapping.ColumnMappings.Add("NoNotaJual", "NoNotaJual")
+            tableMapping.DataSetTable = "HTerima"
+            tableMapping.ColumnMappings.Add("NoNotaTerima", "NoNotaTerima")
             tableMapping.ColumnMappings.Add("TglNota", "TglNota")
-            tableMapping.ColumnMappings.Add("GrandTotal", "GrandTotal")
-            tableMapping.ColumnMappings.Add("NamaPelanggan", "NamaPelanggan")
             tableMapping.ColumnMappings.Add("IDStaff", "IDStaff")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[HJual] WHERE (([NoNotaJual] = @Original_NoNotaJual) AND ([TglN"& _ 
-                "ota] = @Original_TglNota) AND ([GrandTotal] = @Original_GrandTotal) AND ([IDStaf"& _ 
-                "f] = @Original_IDStaff))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[HTerima] WHERE (([NoNotaTerima] = @Original_NoNotaTerima) AND "& _ 
+                "([TglNota] = @Original_TglNota) AND ([IDStaff] = @Original_IDStaff))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TglNota", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglNota", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GrandTotal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GrandTotal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDStaff", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDStaff", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HJual] ([NoNotaJual], [TglNota], [GrandTotal], [NamaPelanggan]"& _ 
-                ", [IDStaff]) VALUES (@NoNotaJual, @TglNota, @GrandTotal, @NamaPelanggan, @IDStaf"& _ 
-                "f);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT NoNotaJual, TglNota, GrandTotal, NamaPelanggan, IDStaff FROM HJual W"& _ 
-                "HERE (NoNotaJual = @NoNotaJual)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HTerima] ([NoNotaTerima], [TglNota], [IDStaff]) VALUES (@NoNot"& _ 
+                "aTerima, @TglNota, @IDStaff);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT NoNotaTerima, TglNota, IDStaff FROM HTerim"& _ 
+                "a WHERE (NoNotaTerima = @NoNotaTerima)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TglNota", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglNota", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GrandTotal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GrandTotal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NamaPelanggan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NamaPelanggan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDStaff", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDStaff", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[HJual] SET [NoNotaJual] = @NoNotaJual, [TglNota] = @TglNota, [Grand"& _ 
-                "Total] = @GrandTotal, [NamaPelanggan] = @NamaPelanggan, [IDStaff] = @IDStaff WHE"& _ 
-                "RE (([NoNotaJual] = @Original_NoNotaJual) AND ([TglNota] = @Original_TglNota) AN"& _ 
-                "D ([GrandTotal] = @Original_GrandTotal) AND ([IDStaff] = @Original_IDStaff));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"S"& _ 
-                "ELECT NoNotaJual, TglNota, GrandTotal, NamaPelanggan, IDStaff FROM HJual WHERE ("& _ 
-                "NoNotaJual = @NoNotaJual)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[HTerima] SET [NoNotaTerima] = @NoNotaTerima, [TglNota] = @TglNota, "& _ 
+                "[IDStaff] = @IDStaff WHERE (([NoNotaTerima] = @Original_NoNotaTerima) AND ([TglN"& _ 
+                "ota] = @Original_TglNota) AND ([IDStaff] = @Original_IDStaff));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT NoNotaTe"& _ 
+                "rima, TglNota, IDStaff FROM HTerima WHERE (NoNotaTerima = @NoNotaTerima)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TglNota", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglNota", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@GrandTotal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GrandTotal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NamaPelanggan", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NamaPelanggan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IDStaff", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDStaff", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaJual", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaJual", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NoNotaTerima", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NoNotaTerima", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TglNota", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TglNota", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GrandTotal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GrandTotal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IDStaff", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IDStaff", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -2185,7 +2219,7 @@ Namespace DSetPembayaranTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT NoNotaJual, TglNota, GrandTotal, NamaPelanggan, IDStaff FROM dbo.HJual"
+            Me._commandCollection(0).CommandText = "SELECT NoNotaTerima, TglNota, IDStaff FROM dbo.HTerima"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2193,7 +2227,7 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DSetPembayaran.HJualDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSetPenerimaanBarang.HTerimaDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2206,9 +2240,9 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DSetPembayaran.HJualDataTable
+        Public Overloads Overridable Function GetData() As DSetPenerimaanBarang.HTerimaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DSetPembayaran.HJualDataTable = New DSetPembayaran.HJualDataTable()
+            Dim dataTable As DSetPenerimaanBarang.HTerimaDataTable = New DSetPenerimaanBarang.HTerimaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2216,15 +2250,15 @@ Namespace DSetPembayaranTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As DSetPembayaran.HJualDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As DSetPenerimaanBarang.HTerimaDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As DSetPembayaran) As Integer
-            Return Me.Adapter.Update(dataSet, "HJual")
+        Public Overloads Overridable Function Update(ByVal dataSet As DSetPenerimaanBarang) As Integer
+            Return Me.Adapter.Update(dataSet, "HTerima")
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2245,18 +2279,17 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_NoNotaJual As String, ByVal Original_TglNota As Date, ByVal Original_GrandTotal As Integer, ByVal Original_IDStaff As String) As Integer
-            If (Original_NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_NoNotaJual")
+        Public Overloads Overridable Function Delete(ByVal Original_NoNotaTerima As String, ByVal Original_TglNota As Date, ByVal Original_IDStaff As String) As Integer
+            If (Original_NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_NoNotaTerima")
             Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_NoNotaJual,String)
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_NoNotaTerima,String)
             End If
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_TglNota,Date)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_GrandTotal,Integer)
             If (Original_IDStaff Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_IDStaff")
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_IDStaff,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_IDStaff,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2277,23 +2310,17 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal NoNotaJual As String, ByVal TglNota As Date, ByVal GrandTotal As Integer, ByVal NamaPelanggan As String, ByVal IDStaff As String) As Integer
-            If (NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("NoNotaJual")
+        Public Overloads Overridable Function Insert(ByVal NoNotaTerima As String, ByVal TglNota As Date, ByVal IDStaff As String) As Integer
+            If (NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NoNotaTerima")
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(NoNotaJual,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(NoNotaTerima,String)
             End If
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(TglNota,Date)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(GrandTotal,Integer)
-            If (NamaPelanggan Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("NamaPelanggan")
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NamaPelanggan,String)
-            End If
             If (IDStaff Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("IDStaff")
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(IDStaff,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(IDStaff,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2314,35 +2341,28 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NoNotaJual As String, ByVal TglNota As Date, ByVal GrandTotal As Integer, ByVal NamaPelanggan As String, ByVal IDStaff As String, ByVal Original_NoNotaJual As String, ByVal Original_TglNota As Date, ByVal Original_GrandTotal As Integer, ByVal Original_IDStaff As String) As Integer
-            If (NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("NoNotaJual")
+        Public Overloads Overridable Function Update(ByVal NoNotaTerima As String, ByVal TglNota As Date, ByVal IDStaff As String, ByVal Original_NoNotaTerima As String, ByVal Original_TglNota As Date, ByVal Original_IDStaff As String) As Integer
+            If (NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("NoNotaTerima")
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(NoNotaJual,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(NoNotaTerima,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(1).Value = CType(TglNota,Date)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(GrandTotal,Integer)
-            If (NamaPelanggan Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("NamaPelanggan")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(NamaPelanggan,String)
-            End If
             If (IDStaff Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("IDStaff")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(IDStaff,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IDStaff,String)
             End If
-            If (Original_NoNotaJual Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_NoNotaJual")
+            If (Original_NoNotaTerima Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_NoNotaTerima")
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_NoNotaJual,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_NoNotaTerima,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_TglNota,Date)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_GrandTotal,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_TglNota,Date)
             If (Original_IDStaff Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_IDStaff")
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_IDStaff,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_IDStaff,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2363,8 +2383,8 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal TglNota As Date, ByVal GrandTotal As Integer, ByVal NamaPelanggan As String, ByVal IDStaff As String, ByVal Original_NoNotaJual As String, ByVal Original_TglNota As Date, ByVal Original_GrandTotal As Integer, ByVal Original_IDStaff As String) As Integer
-            Return Me.Update(Original_NoNotaJual, TglNota, GrandTotal, NamaPelanggan, IDStaff, Original_NoNotaJual, Original_TglNota, Original_GrandTotal, Original_IDStaff)
+        Public Overloads Overridable Function Update(ByVal TglNota As Date, ByVal IDStaff As String, ByVal Original_NoNotaTerima As String, ByVal Original_TglNota As Date, ByVal Original_IDStaff As String) As Integer
+            Return Me.Update(Original_NoNotaTerima, TglNota, IDStaff, Original_NoNotaTerima, Original_TglNota, Original_IDStaff)
         End Function
     End Class
     
@@ -2377,7 +2397,7 @@ Namespace DSetPembayaranTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class DetailPembayaranTableAdapter
+    Partial Public Class PenerimaanTableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -2494,14 +2514,14 @@ Namespace DSetPembayaranTableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "DetailPembayaran"
-            tableMapping.ColumnMappings.Add("NoNotaJual", "NoNotaJual")
-            tableMapping.ColumnMappings.Add("NoNotaPembayaran", "NoNotaPembayaran")
+            tableMapping.DataSetTable = "Penerimaan"
+            tableMapping.ColumnMappings.Add("NoNotaTerima", "NoNotaTerima")
             tableMapping.ColumnMappings.Add("TglNota", "TglNota")
-            tableMapping.ColumnMappings.Add("GrandTotal", "GrandTotal")
-            tableMapping.ColumnMappings.Add("TglBayar", "TglBayar")
-            tableMapping.ColumnMappings.Add("UangBayar", "UangBayar")
-            tableMapping.ColumnMappings.Add("NamaPelanggan", "NamaPelanggan")
+            tableMapping.ColumnMappings.Add("IDStaff", "IDStaff")
+            tableMapping.ColumnMappings.Add("IDBarang", "IDBarang")
+            tableMapping.ColumnMappings.Add("Namabarang", "Namabarang")
+            tableMapping.ColumnMappings.Add("Satuan", "Satuan")
+            tableMapping.ColumnMappings.Add("Jumlah", "Jumlah")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -2518,9 +2538,8 @@ Namespace DSetPembayaranTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT H.NoNotaJual, T.NoNotaPembayaran, H.TglNota,H.NamaPelanggan, H.GrandTotal,"& _ 
-                " T.TglBayar, T.UangBayar from HJual H, TbPembayaran T WHERE H.NoNotaJual = T.NoN"& _ 
-                "otaJual"
+            Me._commandCollection(0).CommandText = "SELECT H.NoNotaTerima, H.TglNota, H.IDStaff, D.IDBarang, D.Namabarang, D.Satuan, "& _ 
+                "D.Jumlah From HTerima H,  DTerima D Where H.NoNotaTerima = D.NoNotaTerima"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2528,7 +2547,7 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DSetPembayaran.DetailPembayaranDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DSetPenerimaanBarang.PenerimaanDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2541,9 +2560,9 @@ Namespace DSetPembayaranTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As DSetPembayaran.DetailPembayaranDataTable
+        Public Overloads Overridable Function GetData() As DSetPenerimaanBarang.PenerimaanDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DSetPembayaran.DetailPembayaranDataTable = New DSetPembayaran.DetailPembayaranDataTable()
+            Dim dataTable As DSetPenerimaanBarang.PenerimaanDataTable = New DSetPenerimaanBarang.PenerimaanDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2562,9 +2581,9 @@ Namespace DSetPembayaranTableAdapters
         
         Private _updateOrder As UpdateOrderOption
         
-        Private _tbPembayaranTableAdapter As TbPembayaranTableAdapter
+        Private _dTerimaTableAdapter As DTerimaTableAdapter
         
-        Private _hJualTableAdapter As HJualTableAdapter
+        Private _hTerimaTableAdapter As HTerimaTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -2586,12 +2605,12 @@ Namespace DSetPembayaranTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property TbPembayaranTableAdapter() As TbPembayaranTableAdapter
+        Public Property DTerimaTableAdapter() As DTerimaTableAdapter
             Get
-                Return Me._tbPembayaranTableAdapter
+                Return Me._dTerimaTableAdapter
             End Get
             Set
-                Me._tbPembayaranTableAdapter = value
+                Me._dTerimaTableAdapter = value
             End Set
         End Property
         
@@ -2600,12 +2619,12 @@ Namespace DSetPembayaranTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property HJualTableAdapter() As HJualTableAdapter
+        Public Property HTerimaTableAdapter() As HTerimaTableAdapter
             Get
-                Return Me._hJualTableAdapter
+                Return Me._hTerimaTableAdapter
             End Get
             Set
-                Me._hJualTableAdapter = value
+                Me._hTerimaTableAdapter = value
             End Set
         End Property
         
@@ -2628,13 +2647,13 @@ Namespace DSetPembayaranTableAdapters
                 If (Not (Me._connection) Is Nothing) Then
                     Return Me._connection
                 End If
-                If ((Not (Me._tbPembayaranTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._tbPembayaranTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._tbPembayaranTableAdapter.Connection
+                If ((Not (Me._dTerimaTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._dTerimaTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._dTerimaTableAdapter.Connection
                 End If
-                If ((Not (Me._hJualTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._hJualTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._hJualTableAdapter.Connection
+                If ((Not (Me._hTerimaTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._hTerimaTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._hTerimaTableAdapter.Connection
                 End If
                 Return Nothing
             End Get
@@ -2649,10 +2668,10 @@ Namespace DSetPembayaranTableAdapters
         Public ReadOnly Property TableAdapterInstanceCount() As Integer
             Get
                 Dim count As Integer = 0
-                If (Not (Me._tbPembayaranTableAdapter) Is Nothing) Then
+                If (Not (Me._dTerimaTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._hJualTableAdapter) Is Nothing) Then
+                If (Not (Me._hTerimaTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -2664,23 +2683,23 @@ Namespace DSetPembayaranTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As DSetPembayaran, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DSetPenerimaanBarang, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPembayaranTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.TbPembayaran.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._dTerimaTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.DTerima.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._tbPembayaranTableAdapter.Update(updatedRows))
+                    result = (result + Me._dTerimaTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._hJualTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.HJual.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._hTerimaTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.HTerima.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._hJualTableAdapter.Update(updatedRows))
+                    result = (result + Me._hTerimaTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -2692,21 +2711,21 @@ Namespace DSetPembayaranTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As DSetPembayaran, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DSetPenerimaanBarang, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._tbPembayaranTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.TbPembayaran.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._dTerimaTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.DTerima.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._tbPembayaranTableAdapter.Update(addedRows))
+                    result = (result + Me._dTerimaTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._hJualTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.HJual.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._hTerimaTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.HTerima.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._hJualTableAdapter.Update(addedRows))
+                    result = (result + Me._hTerimaTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -2718,21 +2737,21 @@ Namespace DSetPembayaranTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As DSetPembayaran, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DSetPenerimaanBarang, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._hJualTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.HJual.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._hTerimaTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.HTerima.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._hJualTableAdapter.Update(deletedRows))
+                    result = (result + Me._hTerimaTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._tbPembayaranTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.TbPembayaran.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._dTerimaTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.DTerima.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._tbPembayaranTableAdapter.Update(deletedRows))
+                    result = (result + Me._dTerimaTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -2770,20 +2789,20 @@ Namespace DSetPembayaranTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As DSetPembayaran) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DSetPenerimaanBarang) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If
             If (dataSet.HasChanges = false) Then
                 Return 0
             End If
-            If ((Not (Me._tbPembayaranTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._tbPembayaranTableAdapter.Connection) = false)) Then
+            If ((Not (Me._dTerimaTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._dTerimaTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
-            If ((Not (Me._hJualTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._hJualTableAdapter.Connection) = false)) Then
+            If ((Not (Me._hTerimaTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._hTerimaTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
@@ -2819,22 +2838,22 @@ Namespace DSetPembayaranTableAdapters
             Try 
                 '---- Prepare for update -----------
                 '
-                If (Not (Me._tbPembayaranTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._tbPembayaranTableAdapter, Me._tbPembayaranTableAdapter.Connection)
-                    Me._tbPembayaranTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbPembayaranTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._tbPembayaranTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._tbPembayaranTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._tbPembayaranTableAdapter.Adapter)
+                If (Not (Me._dTerimaTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._dTerimaTableAdapter, Me._dTerimaTableAdapter.Connection)
+                    Me._dTerimaTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._dTerimaTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._dTerimaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._dTerimaTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._dTerimaTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._hJualTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._hJualTableAdapter, Me._hJualTableAdapter.Connection)
-                    Me._hJualTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
-                    Me._hJualTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
-                    If Me._hJualTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._hJualTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._hJualTableAdapter.Adapter)
+                If (Not (Me._hTerimaTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._hTerimaTableAdapter, Me._hTerimaTableAdapter.Connection)
+                    Me._hTerimaTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._hTerimaTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._hTerimaTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._hTerimaTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._hTerimaTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -2897,13 +2916,13 @@ Namespace DSetPembayaranTableAdapters
                 If workConnOpened Then
                     workConnection.Close
                 End If
-                If (Not (Me._tbPembayaranTableAdapter) Is Nothing) Then
-                    Me._tbPembayaranTableAdapter.Connection = CType(revertConnections(Me._tbPembayaranTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._tbPembayaranTableAdapter.Transaction = Nothing
+                If (Not (Me._dTerimaTableAdapter) Is Nothing) Then
+                    Me._dTerimaTableAdapter.Connection = CType(revertConnections(Me._dTerimaTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._dTerimaTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._hJualTableAdapter) Is Nothing) Then
-                    Me._hJualTableAdapter.Connection = CType(revertConnections(Me._hJualTableAdapter),Global.System.Data.SqlClient.SqlConnection)
-                    Me._hJualTableAdapter.Transaction = Nothing
+                If (Not (Me._hTerimaTableAdapter) Is Nothing) Then
+                    Me._hTerimaTableAdapter.Connection = CType(revertConnections(Me._hTerimaTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._hTerimaTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter

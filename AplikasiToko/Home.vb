@@ -67,8 +67,20 @@
     End Sub
 
     Private Sub CekLaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CekLaporanToolStripMenuItem.Click
-        Dim f As New FormLaporan("NotaPenjualanSatuan")
-        f.LaporanNoNota = "1"
+        Dim f As New FormLaporan("NotaPembayaran")
+        f.LaporanNoNota = "4"
+        f.Show()
+    End Sub
+
+    Private Sub PenjualanToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem2.Click
+        Dim f As New FormLaporanPenjualan
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub PembelianToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem2.Click
+        Dim f As New FormLaporanTerima
+        f.MdiParent = Me
         f.Show()
     End Sub
 End Class

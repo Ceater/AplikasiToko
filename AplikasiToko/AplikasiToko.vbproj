@@ -102,6 +102,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSetPembayaran.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DSetPembayaran.vb">
+      <DependentUpon>DSetPembayaran.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DSetPenerimaanBarang.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSetPenerimaanBarang.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DSetPenjualan.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +123,36 @@
     </Compile>
     <Compile Include="HelpForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPenjualan.Designer.vb">
+      <DependentUpon>FormLaporanPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanTerima.Designer.vb">
+      <DependentUpon>FormLaporanTerima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan\FormLaporanTerima.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan\Rpt\LaporanPembayaran.vb">
+      <DependentUpon>LaporanPembayaran.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Laporan\Rpt\LaporanPenerimaan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPenerimaan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\Rpt\LaporanPenjualan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Master\Pelanggan.Designer.vb">
       <DependentUpon>Pelanggan.vb</DependentUpon>
@@ -176,19 +214,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Nota\FormLaporan.Designer.vb">
+    <Compile Include="Laporan\FormLaporan.Designer.vb">
       <DependentUpon>FormLaporan.vb</DependentUpon>
     </Compile>
-    <Compile Include="Nota\FormLaporan.vb">
+    <Compile Include="Laporan\FormLaporan.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nota\Rpt\NotaPembayaran.vb">
+    <Compile Include="Laporan\Rpt\NotaPembayaran.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NotaPembayaran.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Nota\Rpt\NotaPenjualan.vb">
+    <Compile Include="Laporan\Rpt\NotaPenjualan.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NotaPenjualan.rpt</DependentUpon>
@@ -206,6 +244,12 @@
     <Compile Include="Transaksi\Penjualan.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Transaksi\StokOpname.Designer.vb">
+      <DependentUpon>StokOpname.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\StokOpname.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\TerimaBarang.Designer.vb">
       <DependentUpon>TerimaBarang.vb</DependentUpon>
     </Compile>
@@ -219,6 +263,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanPenjualan.resx">
+      <DependentUpon>FormLaporanPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\FormLaporanTerima.resx">
+      <DependentUpon>FormLaporanTerima.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\Rpt\LaporanPembayaran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPembayaran.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\Rpt\LaporanPenerimaan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPenerimaan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\Rpt\LaporanPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPenjualan.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
@@ -241,14 +303,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nota\FormLaporan.resx">
+    <EmbeddedResource Include="Laporan\FormLaporan.resx">
       <DependentUpon>FormLaporan.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nota\Rpt\NotaPembayaran.rpt">
+    <EmbeddedResource Include="Laporan\Rpt\NotaPembayaran.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NotaPembayaran.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nota\Rpt\NotaPenjualan.rpt">
+    <EmbeddedResource Include="Laporan\Rpt\NotaPenjualan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NotaPenjualan.vb</LastGenOutput>
     </EmbeddedResource>
@@ -258,12 +320,16 @@
     <EmbeddedResource Include="Transaksi\Penjualan.resx">
       <DependentUpon>Penjualan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\StokOpname.resx">
+      <DependentUpon>StokOpname.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\TerimaBarang.resx">
       <DependentUpon>TerimaBarang.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="DataSet\DSetPembayaran.xsc">
       <DependentUpon>DSetPembayaran.xsd</DependentUpon>
     </None>
@@ -274,6 +340,17 @@
     </None>
     <None Include="DataSet\DSetPembayaran.xss">
       <DependentUpon>DSetPembayaran.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DSetPenerimaanBarang.xsc">
+      <DependentUpon>DSetPenerimaanBarang.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DSetPenerimaanBarang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSetPenerimaanBarang.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\DSetPenerimaanBarang.xss">
+      <DependentUpon>DSetPenerimaanBarang.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DSetPenjualan.xsc">
       <DependentUpon>DSetPenjualan.xsd</DependentUpon>
@@ -324,9 +401,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Laporan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

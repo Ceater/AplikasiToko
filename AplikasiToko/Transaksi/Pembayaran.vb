@@ -67,6 +67,9 @@
         If result = DialogResult.Yes Then
             insertPembayaran(lblArr(0).Text, tgl, CInt(lblArr(6).Text))
             MsgBox("Pembayaran berhasil")
+            Dim f As New FormLaporan("NotaPembayaran")
+            f.LaporanNoNota = lblArr(0).Text
+            f.Show()
             clear()
             loadListBox()
         ElseIf result = DialogResult.No Then
