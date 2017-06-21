@@ -118,6 +118,14 @@
     <Compile Include="DataSet\DSetPenjualan.vb">
       <DependentUpon>DSetPenjualan.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DSetStokOpname.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSetStokOpname.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DSetStokOpname.vb">
+      <DependentUpon>DSetStokOpname.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HelpForm.Designer.vb">
       <DependentUpon>HelpForm.vb</DependentUpon>
     </Compile>
@@ -152,6 +160,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LaporanPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Laporan\Rpt\LaporanStokOpname.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanStokOpname.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Master\Pelanggan.Designer.vb">
@@ -282,6 +296,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LaporanPenjualan.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Laporan\Rpt\LaporanStokOpname.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanStokOpname.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +380,17 @@
     </None>
     <None Include="DataSet\DSetPenjualan.xss">
       <DependentUpon>DSetPenjualan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DSetStokOpname.xsc">
+      <DependentUpon>DSetStokOpname.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DSetStokOpname.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSetStokOpname.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\DSetStokOpname.xss">
+      <DependentUpon>DSetStokOpname.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
