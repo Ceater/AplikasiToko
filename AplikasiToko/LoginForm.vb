@@ -26,6 +26,7 @@ Public Class LoginForm
         If cekLogin(TextBox1.Text, TextBox2.Text) Then
             Dim f As New Home
             f.ToolStripStatusLabel2.Text = TextBox1.Text
+            f.hakAkses = getHAkses(TextBox1.Text)
             f.Show()
             Me.Close()
         Else

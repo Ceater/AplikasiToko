@@ -1,8 +1,30 @@
 ﻿Public Class Home
-
+    Public hakAkses As String = ""
+    Public Menu(12) As ToolStripMenuItem
     Private Sub Home_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Timer1.Start()
         LoadDataSet()
+        Menu(0) = BarangToolStripMenuItem
+        Menu(1) = SupplierToolStripMenuItem
+        Menu(2) = StaffToolStripMenuItem
+        Menu(3) = PelangganToolStripMenuItem
+        Menu(4) = PenjualanToolStripMenuItem
+        Menu(5) = TerimaToolStripMenuItem
+        Menu(6) = PembayaranToolStripMenuItem
+        Menu(7) = StokOpnameToolStripMenuItem
+        Menu(8) = PrintUlangNotaToolStripMenuItem
+        Menu(9) = PenjualanToolStripMenuItem2
+        Menu(10) = TerimaToolStripMenuItem2
+        Menu(11) = PembayaranToolStripMenuItem
+        Dim temp(11) As String
+        For i = 0 To 10
+            temp(i) = hakAkses.Substring(i, 1)
+            If temp(i) = "1" Then
+                Menu(i).Enabled = True
+            Else
+                Menu(i).Enabled = False
+            End If
+        Next
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
@@ -33,7 +55,7 @@
         f.Show()
     End Sub
 
-    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim f As New HelpForm
         f.MdiParent = Me
         f.Show()
@@ -52,7 +74,7 @@
         f.Show()
     End Sub
 
-    Private Sub PembelianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem.Click
+    Private Sub PembelianToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TerimaToolStripMenuItem.Click
         Dim f As New TerimaBarang
         f.MdiParent = Me
         f.setStaff(ToolStripStatusLabel2.Text)
@@ -66,7 +88,7 @@
         f.Show()
     End Sub
 
-    Private Sub CekLaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CekLaporanToolStripMenuItem.Click
+    Private Sub CekLaporanToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim f As New FormLaporan("NotaPembayaran")
         f.LaporanNoNota = "4"
         f.Show()
@@ -78,8 +100,20 @@
         f.Show()
     End Sub
 
-    Private Sub PembelianToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles PembelianToolStripMenuItem2.Click
+    Private Sub PembelianToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles TerimaToolStripMenuItem2.Click
         Dim f As New FormLaporanTerima
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub StokOpnameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StokOpnameToolStripMenuItem.Click
+        Dim f As New StokOpname
+        f.MdiParent = Me
+        f.Show()
+    End Sub
+
+    Private Sub PembayaranToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PembayaranToolStripMenuItem1.Click
+        Dim f As New FormLaporan("LaporanPembayaran")
         f.MdiParent = Me
         f.Show()
     End Sub

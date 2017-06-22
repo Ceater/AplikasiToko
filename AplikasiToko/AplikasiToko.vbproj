@@ -205,7 +205,7 @@
     <Compile Include="Master\Barang.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module\Master\LoginModule.vb" />
+    <Compile Include="Module\LoginModule.vb" />
     <Compile Include="Module\Master\ModuleBarang.vb" />
     <Compile Include="Module\Master\ModulePelanggan.vb" />
     <Compile Include="Module\Master\ModuleStaff.vb" />
@@ -256,6 +256,12 @@
       <DependentUpon>Penjualan.vb</DependentUpon>
     </Compile>
     <Compile Include="Transaksi\Penjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\PrintUlangNota.Designer.vb">
+      <DependentUpon>PrintUlangNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\PrintUlangNota.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transaksi\StokOpname.Designer.vb">
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\Penjualan.resx">
       <DependentUpon>Penjualan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\PrintUlangNota.resx">
+      <DependentUpon>PrintUlangNota.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\StokOpname.resx">
       <DependentUpon>StokOpname.vb</DependentUpon>

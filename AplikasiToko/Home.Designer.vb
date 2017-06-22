@@ -38,21 +38,15 @@ Partial Class Home
         Me.PelangganToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PembelianToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TerimaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PembayaranToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReturToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PenjualanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PembelianToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StokOpnameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintUlangNotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PembelianToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReturToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PenjualanToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PembelianToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PengaturanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TerimaToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PembayaranToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CekLaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -105,7 +99,7 @@ Partial Class Home
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem, Me.PengaturanToolStripMenuItem, Me.LogoutToolStripMenuItem, Me.HelpToolStripMenuItem, Me.CekLaporanToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem, Me.LogoutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1274, 24)
@@ -149,7 +143,7 @@ Partial Class Home
         '
         'TransaksiToolStripMenuItem
         '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.PembelianToolStripMenuItem, Me.PembayaranToolStripMenuItem, Me.ReturToolStripMenuItem})
+        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.TerimaToolStripMenuItem, Me.PembayaranToolStripMenuItem, Me.StokOpnameToolStripMenuItem, Me.PrintUlangNotaToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
         Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.TransaksiToolStripMenuItem.Text = "Transaksi"
@@ -158,45 +152,40 @@ Partial Class Home
         '
         Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
         Me.PenjualanToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.PenjualanToolStripMenuItem.Text = "Penjualan"
         '
-        'PembelianToolStripMenuItem
+        'TerimaToolStripMenuItem
         '
-        Me.PembelianToolStripMenuItem.Name = "PembelianToolStripMenuItem"
-        Me.PembelianToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
-        Me.PembelianToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.PembelianToolStripMenuItem.Text = "Terima Barang"
+        Me.TerimaToolStripMenuItem.Name = "TerimaToolStripMenuItem"
+        Me.TerimaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
+        Me.TerimaToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.TerimaToolStripMenuItem.Text = "Terima Barang"
         '
         'PembayaranToolStripMenuItem
         '
         Me.PembayaranToolStripMenuItem.Name = "PembayaranToolStripMenuItem"
         Me.PembayaranToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D3), System.Windows.Forms.Keys)
-        Me.PembayaranToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.PembayaranToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.PembayaranToolStripMenuItem.Text = "Pembayaran"
         '
-        'ReturToolStripMenuItem
+        'StokOpnameToolStripMenuItem
         '
-        Me.ReturToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem1, Me.PembelianToolStripMenuItem1})
-        Me.ReturToolStripMenuItem.Name = "ReturToolStripMenuItem"
-        Me.ReturToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.ReturToolStripMenuItem.Text = "Retur"
+        Me.StokOpnameToolStripMenuItem.Name = "StokOpnameToolStripMenuItem"
+        Me.StokOpnameToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D4), System.Windows.Forms.Keys)
+        Me.StokOpnameToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.StokOpnameToolStripMenuItem.Text = "Stok Opname"
         '
-        'PenjualanToolStripMenuItem1
+        'PrintUlangNotaToolStripMenuItem
         '
-        Me.PenjualanToolStripMenuItem1.Name = "PenjualanToolStripMenuItem1"
-        Me.PenjualanToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
-        Me.PenjualanToolStripMenuItem1.Text = "Penjualan"
-        '
-        'PembelianToolStripMenuItem1
-        '
-        Me.PembelianToolStripMenuItem1.Name = "PembelianToolStripMenuItem1"
-        Me.PembelianToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
-        Me.PembelianToolStripMenuItem1.Text = "Pembelian"
+        Me.PrintUlangNotaToolStripMenuItem.Name = "PrintUlangNotaToolStripMenuItem"
+        Me.PrintUlangNotaToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D5), System.Windows.Forms.Keys)
+        Me.PrintUlangNotaToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.PrintUlangNotaToolStripMenuItem.Text = "Print Ulang Nota"
         '
         'LaporanToolStripMenuItem
         '
-        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem2, Me.PembelianToolStripMenuItem2, Me.ReturToolStripMenuItem1})
+        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem2, Me.TerimaToolStripMenuItem2, Me.PembayaranToolStripMenuItem1})
         Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
         Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.LaporanToolStripMenuItem.Text = "Laporan"
@@ -207,54 +196,23 @@ Partial Class Home
         Me.PenjualanToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.PenjualanToolStripMenuItem2.Text = "Penjualan"
         '
-        'PembelianToolStripMenuItem2
+        'TerimaToolStripMenuItem2
         '
-        Me.PembelianToolStripMenuItem2.Name = "PembelianToolStripMenuItem2"
-        Me.PembelianToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
-        Me.PembelianToolStripMenuItem2.Text = "Pembelian"
+        Me.TerimaToolStripMenuItem2.Name = "TerimaToolStripMenuItem2"
+        Me.TerimaToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.TerimaToolStripMenuItem2.Text = "Barang Masuk"
         '
-        'ReturToolStripMenuItem1
+        'PembayaranToolStripMenuItem1
         '
-        Me.ReturToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem3, Me.PembelianToolStripMenuItem3})
-        Me.ReturToolStripMenuItem1.Name = "ReturToolStripMenuItem1"
-        Me.ReturToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.ReturToolStripMenuItem1.Text = "Retur"
-        '
-        'PenjualanToolStripMenuItem3
-        '
-        Me.PenjualanToolStripMenuItem3.Name = "PenjualanToolStripMenuItem3"
-        Me.PenjualanToolStripMenuItem3.Size = New System.Drawing.Size(130, 22)
-        Me.PenjualanToolStripMenuItem3.Text = "Penjualan"
-        '
-        'PembelianToolStripMenuItem3
-        '
-        Me.PembelianToolStripMenuItem3.Name = "PembelianToolStripMenuItem3"
-        Me.PembelianToolStripMenuItem3.Size = New System.Drawing.Size(130, 22)
-        Me.PembelianToolStripMenuItem3.Text = "Pembelian"
-        '
-        'PengaturanToolStripMenuItem
-        '
-        Me.PengaturanToolStripMenuItem.Name = "PengaturanToolStripMenuItem"
-        Me.PengaturanToolStripMenuItem.Size = New System.Drawing.Size(80, 20)
-        Me.PengaturanToolStripMenuItem.Text = "Pengaturan"
+        Me.PembayaranToolStripMenuItem1.Name = "PembayaranToolStripMenuItem1"
+        Me.PembayaranToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PembayaranToolStripMenuItem1.Text = "Pembayaran"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
         Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.LogoutToolStripMenuItem.Text = "Logout"
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "Help"
-        '
-        'CekLaporanToolStripMenuItem
-        '
-        Me.CekLaporanToolStripMenuItem.Name = "CekLaporanToolStripMenuItem"
-        Me.CekLaporanToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
-        Me.CekLaporanToolStripMenuItem.Text = "Cek Laporan"
         '
         'Timer1
         '
@@ -296,20 +254,14 @@ Partial Class Home
     Friend WithEvents StaffToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransaksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PembelianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReturToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PenjualanToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PembelianToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TerimaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PenjualanToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PembelianToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReturToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PenjualanToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PembelianToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PengaturanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TerimaToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PelangganToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PembayaranToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CekLaporanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StokOpnameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PrintUlangNotaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PembayaranToolStripMenuItem1 As ToolStripMenuItem
 End Class

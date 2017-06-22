@@ -28,16 +28,15 @@ Partial Class Staff
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.L3 = New System.Windows.Forms.CheckBox()
-        Me.T6 = New System.Windows.Forms.CheckBox()
-        Me.T3 = New System.Windows.Forms.CheckBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.T5 = New System.Windows.Forms.CheckBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.T4 = New System.Windows.Forms.CheckBox()
         Me.L1 = New System.Windows.Forms.CheckBox()
         Me.T2 = New System.Windows.Forms.CheckBox()
         Me.M4 = New System.Windows.Forms.CheckBox()
         Me.M3 = New System.Windows.Forms.CheckBox()
         Me.L2 = New System.Windows.Forms.CheckBox()
-        Me.T4 = New System.Windows.Forms.CheckBox()
+        Me.T3 = New System.Windows.Forms.CheckBox()
         Me.T1 = New System.Windows.Forms.CheckBox()
         Me.M2 = New System.Windows.Forms.CheckBox()
         Me.M1 = New System.Windows.Forms.CheckBox()
@@ -106,16 +105,15 @@ Partial Class Staff
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.L3)
-        Me.GroupBox2.Controls.Add(Me.T6)
-        Me.GroupBox2.Controls.Add(Me.T3)
-        Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.T5)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.T4)
         Me.GroupBox2.Controls.Add(Me.L1)
         Me.GroupBox2.Controls.Add(Me.T2)
         Me.GroupBox2.Controls.Add(Me.M4)
         Me.GroupBox2.Controls.Add(Me.M3)
         Me.GroupBox2.Controls.Add(Me.L2)
-        Me.GroupBox2.Controls.Add(Me.T4)
+        Me.GroupBox2.Controls.Add(Me.T3)
         Me.GroupBox2.Controls.Add(Me.T1)
         Me.GroupBox2.Controls.Add(Me.M2)
         Me.GroupBox2.Controls.Add(Me.M1)
@@ -154,25 +152,15 @@ Partial Class Staff
         Me.L3.Text = "Pembayaran"
         Me.L3.UseVisualStyleBackColor = True
         '
-        'T6
+        'T5
         '
-        Me.T6.AutoSize = True
-        Me.T6.Location = New System.Drawing.Point(143, 159)
-        Me.T6.Name = "T6"
-        Me.T6.Size = New System.Drawing.Size(104, 17)
-        Me.T6.TabIndex = 18
-        Me.T6.Text = "Print Ulang Nota"
-        Me.T6.UseVisualStyleBackColor = True
-        '
-        'T3
-        '
-        Me.T3.AutoSize = True
-        Me.T3.Location = New System.Drawing.Point(143, 90)
-        Me.T3.Name = "T3"
-        Me.T3.Size = New System.Drawing.Size(52, 17)
-        Me.T3.TabIndex = 15
-        Me.T3.Text = "Retur"
-        Me.T3.UseVisualStyleBackColor = True
+        Me.T5.AutoSize = True
+        Me.T5.Location = New System.Drawing.Point(143, 136)
+        Me.T5.Name = "T5"
+        Me.T5.Size = New System.Drawing.Size(104, 17)
+        Me.T5.TabIndex = 18
+        Me.T5.Text = "Print Ulang Nota"
+        Me.T5.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -183,15 +171,15 @@ Partial Class Staff
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Master"
         '
-        'T5
+        'T4
         '
-        Me.T5.AutoSize = True
-        Me.T5.Location = New System.Drawing.Point(143, 136)
-        Me.T5.Name = "T5"
-        Me.T5.Size = New System.Drawing.Size(85, 17)
-        Me.T5.TabIndex = 17
-        Me.T5.Text = "Pembayaran"
-        Me.T5.UseVisualStyleBackColor = True
+        Me.T4.AutoSize = True
+        Me.T4.Location = New System.Drawing.Point(143, 113)
+        Me.T4.Name = "T4"
+        Me.T4.Size = New System.Drawing.Size(85, 17)
+        Me.T4.TabIndex = 17
+        Me.T4.Text = "Pembayaran"
+        Me.T4.UseVisualStyleBackColor = True
         '
         'L1
         '
@@ -208,9 +196,9 @@ Partial Class Staff
         Me.T2.AutoSize = True
         Me.T2.Location = New System.Drawing.Point(143, 67)
         Me.T2.Name = "T2"
-        Me.T2.Size = New System.Drawing.Size(75, 17)
+        Me.T2.Size = New System.Drawing.Size(95, 17)
         Me.T2.TabIndex = 14
-        Me.T2.Text = "Pembelian"
+        Me.T2.Text = "Terima Barang"
         Me.T2.UseVisualStyleBackColor = True
         '
         'M4
@@ -218,9 +206,9 @@ Partial Class Staff
         Me.M4.AutoSize = True
         Me.M4.Location = New System.Drawing.Point(6, 113)
         Me.M4.Name = "M4"
-        Me.M4.Size = New System.Drawing.Size(60, 17)
+        Me.M4.Size = New System.Drawing.Size(77, 17)
         Me.M4.TabIndex = 9
-        Me.M4.Text = "Satuan"
+        Me.M4.Text = "Pelanggan"
         Me.M4.UseVisualStyleBackColor = True
         '
         'M3
@@ -243,15 +231,15 @@ Partial Class Staff
         Me.L2.Text = "Barang Masuk"
         Me.L2.UseVisualStyleBackColor = True
         '
-        'T4
+        'T3
         '
-        Me.T4.AutoSize = True
-        Me.T4.Location = New System.Drawing.Point(143, 113)
-        Me.T4.Name = "T4"
-        Me.T4.Size = New System.Drawing.Size(91, 17)
-        Me.T4.TabIndex = 16
-        Me.T4.Text = "Stok Opname"
-        Me.T4.UseVisualStyleBackColor = True
+        Me.T3.AutoSize = True
+        Me.T3.Location = New System.Drawing.Point(143, 90)
+        Me.T3.Name = "T3"
+        Me.T3.Size = New System.Drawing.Size(91, 17)
+        Me.T3.TabIndex = 16
+        Me.T3.Text = "Stok Opname"
+        Me.T3.UseVisualStyleBackColor = True
         '
         'T1
         '
@@ -419,7 +407,6 @@ Partial Class Staff
     Friend WithEvents Label5 As Label
     Friend WithEvents L3 As CheckBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents T3 As CheckBox
     Friend WithEvents L2 As CheckBox
     Friend WithEvents Label3 As Label
     Friend WithEvents T2 As CheckBox
@@ -433,10 +420,10 @@ Partial Class Staff
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Reset As Button
-    Friend WithEvents T6 As CheckBox
     Friend WithEvents T5 As CheckBox
-    Friend WithEvents M4 As CheckBox
     Friend WithEvents T4 As CheckBox
+    Friend WithEvents M4 As CheckBox
+    Friend WithEvents T3 As CheckBox
     Friend WithEvents Tambah As Button
     Friend WithEvents Hapus As Button
     Friend WithEvents Label8 As Label

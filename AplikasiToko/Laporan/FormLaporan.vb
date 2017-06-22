@@ -7,6 +7,7 @@ Public Class FormLaporan
     Public mode As String = ""
     Public tglAwal As Date
     Public tglAkhir As Date
+    Public kodebarang As String = ""
     Dim Jenis As String = ""
 
     Public Sub New(ByVal laporan As String)
@@ -87,6 +88,17 @@ Public Class FormLaporan
                     rep = New LaporanPenerimaan
                     rep.SetDataSource(dataset)
                 End If
+            ElseIf Jenis = "StokOpname" Then
+                cmd.CommandText = "Select H.TglNota, H.NoNotaJual As 'Nomer Nota', D.IDBarang, D.NamaBarang, D.Jumlah From HJual As H INNER Join DJual As D On H.NoNotaJual = D.NoNotaJual where D.IDBarang = @a UNION Select HT.TglNota, HT.NoNotaTerima As 'Nomer Nota', DT.IDBarang, DT.NamaBarang, DT.Jumlah From HTerima As HT INNER Join DTerima As DT On HT.NoNotaTerima = DT.NoNotaTerima where DT.IDBarang = @a"
+                cmd.Parameters.AddWithValue("@a", kodebarang)
+                adapt.Fill(dataset, "StokOpName")
+                rep = New LaporanStokOpname
+                rep.SetDataSource(dataset)
+            ElseIf Jenis = "LaporanPembayaran" Then
+                cmd.CommandText = "SELECT H.NoNotaJual, T.NoNotaPembayaran, H.TglNota,H.NamaPelanggan, H.GrandTotal, T.TglBayar, T.UangBayar from HJual H, TbPembayaran T WHERE H.NoNotaJual = T.NoNotaJual"
+                adapt.Fill(dataset, "Detailpembayaran")
+                rep = New LaporanPembayaran
+                rep.SetDataSource(dataset)
             End If
             con.Close()
             crv.ReportSource = rep
@@ -94,10 +106,6 @@ Public Class FormLaporan
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub FormLaporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Sub print()

@@ -83,3 +83,5 @@ C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\Aplikasi
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporanPenjualan.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporanTerima.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.StokOpname.resources
+C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.PrintUlangNota.resources

@@ -2605,6 +2605,8 @@ Partial Public Class DSetStokOpname
         
         Private columnJumlah As Global.System.Data.DataColumn
         
+        Private columnIDBarang As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -2673,6 +2675,14 @@ Partial Public Class DSetStokOpname
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IDBarangColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIDBarang
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2709,9 +2719,9 @@ Partial Public Class DSetStokOpname
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddStokOpNameRow(ByVal TglNota As Date, ByVal Nomer_Nota As String, ByVal NamaBarang As String, ByVal Jumlah As Integer) As StokOpNameRow
+        Public Overloads Function AddStokOpNameRow(ByVal TglNota As Date, ByVal Nomer_Nota As String, ByVal NamaBarang As String, ByVal Jumlah As Integer, ByVal IDBarang As String) As StokOpNameRow
             Dim rowStokOpNameRow As StokOpNameRow = CType(Me.NewRow,StokOpNameRow)
-            Dim columnValuesArray() As Object = New Object() {TglNota, Nomer_Nota, NamaBarang, Jumlah}
+            Dim columnValuesArray() As Object = New Object() {TglNota, Nomer_Nota, NamaBarang, Jumlah, IDBarang}
             rowStokOpNameRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowStokOpNameRow)
             Return rowStokOpNameRow
@@ -2738,6 +2748,7 @@ Partial Public Class DSetStokOpname
             Me.columnNomer_Nota = MyBase.Columns("Nomer Nota")
             Me.columnNamaBarang = MyBase.Columns("NamaBarang")
             Me.columnJumlah = MyBase.Columns("Jumlah")
+            Me.columnIDBarang = MyBase.Columns("IDBarang")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2751,12 +2762,16 @@ Partial Public Class DSetStokOpname
             MyBase.Columns.Add(Me.columnNamaBarang)
             Me.columnJumlah = New Global.System.Data.DataColumn("Jumlah", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnJumlah)
+            Me.columnIDBarang = New Global.System.Data.DataColumn("IDBarang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIDBarang)
             Me.columnTglNota.ReadOnly = true
             Me.columnNomer_Nota.ReadOnly = true
             Me.columnNomer_Nota.MaxLength = 10
             Me.columnNamaBarang.ReadOnly = true
             Me.columnNamaBarang.MaxLength = 2147483647
             Me.columnJumlah.ReadOnly = true
+            Me.columnIDBarang.ReadOnly = true
+            Me.columnIDBarang.MaxLength = 10
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3521,6 +3536,21 @@ Partial Public Class DSetStokOpname
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property IDBarang() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableStokOpName.IDBarangColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IDBarang' in table 'StokOpName' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableStokOpName.IDBarangColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsTglNotaNull() As Boolean
             Return Me.IsNull(Me.tableStokOpName.TglNotaColumn)
         End Function
@@ -3565,6 +3595,18 @@ Partial Public Class DSetStokOpname
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetJumlahNull()
             Me(Me.tableStokOpName.JumlahColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsIDBarangNull() As Boolean
+            Return Me.IsNull(Me.tableStokOpName.IDBarangColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetIDBarangNull()
+            Me(Me.tableStokOpName.IDBarangColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -5865,6 +5907,7 @@ Namespace DSetStokOpnameTableAdapters
             tableMapping.ColumnMappings.Add("Nomer Nota", "Nomer Nota")
             tableMapping.ColumnMappings.Add("NamaBarang", "NamaBarang")
             tableMapping.ColumnMappings.Add("Jumlah", "Jumlah")
+            tableMapping.ColumnMappings.Add("IDBarang", "IDBarang")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -5881,10 +5924,12 @@ Namespace DSetStokOpnameTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT H.TglNota, H.NoNotaJual as 'Nomer Nota', D.NamaBarang, D.Jumlah from HJual"& _ 
-                " H, DJual D where H.NoNotaJual=D.NoNotaJual"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT HT.TglNota, HT.NoNot"& _ 
-                "aTerima as 'Nomer Nota', DT.Namabarang, DT.Jumlah From HTerima HT,  DTerima DT W"& _ 
-                "here HT.NoNotaTerima = DT.NoNotaTerima"
+            Me._commandCollection(0).CommandText = "SELECT        H.TglNota, H.NoNotaJual AS 'Nomer Nota', D.IDBarang, D.NamaBarang, "& _ 
+                "D.Jumlah"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            HJual AS H INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DJual "& _ 
+                "AS D ON H.NoNotaJual = D.NoNotaJual"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT        HT.TglNota, HT.NoNotaT"& _ 
+                "erima AS 'Nomer Nota', DT.IDBarang, DT.NamaBarang, DT.Jumlah"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            HT"& _ 
+                "erima AS HT INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DTerima AS DT ON HT.NoNotaTerim"& _ 
+                "a = DT.NoNotaTerima"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

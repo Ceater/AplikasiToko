@@ -12,10 +12,9 @@
         chkbox(6) = T3
         chkbox(7) = T4
         chkbox(8) = T5
-        chkbox(9) = T6
-        chkbox(10) = L1
-        chkbox(11) = L2
-        chkbox(12) = L3
+        chkbox(9) = L1
+        chkbox(10) = L2
+        chkbox(11) = L3
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
@@ -140,6 +139,5 @@
         T3.Checked = False
         T4.Checked = False
         T5.Checked = False
-        T6.Checked = False
     End Sub
 End Class
