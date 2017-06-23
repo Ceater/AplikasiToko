@@ -114,6 +114,11 @@
 
     Private Sub PembayaranToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PembayaranToolStripMenuItem1.Click
         Dim f As New FormLaporan("LaporanPembayaran")
+        f.Show()
+    End Sub
+
+    Private Sub PrintUlangNotaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintUlangNotaToolStripMenuItem.Click
+        Dim f As New PrintUlangNota
         f.MdiParent = Me
         f.Show()
     End Sub

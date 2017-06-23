@@ -193,19 +193,19 @@ Partial Class Home
         'PenjualanToolStripMenuItem2
         '
         Me.PenjualanToolStripMenuItem2.Name = "PenjualanToolStripMenuItem2"
-        Me.PenjualanToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.PenjualanToolStripMenuItem2.Size = New System.Drawing.Size(149, 22)
         Me.PenjualanToolStripMenuItem2.Text = "Penjualan"
         '
         'TerimaToolStripMenuItem2
         '
         Me.TerimaToolStripMenuItem2.Name = "TerimaToolStripMenuItem2"
-        Me.TerimaToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.TerimaToolStripMenuItem2.Size = New System.Drawing.Size(149, 22)
         Me.TerimaToolStripMenuItem2.Text = "Barang Masuk"
         '
         'PembayaranToolStripMenuItem1
         '
         Me.PembayaranToolStripMenuItem1.Name = "PembayaranToolStripMenuItem1"
-        Me.PembayaranToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.PembayaranToolStripMenuItem1.Size = New System.Drawing.Size(149, 22)
         Me.PembayaranToolStripMenuItem1.Text = "Pembayaran"
         '
         'LogoutToolStripMenuItem

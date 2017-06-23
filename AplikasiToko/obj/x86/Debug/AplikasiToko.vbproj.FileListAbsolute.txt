@@ -80,7 +80,6 @@ C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\ShockwaveFla
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\bin\Debug\stdole.dll
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporan.resources
-C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.vbprojResolveAssemblyReference.cache
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporanPenjualan.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.FormLaporanTerima.resources
 C:\Users\Johan\Documents\Github\AplikasiToko\AplikasiToko\obj\x86\Debug\AplikasiToko.StokOpname.resources

@@ -48,6 +48,8 @@ Module GlobalModule
             SqlAdapter.Fill(DSet, "DataStaff")
             SqlAdapter = New SqlDataAdapter("select * from TbPelanggan", constring)
             SqlAdapter.Fill(DSet, "DataPelanggan")
+            SqlAdapter = New SqlDataAdapter("select NoNotaJual from HJual", constring)
+            SqlAdapter.Fill(DSet, "DataNotaPenjualan")
             constring.Close()
         Catch ex As Exception
             MsgBox(ex.ToString)
