@@ -19,6 +19,9 @@ Public Class FormLaporan
         Try
             Dim con As SqlConnection
             con = constring
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
             con.Open()
 
             Dim cmd As New SqlCommand
@@ -105,7 +108,7 @@ Public Class FormLaporan
             crv.ReportSource = rep
             crv.Refresh()
         Catch ex As Exception
-
+            MsgBox(ex.ToString)
         End Try
     End Sub
 
