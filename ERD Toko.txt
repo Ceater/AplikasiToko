@@ -4,7 +4,6 @@ TbBarang
 - Stok
 - SatuanBarang
 - HargaSatuan
-- StokPengingat
 
 TbStaff
 - IDStaff
@@ -79,6 +78,21 @@ HBeli
 DBeli
 - NoDBeli
 - NoNotaBeli
+- KodeBarang
+- NamaBarang
+- HargaSatuan
+- Jumlah
+- Subtotal
+
+HTerima
+- NoNotaTerima
+- TglNota
+- GrandTotal
+- IDStaff
+
+DTerima
+- NoDTerima
+- NoNotaTerima
 - KodeBarang
 - NamaBarang
 - HargaSatuan
