@@ -14,3 +14,4 @@ delete TbSatuan
 delete TbStaff
 delete TbSupplier
 delete TbPelanggan
+delete TbPembayaran
