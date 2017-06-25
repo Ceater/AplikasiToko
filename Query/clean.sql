@@ -2,6 +2,8 @@ delete DBeli
 delete DJual
 delete HBeli
 delete HJual
+delete HTerima
+delete DTerima
 delete DReturBeli
 delete DReturJual
 delete HReturBeli
@@ -9,7 +11,6 @@ delete HReturJual
 delete TbBarang
 delete TbKontakSupplier
 delete TbSatuan
-delete DSatuan
 delete TbStaff
 delete TbSupplier
 delete TbPelanggan

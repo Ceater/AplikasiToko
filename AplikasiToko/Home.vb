@@ -30,6 +30,7 @@
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         ToolStripStatusLabel4.Text = Date.Now.ToString("dd - MMMM - yyyy")
         ToolStripStatusLabel6.Text = TimeOfDay.ToString("h:mm:ss tt")
+        cekStokMinimum()
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
@@ -51,12 +52,6 @@
 
     Private Sub StaffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StaffToolStripMenuItem.Click
         Dim f As New Staff
-        f.MdiParent = Me
-        f.Show()
-    End Sub
-
-    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Dim f As New HelpForm
         f.MdiParent = Me
         f.Show()
     End Sub
@@ -121,5 +116,14 @@
         Dim f As New PrintUlangNota
         f.MdiParent = Me
         f.Show()
+    End Sub
+
+    Sub cekStokMinimum()
+        Dim DT As DataTable = DSet.Tables("DataStokMinim")
+        ListBox1.Items.Clear()
+        ListBox1.Items.Add("Stok Pengingat")
+        For Each f As DataRow In DT.Rows
+            ListBox1.Items.Add(f(0) & " - " & f(1))
+        Next
     End Sub
 End Class

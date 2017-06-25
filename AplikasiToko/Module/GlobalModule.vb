@@ -10,16 +10,16 @@ Module GlobalModule
     Public SqlAdapter As SqlDataAdapter
 
     Sub LoadSetting()
-        Dim filepath As String = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath())) & "\Setting\setting.txt"
-        Dim line As String = ""
+        Dim filepath As String = Directory.GetCurrentDirectory & "\setting.txt"
+        Dim x1, x2, x3, x4 As String
         Try
             Dim sr As StreamReader = New StreamReader(filepath)
-            line = sr.ReadLine
-            If line Is Nothing Then
-                MsgBox("Database tidak termuat")
-            Else
-                constring = New SqlConnection(line)
-            End If
+            x1 = sr.ReadLine()
+            x2 = sr.ReadLine()
+            x3 = sr.ReadLine()
+            x4 = sr.ReadLine()
+            Dim con As String = "Server=" & x1 & "\" & x2 & ";Database=DatabaseToko;User Id=" & x3 & ";Password=" & x4 & ";"
+            constring = New SqlConnection(con)
         Catch ex As Exception
             MsgBox("Database tidak ditemukan")
         End Try
@@ -36,7 +36,7 @@ Module GlobalModule
         DSet.Clear()
         Try
             constring.Open()
-            SqlAdapter = New SqlDataAdapter("select tb.KodeBarang, NamaBarang, Stok, NamaSatuan, HargaSatuan, JumlahIsiBarang, StokPengingat from TbBarang tb, TbSatuan ts, DSatuan ds where tb.SatuanBarang = ts.KodeSatuan and tb.KodeBarang=ds.KodeBarang", constring)
+            SqlAdapter = New SqlDataAdapter("select tb.KodeBarang, NamaBarang, Stok, NamaSatuan, HargaSatuan,  StokPengingat from TbBarang tb, TbSatuan ts where tb.SatuanBarang = ts.KodeSatuan", constring)
             SqlAdapter.Fill(DSet, "DataBarang")
             SqlAdapter = New SqlDataAdapter("select * from TbSupplier", constring)
             SqlAdapter.Fill(DSet, "DataSupplier")
@@ -50,6 +50,8 @@ Module GlobalModule
             SqlAdapter.Fill(DSet, "DataPelanggan")
             SqlAdapter = New SqlDataAdapter("select NoNotaJual from HJual", constring)
             SqlAdapter.Fill(DSet, "DataNotaPenjualan")
+            SqlAdapter = New SqlDataAdapter("select tb.KodeBarang, NamaBarang, Stok, NamaSatuan, HargaSatuan,  StokPengingat from TbBarang tb, TbSatuan ts where tb.SatuanBarang = ts.KodeSatuan and Stok<=StokPengingat", constring)
+            SqlAdapter.Fill(DSet, "DataStokMinim")
             constring.Close()
         Catch ex As Exception
             MsgBox(ex.ToString)

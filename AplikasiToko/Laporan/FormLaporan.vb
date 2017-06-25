@@ -36,7 +36,6 @@ Public Class FormLaporan
             dataset.Clear()
             Dim rep As New ReportDocument
             If Jenis = "NotaPenjualan" Then
-                MsgBox(LaporanNoNota)
                 cmd.CommandText = "SELECT H.NoNotaJual, H.TglNota, H.GrandTotal, H.NamaPelanggan, H.IDStaff, D.IDBarang, D.NamaBarang, D.Satuan, D.HargaSatuan, D.Jumlah, D.Diskon, D.Subtotal from HJual H, DJual D where H.NoNotaJual=D.NoNotaJual and H.NoNotaJual=@a"
                 cmd.Parameters.AddWithValue("@a", LaporanNoNota)
                 adapt.Fill(dataset, "Penjualan")

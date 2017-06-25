@@ -2,6 +2,8 @@ delete DBeli
 delete DJual
 delete HBeli
 delete HJual
+delete HTerima
+delete DTerima
 delete DReturBeli
 delete DReturJual
 delete HReturBeli
@@ -9,12 +11,10 @@ delete HReturJual
 delete TbBarang
 delete TbKontakSupplier
 delete TbSatuan
-delete DSatuan
 delete TbStaff
 delete TbSupplier
 delete TbPelanggan
 DBCC CHECKIDENT ('DJual', RESEED, 0);
-DBCC CHECKIDENT ('DSatuan', RESEED, 0);
 DBCC CHECKIDENT ('DTerima', RESEED, 0);
 DBCC CHECKIDENT ('TbKontakSupplier', RESEED, 0);
 DBCC CHECKIDENT ('TbPelanggan', RESEED, 0);
@@ -63,21 +63,6 @@ insert into TbSatuan values('25','Gram')
 insert into TbSatuan values('26','Miligram')
 insert into TbSatuan values('27','Meter')
 insert into TbSatuan values('28','Liter')
-insert into DSatuan values('PE001','2',0)
-insert into DSatuan values('PE002','2',0)
-insert into DSatuan values('PE003','6',0)
-insert into DSatuan values('SA001','6',0)
-insert into DSatuan values('SA002','2',0)
-insert into DSatuan values('GE001','7',0)
-insert into DSatuan values('GE002','14',0)
-insert into DSatuan values('AQ001','2',0)
-insert into DSatuan values('AQ002','11',0)
-insert into DSatuan values('AQ003','11',0)
-insert into DSatuan values('TE001','11',0)
-insert into DSatuan values('YO001','11',0)
-insert into DSatuan values('RO001','7',0)
-insert into DSatuan values('RO002','7',0)
-insert into DSatuan values('RO003','7',0)
 insert into TbKontakSupplier values('1','Andri Mulyanto','5614844')
 insert into TbKontakSupplier values('1','Feby Adrian','6419275')
 insert into TbKontakSupplier values('2','Maikelele','5714829')
@@ -89,8 +74,8 @@ insert into TbPelanggan values('Willy Budiman','Pandegiling','031-5674380')
 insert into TbPelanggan values('Kent Tanuwijaya','Dinoyo','08175135582')
 insert into TbPelanggan values('Marissa Clara','Dukuh Pakis','082232130065')
 insert into TbPelanggan values('Oktaviani Sherly Diaz','Pakuwon City Regency','083849492993')
-insert into TbStaff values('admin','admin','Johan Jusianto','Kupang Panjaan','08175135582','1111111111111')
-insert into TbStaff values('kasir','kasir','Chintya Marcheline','Diponegoro','081081081081','1111111111111')
+insert into TbStaff values('admin','admin','Johan Jusianto','Kupang Panjaan','08175135582','11111111111')
+insert into TbStaff values('kasir','kasir','Chintya Marcheline','Diponegoro','081081081081','11111111111')
 insert into TbSupplier values('Unilever','Kupang Panjaan')
 insert into TbSupplier values('Wings','Diponegoro')
 insert into TbSupplier values('Alexa','GWalk')

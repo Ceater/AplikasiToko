@@ -126,12 +126,6 @@
     <Compile Include="DataSet\DSetStokOpname.vb">
       <DependentUpon>DSetStokOpname.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HelpForm.Designer.vb">
-      <DependentUpon>HelpForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="HelpForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Laporan\FormLaporanPenjualan.Designer.vb">
       <DependentUpon>FormLaporanPenjualan.vb</DependentUpon>
     </Compile>
@@ -246,6 +240,12 @@
       <DependentUpon>NotaPenjualan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PreLoad\CekSetting.Designer.vb">
+      <DependentUpon>CekSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PreLoad\CekSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Transaksi\Pembayaran.Designer.vb">
       <DependentUpon>Pembayaran.vb</DependentUpon>
     </Compile>
@@ -278,9 +278,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="HelpForm.resx">
-      <DependentUpon>HelpForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.vb</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +335,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>NotaPenjualan.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PreLoad\CekSetting.resx">
+      <DependentUpon>CekSetting.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\Pembayaran.resx">
       <DependentUpon>Pembayaran.vb</DependentUpon>
     </EmbeddedResource>
@@ -356,7 +356,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="DataSet\DSetPembayaran.xsc">
       <DependentUpon>DSetPembayaran.xsd</DependentUpon>
     </None>
@@ -413,9 +412,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Setting\setting.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">

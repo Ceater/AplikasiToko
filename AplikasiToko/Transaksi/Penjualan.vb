@@ -24,6 +24,9 @@
         ComboBox1.DataSource = DSet.Tables("DataBarang")
         ComboBox1.ValueMember = "NamaBarang"
         ComboBox1.DisplayMember = "KodeBarang"
+        ComboBox2.DataSource = DSet.Tables("DataPelanggan")
+        ComboBox2.ValueMember = "NamaPelanggan"
+        ComboBox2.DisplayMember = "NamaPelanggan"
     End Sub
 
     Private Sub ComboBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles ComboBox1.KeyUp
@@ -157,12 +160,22 @@
                     g.Show()
                     LoadDataSet()
                     clear()
+                    g.Close()
                 End If
             ElseIf result = DialogResult.No Then
-                End If
+            End If
         Else
             MsgBox("Cek nomer nota atau data barang")
         End If
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged
+        If RadioButton1.Checked Then
+            ComboBox2.Enabled = False
+        ElseIf RadioButton2.checked Then
+            ComboBox2.Enabled = True
+        End If
+        'ComboBox2.SelectedIndex = 0
     End Sub
 
     Private Sub DataGridView1_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles DataGridView1.RowsRemoved
